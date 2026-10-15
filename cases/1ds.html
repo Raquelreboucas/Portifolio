@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1DS: Design System da 1Doc · Raquel Rebouças</title>
+<meta name="description" content="Portfólio de Raquel Rebouças, Product Designer.">
+<style>dc-if{display:contents}dc-if[hidden]{display:none!important}html,body{margin:0}</style>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Hanken+Grotesk:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Caveat:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0}
+body:has(.rr[data-theme="light"]){background:#F7FAF8}
+body:has(.rr[data-theme="dark"]){background:#0B1712}
+.rr{--bg:#F7FAF8;--surface:#FFFFFF;--surface-2:#EEF6F1;--text:#10221B;--muted:#4A5E55;--line:rgba(16,34,27,.12);--line-strong:rgba(16,34,27,.28);--primary:#0E7C5A;--primary-hover:#0A6447;--on-primary:#FFFFFF;--accent-text:#0E7C5A;--mint:#A8E6CF;--mint-soft:#E3F7EE;--tag-text:#0A6447;--dot:rgba(16,34,27,.17);--hover-bg:rgba(14,124,90,.08);--glass:rgba(247,250,248,.6);--glass-border:rgba(255,255,255,.75);--glass-hi:rgba(255,255,255,.9);--sheen:.55;--shadow-c:rgba(14,60,40,.18);--thumb-bg:#D3F2E4;--mock-surface:#FFFFFF;--mock-line:#D6EEE2;--mock-soft:#E3F7EE;--mock-strong:#0E7C5A;--card-glow:rgba(14,124,90,.38);
+background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;transition:background-color .3s ease,color .3s ease}
+.rr[data-theme="dark"]{--bg:#0B1712;--surface:#12241C;--surface-2:#173026;--text:#E6F2EC;--muted:#A6BDB2;--line:rgba(230,242,236,.12);--line-strong:rgba(230,242,236,.3);--primary:#A8E6CF;--primary-hover:#C9F2E1;--on-primary:#0B1712;--accent-text:#A8E6CF;--mint-soft:#173026;--tag-text:#A8E6CF;--dot:rgba(230,242,236,.14);--hover-bg:rgba(168,230,207,.1);--glass:rgba(18,36,28,.55);--glass-border:rgba(255,255,255,.12);--glass-hi:rgba(255,255,255,.14);--sheen:.14;--shadow-c:rgba(0,0,0,.5);--thumb-bg:#173026;--mock-surface:#1C3B2F;--mock-line:#2B5546;--mock-soft:#234838;--mock-strong:#A8E6CF;--card-glow:rgba(168,230,207,.22)}
+a{color:#0E7C5A}a:hover{color:#0A6447}
+.rr a{color:var(--accent-text)}.rr a:hover{color:var(--primary-hover)}
+.rr :focus-visible{outline:2.5px solid var(--primary);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:16px;top:-60px;z-index:100;background:var(--primary);color:var(--on-primary)!important;padding:10px 16px;border-radius:12px;font-weight:700;text-decoration:none}
+.skip:focus{top:16px}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+.narrow{width:min(1040px,100% - 48px);margin-inline:auto}
+.display{font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:-.015em;line-height:1}
+.display em{font-style:italic;color:var(--accent-text)}
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;flex-direction:column;align-items:center;padding:0;transition:padding .3s ease-out;pointer-events:none}
+.hd-bar{pointer-events:auto;position:relative;width:100%;max-width:1600px;height:84px;padding:0 40px;display:flex;align-items:center;gap:24px;border:1px solid transparent;border-radius:0;background:transparent;transition:max-width .3s ease-out,height .3s ease-out,padding .3s ease-out,border-radius .3s ease-out,background-color .3s ease-out,border-color .3s ease-out,box-shadow .3s ease-out,-webkit-backdrop-filter .3s ease-out,backdrop-filter .3s ease-out}
+.hd-bar::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;background:linear-gradient(180deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 55%);transition:opacity .3s ease-out}
+.hd.is-scrolled{padding-top:16px}
+.hd.is-scrolled .hd-bar,.hd-menu{background:var(--glass);border-color:var(--glass-border);-webkit-backdrop-filter:blur(18px) saturate(180%);backdrop-filter:blur(18px) saturate(180%);box-shadow:inset 0 1px 0 var(--glass-hi),0 12px 32px -12px var(--shadow-c),0 2px 6px -2px var(--shadow-c)}
+.hd.is-scrolled .hd-bar{max-width:940px;height:60px;padding:0 8px 0 24px;border-radius:999px}
+.hd.is-scrolled .hd-bar::before{opacity:var(--sheen)}
+.brand{font-family:'Instrument Serif',Georgia,serif;font-size:28px;line-height:1;color:var(--text)!important;text-decoration:none;white-space:nowrap;transition:font-size .3s ease-out}
+.brand em{font-style:italic}
+.hd.is-scrolled .brand{font-size:24px}
+.hd-nav{flex:1;display:flex;justify-content:center;gap:2px}
+.rr .hd-nav a{color:var(--text);text-decoration:none;font-weight:500;font-size:15px;padding:9px 14px;border-radius:999px;transition:background-color .2s;white-space:nowrap}
+.rr .hd-nav a:hover{background:var(--hover-bg);color:var(--text)}
+.rr .hd-nav a.is-active{background:var(--mint-soft);color:var(--tag-text);font-weight:700}
+.hd-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{width:44px;height:44px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--text);display:grid;place-items:center;cursor:pointer;padding:0}
+.icon-btn:hover{background:var(--hover-bg)}
+.icon-btn svg{width:20px;height:20px}
+.menu-btn{display:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 26px;border-radius:999px;font-family:inherit;font-weight:700;font-size:16px;line-height:1;text-decoration:none;cursor:pointer;border:1.5px solid transparent;transition:background-color .2s,transform .2s,box-shadow .2s,border-color .2s;white-space:nowrap}
+.btn svg{width:18px;height:18px}
+.rr .btn-primary{background:var(--primary);color:var(--on-primary)}
+.rr .btn-primary:hover{background:var(--primary-hover);color:var(--on-primary);transform:translateY(-2px)}
+.rr .btn-ghost{border-color:var(--line-strong);color:var(--text);background:var(--surface)}
+.rr .btn-ghost:hover{border-color:var(--text);color:var(--text)}
+.hd-cta{min-height:44px;padding:0 20px;font-size:15px}
+.hd-menu{pointer-events:auto;display:none;flex-direction:column;gap:2px;margin-top:8px;width:100%;padding:8px;border:1px solid var(--glass-border);border-radius:24px}
+.rr .hd-menu a{display:flex;align-items:center;min-height:48px;padding:0 16px;border-radius:16px;color:var(--text);text-decoration:none;font-weight:600}
+@media (max-width:920px){
+.hd,.hd.is-scrolled{padding:12px 12px 0}
+.hd .hd-bar,.hd.is-scrolled .hd-bar{max-width:none;height:60px;padding:0 8px 0 20px;border-radius:999px;background:var(--glass);border-color:var(--glass-border);-webkit-backdrop-filter:blur(18px) saturate(180%);backdrop-filter:blur(18px) saturate(180%);box-shadow:inset 0 1px 0 var(--glass-hi),0 12px 32px -12px var(--shadow-c)}
+.hd-nav,.hd-cta{display:none}
+.menu-btn{display:grid}
+.brand,.hd.is-scrolled .brand{font-size:23px;flex:1}
+.hd-menu{display:flex}
+}
+.canvas-bg{background-color:var(--bg);background-image:radial-gradient(circle,var(--dot) 1.15px,transparent 1.6px);background-size:24px 24px;background-position:-12px -12px}
+.back{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px 0 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-weight:700;font-size:15px;text-decoration:none}
+.rr .back{color:var(--text)}
+.rr .back:hover{color:var(--text);background:var(--hover-bg)}
+.back svg{width:18px;height:18px}
+.c-hero{padding:136px 0 64px}
+.c-kicker{display:inline-flex;align-items:center;gap:8px;margin:44px 0 18px;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text)}
+.c-kicker svg{width:16px;height:16px}
+.c-title{font-size:clamp(52px,8vw,112px);margin:0;max-width:100%}
+.c-summary{font-size:clamp(19px,1.8vw,23px);line-height:1.55;color:var(--muted);max-width:720px;margin:28px 0 0}
+.tags{list-style:none;padding:0;margin:28px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.tags li{font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;background:var(--mint-soft);color:var(--tag-text)}
+.cover{border-radius:32px;overflow:hidden;background:var(--thumb-bg);aspect-ratio:16/8;display:grid;place-items:center;background-image:radial-gradient(circle,rgba(14,124,90,.16) 1px,transparent 1.5px);background-size:22px 22px;border:1px solid var(--line)}
+.cover-mock{width:min(76%,860px);aspect-ratio:16/9;background:var(--mock-surface);border:1px solid var(--mock-line);border-radius:18px;box-shadow:0 40px 80px -40px rgba(16,34,27,.45);padding:22px;display:flex;flex-direction:column;gap:16px}
+.mock-bar{display:flex;gap:7px;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--mock-line)}
+.mock-bar i{width:10px;height:10px;border-radius:50%;background:var(--mock-line)}
+.mock-bar b{margin-left:12px;height:10px;width:28%;border-radius:5px;background:var(--mock-soft)}
+.ph-label{margin:auto;font-size:15px;font-weight:700;color:var(--muted);text-align:center}
+.ln{display:block;height:10px;border-radius:5px;background:var(--mock-soft)}
+.ln.strong{background:var(--mock-strong)}
+.facts{margin:56px 0 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:24px;background:var(--surface);overflow:hidden}
+.fact{padding:24px 24px 26px;border-right:1px solid var(--line)}
+.fact:last-child{border-right:0}
+.fact dt{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.fact dd{margin:0;font-size:16px;font-weight:600}
+.cs{padding:clamp(72px,9vw,120px) 0 0}
+.cs-sec{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,5vw,72px);padding:44px 0;border-top:1px solid var(--line)}
+.cs-num{display:block;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:22px;color:var(--accent-text);margin-bottom:6px}
+.cs-h{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(34px,3.6vw,48px);line-height:1.05;margin:0;letter-spacing:-.01em}
+.cs-body p{margin:0 0 16px;font-size:18px;line-height:1.75}
+.cs-body p:last-child{margin-bottom:0}
+.ph{color:var(--muted)}
+.gallery{padding:clamp(72px,9vw,120px) 0 0}
+.gal-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:32px}
+.gal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.gal-grid figure{margin:0}
+.gal-grid figure.wide{grid-column:1 / -1}
+.gal-img{border-radius:24px;background:var(--thumb-bg);border:1px solid var(--line);aspect-ratio:4/3;display:grid;place-items:center;color:var(--muted);font-weight:700;font-size:15px;background-image:radial-gradient(circle,rgba(14,124,90,.16) 1px,transparent 1.5px);background-size:20px 20px}
+.gal-grid figure.wide .gal-img{aspect-ratio:21/9}
+.gal-grid figcaption{margin-top:12px;font-size:15px;color:var(--muted)}
+.next-wrap{padding:clamp(88px,10vw,140px) 0}
+.rr .next{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:clamp(28px,4vw,48px);border-radius:32px;background:var(--surface);border:1px solid var(--line);color:var(--text);text-decoration:none;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.rr .next:hover,.rr .next:focus-visible{color:var(--text);transform:translateY(-4px);border-color:var(--mint);box-shadow:0 32px 56px -26px var(--card-glow)}
+.next-k{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text);margin:0 0 10px}
+.next-t{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(36px,4.6vw,64px);line-height:1;margin:0}
+.next-arrow{width:72px;height:72px;border-radius:50%;background:var(--primary);color:var(--on-primary);display:grid;place-items:center;flex:none;transition:transform .35s ease}
+.next-arrow svg{width:28px;height:28px}
+.next:hover .next-arrow{transform:translateX(6px)}
+.ft{border-top:1px solid var(--line);padding:32px 0}
+.ft-in{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:15px;color:var(--muted)}
+.ft-links{display:flex;gap:20px}
+.rr .ft-links a{color:var(--text);font-weight:600;text-decoration:none}
+.rr .ft-links a:hover{color:var(--accent-text);text-decoration:underline}
+.rr .c-title,.rr .cs-h,.rr .next-t,.rr .gal-head .display{font-family:'Hanken Grotesk','Manrope',system-ui,sans-serif;font-weight:400;letter-spacing:-.045em;line-height:1.02}
+.rr .c-title em{font-style:normal;color:var(--accent-text)}
+.rr .c-title{font-size:clamp(42px,5.8vw,80px);letter-spacing:-.05em}
+.rr .cs-h{font-size:clamp(26px,2.5vw,34px)}
+.rr{font-size:16px}
+.brand em{font-style:normal}
+.rr .hd-nav a.is-active{background:var(--mint);color:#0A3F2E}
+.rr{--glass:rgba(247,250,248,.38)}
+.rr[data-theme="dark"]{--glass:rgba(18,36,28,.36)}
+.rr .display em,.rr .c-title em{color:var(--text)}
+.wrap{width:min(1120px,100% - 2 * clamp(24px,7vw,128px))}
+.narrow{width:min(960px,100% - 2 * clamp(24px,7vw,128px))}
+.hd-bar{padding:0 clamp(24px,5vw,80px)}
+.c-summary{font-size:clamp(16px,1.4vw,19px)}
+.cs-body p{font-size:16px}
+.fact dd{font-size:15px}
+.tags li{font-size:12px}
+.rr .next-t{font-size:clamp(30px,3.6vw,50px)}
+@media (max-width:600px){.wrap,.narrow{width:calc(100% - 40px)}}
+.rr .cs-num{font-family:'Manrope',system-ui,sans-serif;font-style:normal;font-weight:700;font-size:15px;letter-spacing:.06em}
+.rr.js-reveal .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rr.js-reveal .reveal.is-in{opacity:1;transform:none}
+.ds-cover{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;flex:1}
+.ds-cell{border-radius:12px;border:1px solid var(--mock-line);padding:14px;display:flex;flex-direction:column;gap:10px;justify-content:center}
+.ds-pill{display:block;height:26px;border-radius:999px;background:var(--mock-soft)}
+.ds-pill.on{background:var(--mock-strong)}
+.ds-pill.out{background:transparent;border:2px solid var(--mock-strong)}
+.ds-sw{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.ds-sw i{aspect-ratio:1;border-radius:8px}
+@media (max-width:900px){
+.facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+.fact{border-right:0;border-bottom:1px solid var(--line)}
+.cs-sec{grid-template-columns:minmax(0,1fr)}
+.cover{aspect-ratio:4/3}
+.cover-mock{width:86%}
+}
+@media (max-width:600px){
+.wrap,.narrow{width:min(1200px,100% - 32px)}
+.facts{grid-template-columns:minmax(0,1fr)}
+.gal-grid{grid-template-columns:minmax(0,1fr)}
+.ds-cover{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.rr *{transition-duration:.01ms!important}}
+.cs-sub{font-family:'Hanken Grotesk','Manrope',system-ui,sans-serif;font-weight:500;font-size:22px;letter-spacing:-.02em;margin:0 0 10px}
+.cs-step + .cs-step{margin-top:32px;padding-top:28px;border-top:1px dashed var(--line)}
+.callout{padding:18px 22px;border-radius:12px;background:var(--mint-soft);border:1px solid var(--line);font-weight:600}
+.issues{margin:0 0 16px;padding-left:22px;display:flex;flex-direction:column;gap:8px}
+.issues li{font-size:16px;line-height:1.7;padding-left:4px}
+.issues li::marker{color:var(--accent-text)}
+.flow{list-style:none;counter-reset:flow;margin:20px 0 8px;padding:0}
+.flow li{counter-increment:flow;position:relative;padding:0 0 22px 52px;font-size:16px;line-height:1.7}
+.flow li::before{content:counter(flow);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--primary);color:var(--on-primary);font-weight:800;font-size:14px;display:grid;place-items:center}
+.flow li::after{content:"";position:absolute;left:15px;top:36px;bottom:4px;width:2px;background:var(--line)}
+.flow li:last-child::after{display:none}
+.inline-link{color:var(--accent-text);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.cs-fig{margin:24px 0 0}
+.cs-fig img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
+.fig-ph{aspect-ratio:16/9;border-radius:12px;border:1px dashed var(--line-strong);background:var(--thumb-bg);display:grid;place-items:center;color:var(--muted);font-size:15px;font-weight:600;padding:16px;text-align:center}
+.cs-fig figcaption{margin-top:10px;font-size:13px;color:var(--muted);line-height:1.5}
+</style>
+</head>
+<body>
+<div class="rr" data-tpl-data-theme="{{theme}}" data-ref="setRoot">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header data-tpl-class="hd {{hdClass}}">
+  <div class="hd-bar">
+    <a class="brand" href="../index.html" aria-label="Raquel Rebouças, página inicial">Raquel <em>Rebouças</em></a>
+    <nav class="hd-nav" aria-label="Principal">
+      <a href="../index.html">Sobre mim</a>
+      <a href="../index.html" class="is-active" aria-current="page">Cases</a>
+      <a href="../index.html">Textos</a>
+      <a href="../index.html">Contato</a>
+    </nav>
+    <div class="hd-actions">
+      <button class="icon-btn" type="button" data-on-click="toggleTheme" data-tpl-aria-label="{{themeLabel}}" data-tpl-title="{{themeLabel}}">
+        <dc-if data-if="isDark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg></dc-if>
+        <dc-if data-if="isLight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"></path></svg></dc-if>
+      </button>
+      <a class="btn btn-primary hd-cta" href="https://www.linkedin.com/in/raquelreboucas/" target="_blank" rel="noopener">LinkedIn<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg><span class="sr-only">(abre em nova aba)</span></a>
+      <button class="icon-btn menu-btn" type="button" data-on-click="toggleMenu" data-tpl-aria-expanded="{{menuOpen}}" aria-controls="menu-mobile" data-tpl-aria-label="{{menuLabel}}">
+        <dc-if data-if="menuOpen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></dc-if>
+        <dc-if data-if="menuClosed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></dc-if>
+      </button>
+    </div>
+  </div>
+  <dc-if data-if="menuOpen">
+    <nav id="menu-mobile" class="hd-menu" aria-label="Menu">
+      <a href="../index.html">Sobre mim</a><a href="../index.html">Cases</a><a href="../index.html">Textos</a><a href="../index.html">Contato</a>
+    </nav>
+  </dc-if>
+</header>
+
+<main id="conteudo">
+  <section class="c-hero canvas-bg">
+    <div class="narrow">
+      <a class="back" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>Voltar para cases</a>
+      <div class="reveal">
+        <p class="c-kicker"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 1.5v13M11.5 1.5v13M1.5 4.5h13M1.5 11.5h13"></path></svg>Case 01 · 1Doc</p>
+        <h1 class="display c-title">1DS: <em>Design System</em> da 1Doc</h1>
+        <p class="c-summary">Da identidade visual aos tokens no Figma, e de uma biblioteca adaptada do PrimeVue a um sistema que designers e IA evoluem juntos, direto no código.</p>
+        <ul class="tags"><li>Design System</li><li>IA</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="cover reveal" role="img" aria-label="Imagem de capa do case (placeholder)">
+      <div class="cover-mock">
+        <div class="mock-bar"><i></i><i></i><i></i><b></b></div>
+        <div class="ds-cover">
+          <div class="ds-cell"><span class="ds-pill on"></span><span class="ds-pill out"></span><span class="ds-pill"></span></div>
+          <div class="ds-cell"><div class="ds-sw"><i style="background: #0A6447"></i><i style="background: #0E7C5A"></i><i style="background: #4FBF95"></i><i style="background: #A8E6CF"></i><i style="background: #E3F7EE"></i></div><span class="ln strong" style="width: 50%"></span><span class="ln" style="width: 80%"></span></div>
+          <div class="ds-cell"><span class="ln strong" style="width: 40%"></span><span class="ln"></span><span class="ln" style="width: 70%"></span></div>
+        </div>
+        <p class="ph-label">[Imagem de capa do case]</p>
+      </div>
+    </div>
+
+    <dl class="facts reveal">
+      <div class="fact"><dt>Empresa</dt><dd>1Doc · Softplan</dd></div>
+      <div class="fact"><dt>Meu papel</dt><dd>Product Designer</dd></div>
+      <div class="fact"><dt>Período</dt><dd>[Período]</dd></div>
+      <div class="fact"><dt>Time</dt><dd>Time de design com 4 pessoas</dd></div>
+      <div class="fact"><dt>Ferramentas</dt><dd>Figma · Claude Code · GitLab</dd></div>
+    </dl>
+  </div>
+
+  <div class="narrow cs">
+    <section class="cs-sec reveal" aria-labelledby="s1"><div><span class="cs-num">01</span><h2 id="s1" class="cs-h">Contexto</h2></div><div class="cs-body">
+      <p>A construção do 1DS aconteceu em paralelo ao redesign da plataforma. Ele começou como uma adaptação da biblioteca do PrimeVue e, depois, os componentes passaram a ser desenvolvidos pelo time de tecnologia com apoio da IA.</p>
+      <p>Conto um pouco mais sobre a criação e a evolução do 1DS <a class="inline-link" href="https://www.linkedin.com/pulse/utilizando-ia-para-escalar-design-systems-em-times-enxutos-rebou%C3%A7as-ykcof" target="_blank" rel="noopener">neste artigo<span class="sr-only"> (abre em nova aba)</span></a>.</p>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s2"><div><span class="cs-num">02</span><h2 id="s2" class="cs-h">Fundação</h2></div><div class="cs-body">
+      <p>Fui responsável pela criação da identidade visual e do nome do 1DS, ajudando a estabelecer sua personalidade e seus padrões de comunicação.</p>
+      <p>Também estruturei toda a organização das bibliotecas no Figma, criando os tokens e suas relações para garantir consistência e flexibilidade na evolução das interfaces. Entre as principais entregas:</p>
+      <ul class="issues">
+        <li>Organização das cores primitivas (primitive tokens) e criação das variantes semânticas de cor.</li>
+        <li>Criação dos tokens tipográficos e de sombras.</li>
+        <li>Organização das variantes de tema no Figma, com diferentes paletas de cores e os modos claro e escuro.</li>
+        <li>Estruturação das bibliotecas e do padrão de documentação dos componentes.</li>
+        <li>Manutenção dos componentes criados inicialmente com base no Vue, adaptando estilos, aplicando os tokens e organizando a estrutura.</li>
+      </ul>
+      <p>Antes do lançamento do 1DS, fiz toda a componentização no Figma, aplicando propriedades e variáveis. Como ainda não existiam os MCPs, toda a documentação dos componentes também foi feita de forma manual.</p>
+      <p class="callout" style="margin-top: 24px">Essa organização criou uma base consistente para novos componentes e para a manutenção das interfaces. Foi a partir da documentação no Figma que o 1DS passou a ser construído com IA.</p>
+      <p style="margin-top: 16px">Com o tempo, o processo evoluiu: hoje todo o time usa IA e agentes para desenvolver componentes, subir alterações e atualizar a documentação. É isso que permite a um time de design enxuto, de 4 pessoas, manter e escalar o sistema.</p>
+      <figure class="cs-fig"><div class="fig-ph" role="img" aria-label="Organização das bibliotecas no Figma (placeholder)">[Organização das bibliotecas no Figma]</div><figcaption>Estrutura das bibliotecas do 1DS no Figma: tokens primitivos, semânticos e temas.</figcaption></figure>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s3"><div><span class="cs-num">03</span><h2 id="s3" class="cs-h">Desafio</h2></div><div class="cs-body">
+      <p>Com a adoção da IA no desenvolvimento, o time passou a implementar componentes com o Claude Code, por meio de um agente especializado, e a disponibilizar o projeto via GitLab.</p>
+      <p>Mas, com esse processo concentrado exclusivamente no time de tecnologia, identificamos uma limitação na escalabilidade e na velocidade de evolução do Design System.</p>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s4"><div><span class="cs-num">04</span><h2 id="s4" class="cs-h">Solução</h2></div><div class="cs-body">
+      <div class="cs-step">
+        <h3 class="cs-sub">Autonomia para o time de Design</h3>
+        <p>A solução foi ampliar a autonomia do time de Design: os próprios designers passaram a usar os agentes para fazer manutenções nas bibliotecas de código, abrir Merge Requests (MRs) e participar diretamente da revisão e aprovação das alterações.</p>
+        <figure class="cs-fig"><div class="fig-ph" role="img" aria-label="Exemplos de componentes criados com IA (placeholder)">[Exemplos de componentes criados com IA]</div><figcaption>Componentes que criei com apoio da IA, seguindo os tokens e as convenções do 1DS.</figcaption></figure>
+      </div>
+      <div class="cs-step">
+        <h3 class="cs-sub">Uma skill para aproximar código e Figma</h3>
+        <p>Nesse contexto, identifiquei outra lacuna: os componentes implementados em código nem sempre chegavam às bibliotecas do Figma, gerando um descompasso entre o sistema usado no desenvolvimento e o disponível para criar interfaces.</p>
+        <p>Para resolver isso, desenvolvi uma skill para o Claude Code, adaptada aos padrões visuais e às diretrizes do 1DS. Com ela, é possível:</p>
+        <ol class="flow">
+          <li>Criar interfaces utilizando os componentes existentes.</li>
+          <li>Desenvolver novos componentes seguindo as convenções do Design System.</li>
+          <li>Organizar a documentação no Figma a partir de uma estrutura predefinida.</li>
+        </ol>
+        <p>A skill fica versionada na pasta do projeto no GitLab e é atualizada a cada sessão de trabalho com o Claude Code, mantendo as instruções alinhadas à evolução do sistema.</p>
+        <figure class="cs-fig"><div class="fig-ph" role="img" aria-label="Exemplo de tela gerada com a skill de Figma (placeholder)">[Exemplo de tela gerada com a skill de Figma]</div><figcaption>Tela criada com a skill do 1DS, usando os componentes e a documentação do sistema.</figcaption></figure>
+      </div>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s5"><div><span class="cs-num">05</span><h2 id="s5" class="cs-h">Próximos passos</h2></div><div class="cs-body">
+      <ul class="issues">
+        <li>Revisar e aprimorar os componentes considerando critérios de acessibilidade.</li>
+        <li>Aprofundar as orientações de uso, detalhando propriedades, variantes, estados e comportamentos esperados de cada componente.</li>
+      </ul>
+    </div></section>
+
+    
+  </div>
+
+  <section class="wrap gallery" aria-labelledby="gal">
+    <div class="gal-head reveal"><h2 id="gal" class="display" style="font-size: clamp(40px, 5vw, 64px); margin: 0">Galeria</h2></div>
+    <div class="gal-grid">
+      <figure class="wide reveal"><div class="gal-img" role="img" aria-label="Imagem 1 (placeholder)">[Imagem 1]</div><figcaption>[Legenda da imagem 1]</figcaption></figure>
+      <figure class="reveal"><div class="gal-img" role="img" aria-label="Imagem 2 (placeholder)">[Imagem 2]</div><figcaption>[Legenda da imagem 2]</figcaption></figure>
+      <figure class="reveal"><div class="gal-img" role="img" aria-label="Imagem 3 (placeholder)">[Imagem 3]</div><figcaption>[Legenda da imagem 3]</figcaption></figure>
+    </div>
+  </section>
+
+  <div class="wrap next-wrap">
+    <a class="next reveal" href="../cases/temporalidade-documental.html">
+      <div><p class="next-k">Próximo case →</p><p class="next-t">Temporalidade documental</p></div>
+      <span class="next-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+    </a>
+  </div>
+</main>
+
+<footer class="ft">
+  <div class="wrap ft-in">
+    <p style="margin: 0">© 2026 Raquel Rebouças</p>
+    <p style="margin: 0">São Paulo - Brasil</p>
+  </div>
+</footer>
+</div>
+<script src="../assets/dc-runtime.js"></script>
+<script>
+class Component extends DCLogic {
+  state = { theme: null, stored: null, sys: 'light', scrolled: false, menuOpen: false };
+  setRoot = (el) => { if (el) this.rootEl = el; };
+  resolveTheme() {
+    const s = this.state || {};
+    if (s.theme) return s.theme;
+    const p = this.props && this.props.themePreview;
+    if (p === 'light' || p === 'dark') return p;
+    return s.stored || s.sys || 'light';
+  }
+  toggleTheme = () => {
+    const next = this.resolveTheme() === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('rr-theme', next); } catch (e) {}
+    this.setState({ theme: next });
+  };
+  toggleMenu = () => { this.setState({ menuOpen: !this.state.menuOpen }); };
+  componentDidMount() {
+    this.cleanups = [];
+    const mm = (q) => (window.matchMedia ? window.matchMedia(q) : { matches: false });
+    const reduce = mm('(prefers-reduced-motion: reduce)').matches;
+    let stored = null;
+    try { stored = localStorage.getItem('rr-theme'); } catch (e) {}
+    if (stored !== 'light' && stored !== 'dark') stored = null;
+    const mq = mm('(prefers-color-scheme: dark)');
+    const onMq = (e) => this.setState({ sys: e.matches ? 'dark' : 'light' });
+    if (mq.addEventListener) { mq.addEventListener('change', onMq); this.cleanups.push(() => mq.removeEventListener('change', onMq)); }
+    this.setState({ stored: stored, sys: mq.matches ? 'dark' : 'light' });
+    const onScroll = (e) => {
+      let y = window.scrollY || document.documentElement.scrollTop || 0;
+      const t = e && e.target;
+      if (t && t !== document && typeof t.scrollTop === 'number') y = Math.max(y, t.scrollTop);
+      const sc = y > 24;
+      if (sc !== this.state.scrolled) this.setState({ scrolled: sc });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+    this.cleanups.push(() => { window.removeEventListener('scroll', onScroll); document.removeEventListener('scroll', onScroll, true); });
+    onScroll();
+    const root = this.rootEl || document.querySelector('.rr');
+    if (root && !reduce && 'IntersectionObserver' in window) {
+      root.classList.add('js-reveal');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+      }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+      root.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+      this.cleanups.push(() => io.disconnect());
+    }
+  }
+  componentWillUnmount() { (this.cleanups || []).forEach((f) => { try { f(); } catch (e) {} }); }
+  renderVals() {
+    const s = this.state || {};
+    const theme = this.resolveTheme();
+    return {
+      setRoot: this.setRoot, theme: theme,
+      isDark: theme === 'dark', isLight: theme !== 'dark',
+      themeLabel: theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro',
+      toggleTheme: this.toggleTheme,
+      hdClass: s.scrolled ? 'is-scrolled' : '',
+      menuOpen: !!s.menuOpen, menuClosed: !s.menuOpen,
+      menuLabel: s.menuOpen ? 'Fechar menu' : 'Abrir menu',
+      toggleMenu: this.toggleMenu
+    };
+  }
+}
+DC.mount(Component, {"themePreview": "auto"});
+</script>
+</body>
+</html>
