@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1DS: The 1Doc Design System · Raquel Rebouças</title>
+<meta name="description" content="Portfolio of Raquel Rebouças, Product Designer.">
+<style>dc-if{display:contents}dc-if[hidden]{display:none!important}html,body{margin:0}</style>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Hanken+Grotesk:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Caveat:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0}
+body:has(.rr[data-theme="light"]){background:#F7FAF8}
+body:has(.rr[data-theme="dark"]){background:#0B1712}
+.rr{--bg:#F7FAF8;--surface:#FFFFFF;--surface-2:#EEF6F1;--text:#10221B;--muted:#4A5E55;--line:rgba(16,34,27,.12);--line-strong:rgba(16,34,27,.28);--primary:#0E7C5A;--primary-hover:#0A6447;--on-primary:#FFFFFF;--accent-text:#0E7C5A;--mint:#A8E6CF;--mint-soft:#E3F7EE;--tag-text:#0A6447;--dot:rgba(16,34,27,.17);--hover-bg:rgba(14,124,90,.08);--glass:rgba(247,250,248,.6);--glass-border:rgba(255,255,255,.75);--glass-hi:rgba(255,255,255,.9);--sheen:.55;--shadow-c:rgba(14,60,40,.18);--thumb-bg:#D3F2E4;--mock-surface:#FFFFFF;--mock-line:#D6EEE2;--mock-soft:#E3F7EE;--mock-strong:#0E7C5A;--card-glow:rgba(14,124,90,.38);
+background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;transition:background-color .3s ease,color .3s ease}
+.rr[data-theme="dark"]{--bg:#0B1712;--surface:#12241C;--surface-2:#173026;--text:#E6F2EC;--muted:#A6BDB2;--line:rgba(230,242,236,.12);--line-strong:rgba(230,242,236,.3);--primary:#A8E6CF;--primary-hover:#C9F2E1;--on-primary:#0B1712;--accent-text:#A8E6CF;--mint-soft:#173026;--tag-text:#A8E6CF;--dot:rgba(230,242,236,.14);--hover-bg:rgba(168,230,207,.1);--glass:rgba(18,36,28,.55);--glass-border:rgba(255,255,255,.12);--glass-hi:rgba(255,255,255,.14);--sheen:.14;--shadow-c:rgba(0,0,0,.5);--thumb-bg:#173026;--mock-surface:#1C3B2F;--mock-line:#2B5546;--mock-soft:#234838;--mock-strong:#A8E6CF;--card-glow:rgba(168,230,207,.22)}
+a{color:#0E7C5A}a:hover{color:#0A6447}
+.rr a{color:var(--accent-text)}.rr a:hover{color:var(--primary-hover)}
+.rr :focus-visible{outline:2.5px solid var(--primary);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:16px;top:-60px;z-index:100;background:var(--primary);color:var(--on-primary)!important;padding:10px 16px;border-radius:12px;font-weight:700;text-decoration:none}
+.skip:focus{top:16px}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+.narrow{width:min(1040px,100% - 48px);margin-inline:auto}
+.display{font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:-.015em;line-height:1}
+.display em{font-style:italic;color:var(--accent-text)}
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;flex-direction:column;align-items:center;padding:0;transition:padding .3s ease-out;pointer-events:none}
+.hd-bar{pointer-events:auto;position:relative;width:100%;max-width:1600px;height:84px;padding:0 40px;display:flex;align-items:center;gap:24px;border:1px solid transparent;border-radius:0;background:transparent;transition:max-width .3s ease-out,height .3s ease-out,padding .3s ease-out,border-radius .3s ease-out,background-color .3s ease-out,border-color .3s ease-out,box-shadow .3s ease-out,-webkit-backdrop-filter .3s ease-out,backdrop-filter .3s ease-out}
+.hd-bar::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;background:linear-gradient(180deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 55%);transition:opacity .3s ease-out}
+.hd.is-scrolled{padding-top:16px}
+.hd.is-scrolled .hd-bar,.hd-menu{background:var(--glass);border-color:var(--glass-border);-webkit-backdrop-filter:blur(18px) saturate(180%);backdrop-filter:blur(18px) saturate(180%);box-shadow:inset 0 1px 0 var(--glass-hi),0 12px 32px -12px var(--shadow-c),0 2px 6px -2px var(--shadow-c)}
+.hd.is-scrolled .hd-bar{max-width:940px;height:60px;padding:0 8px 0 24px;border-radius:999px}
+.hd.is-scrolled .hd-bar::before{opacity:var(--sheen)}
+.brand{font-family:'Instrument Serif',Georgia,serif;font-size:28px;line-height:1;color:var(--text)!important;text-decoration:none;white-space:nowrap;transition:font-size .3s ease-out}
+.brand em{font-style:italic}
+.hd.is-scrolled .brand{font-size:24px}
+.hd-nav{flex:1;display:flex;justify-content:center;gap:2px}
+.rr .hd-nav a{color:var(--text);text-decoration:none;font-weight:500;font-size:15px;padding:9px 14px;border-radius:999px;transition:background-color .2s;white-space:nowrap}
+.rr .hd-nav a:hover{background:var(--hover-bg);color:var(--text)}
+.rr .hd-nav a.is-active{background:var(--mint-soft);color:var(--tag-text);font-weight:700}
+.hd-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{width:44px;height:44px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--text);display:grid;place-items:center;cursor:pointer;padding:0}
+.icon-btn:hover{background:var(--hover-bg)}
+.icon-btn svg{width:20px;height:20px}
+.menu-btn{display:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 26px;border-radius:999px;font-family:inherit;font-weight:700;font-size:16px;line-height:1;text-decoration:none;cursor:pointer;border:1.5px solid transparent;transition:background-color .2s,transform .2s,box-shadow .2s,border-color .2s;white-space:nowrap}
+.btn svg{width:18px;height:18px}
+.rr .btn-primary{background:var(--primary);color:var(--on-primary)}
+.rr .btn-primary:hover{background:var(--primary-hover);color:var(--on-primary);transform:translateY(-2px)}
+.rr .btn-ghost{border-color:var(--line-strong);color:var(--text);background:var(--surface)}
+.rr .btn-ghost:hover{border-color:var(--text);color:var(--text)}
+.hd-cta{min-height:44px;padding:0 20px;font-size:15px}
+.hd-menu{pointer-events:auto;display:none;flex-direction:column;gap:2px;margin-top:8px;width:100%;padding:8px;border:1px solid var(--glass-border);border-radius:24px}
+.rr .hd-menu a{display:flex;align-items:center;min-height:48px;padding:0 16px;border-radius:16px;color:var(--text);text-decoration:none;font-weight:600}
+@media (max-width:920px){
+.hd,.hd.is-scrolled{padding:12px 12px 0}
+.hd .hd-bar,.hd.is-scrolled .hd-bar{max-width:none;height:60px;padding:0 8px 0 20px;border-radius:999px;background:var(--glass);border-color:var(--glass-border);-webkit-backdrop-filter:blur(18px) saturate(180%);backdrop-filter:blur(18px) saturate(180%);box-shadow:inset 0 1px 0 var(--glass-hi),0 12px 32px -12px var(--shadow-c)}
+.hd-nav,.hd-cta{display:none}
+.menu-btn{display:grid}
+.brand,.hd.is-scrolled .brand{font-size:23px;flex:1}
+.hd-menu{display:flex}
+}
+.canvas-bg{background-color:var(--bg);background-image:radial-gradient(circle,var(--dot) 1.15px,transparent 1.6px);background-size:24px 24px;background-position:-12px -12px}
+.back{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px 0 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-weight:700;font-size:15px;text-decoration:none}
+.rr .back{color:var(--text)}
+.rr .back:hover{color:var(--text);background:var(--hover-bg)}
+.back svg{width:18px;height:18px}
+.c-hero{padding:136px 0 64px}
+.c-kicker{display:inline-flex;align-items:center;gap:8px;margin:44px 0 18px;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text)}
+.c-kicker svg{width:16px;height:16px}
+.c-title{font-size:clamp(52px,8vw,112px);margin:0;max-width:100%}
+.c-summary{font-size:clamp(19px,1.8vw,23px);line-height:1.55;color:var(--muted);max-width:720px;margin:28px 0 0}
+.tags{list-style:none;padding:0;margin:28px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.tags li{font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;background:var(--mint-soft);color:var(--tag-text)}
+.cover{border-radius:32px;overflow:hidden;background:var(--thumb-bg);aspect-ratio:16/8;display:grid;place-items:center;background-image:radial-gradient(circle,rgba(14,124,90,.16) 1px,transparent 1.5px);background-size:22px 22px;border:1px solid var(--line)}
+.cover-mock{width:min(76%,860px);aspect-ratio:16/9;background:var(--mock-surface);border:1px solid var(--mock-line);border-radius:18px;box-shadow:0 40px 80px -40px rgba(16,34,27,.45);padding:22px;display:flex;flex-direction:column;gap:16px}
+.mock-bar{display:flex;gap:7px;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--mock-line)}
+.mock-bar i{width:10px;height:10px;border-radius:50%;background:var(--mock-line)}
+.mock-bar b{margin-left:12px;height:10px;width:28%;border-radius:5px;background:var(--mock-soft)}
+.ph-label{margin:auto;font-size:15px;font-weight:700;color:var(--muted);text-align:center}
+.ln{display:block;height:10px;border-radius:5px;background:var(--mock-soft)}
+.ln.strong{background:var(--mock-strong)}
+.facts{margin:56px 0 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:24px;background:var(--surface);overflow:hidden}
+.fact{padding:24px 24px 26px;border-right:1px solid var(--line)}
+.fact:last-child{border-right:0}
+.fact dt{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.fact dd{margin:0;font-size:16px;font-weight:600}
+.cs{padding:clamp(72px,9vw,120px) 0 0}
+.cs-sec{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,5vw,72px);padding:44px 0;border-top:1px solid var(--line)}
+.cs-num{display:block;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:22px;color:var(--accent-text);margin-bottom:6px}
+.cs-h{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(34px,3.6vw,48px);line-height:1.05;margin:0;letter-spacing:-.01em}
+.cs-body p{margin:0 0 16px;font-size:18px;line-height:1.75}
+.cs-body p:last-child{margin-bottom:0}
+.ph{color:var(--muted)}
+.gallery{padding:clamp(72px,9vw,120px) 0 0}
+.gal-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:32px}
+.gal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.gal-grid figure{margin:0}
+.gal-grid figure.wide{grid-column:1 / -1}
+.gal-img{border-radius:24px;background:var(--thumb-bg);border:1px solid var(--line);aspect-ratio:4/3;display:grid;place-items:center;color:var(--muted);font-weight:700;font-size:15px;background-image:radial-gradient(circle,rgba(14,124,90,.16) 1px,transparent 1.5px);background-size:20px 20px}
+.gal-grid figure.wide .gal-img{aspect-ratio:21/9}
+.gal-grid figcaption{margin-top:12px;font-size:15px;color:var(--muted)}
+.next-wrap{padding:clamp(88px,10vw,140px) 0}
+.rr .next{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:clamp(28px,4vw,48px);border-radius:32px;background:var(--surface);border:1px solid var(--line);color:var(--text);text-decoration:none;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.rr .next:hover,.rr .next:focus-visible{color:var(--text);transform:translateY(-4px);border-color:var(--mint);box-shadow:0 32px 56px -26px var(--card-glow)}
+.next-k{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text);margin:0 0 10px}
+.next-t{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(36px,4.6vw,64px);line-height:1;margin:0}
+.next-arrow{width:72px;height:72px;border-radius:50%;background:var(--primary);color:var(--on-primary);display:grid;place-items:center;flex:none;transition:transform .35s ease}
+.next-arrow svg{width:28px;height:28px}
+.next:hover .next-arrow{transform:translateX(6px)}
+.ft{border-top:1px solid var(--line);padding:32px 0}
+.ft-in{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:15px;color:var(--muted)}
+.ft-links{display:flex;gap:20px}
+.rr .ft-links a{color:var(--text);font-weight:600;text-decoration:none}
+.rr .ft-links a:hover{color:var(--accent-text);text-decoration:underline}
+.rr .c-title,.rr .cs-h,.rr .next-t,.rr .gal-head .display{font-family:'Hanken Grotesk','Manrope',system-ui,sans-serif;font-weight:400;letter-spacing:-.045em;line-height:1.02}
+.rr .c-title em{font-style:normal;color:var(--accent-text)}
+.rr .c-title{font-size:clamp(42px,5.8vw,80px);letter-spacing:-.05em}
+.rr .cs-h{font-size:clamp(26px,2.5vw,34px)}
+.rr{font-size:16px}
+.brand em{font-style:normal}
+.rr .hd-nav a.is-active{background:var(--mint);color:#0A3F2E}
+.rr{--glass:rgba(247,250,248,.38)}
+.rr[data-theme="dark"]{--glass:rgba(18,36,28,.36)}
+.rr .display em,.rr .c-title em{color:var(--text)}
+.wrap{width:min(1120px,100% - 2 * clamp(24px,7vw,128px))}
+.narrow{width:min(960px,100% - 2 * clamp(24px,7vw,128px))}
+.hd-bar{padding:0 clamp(24px,5vw,80px)}
+.c-summary{font-size:clamp(16px,1.4vw,19px)}
+.cs-body p{font-size:16px}
+.fact dd{font-size:15px}
+.tags li{font-size:12px}
+.rr .next-t{font-size:clamp(30px,3.6vw,50px)}
+@media (max-width:600px){.wrap,.narrow{width:calc(100% - 40px)}}
+.rr .cs-num{font-family:'Manrope',system-ui,sans-serif;font-style:normal;font-weight:700;font-size:15px;letter-spacing:.06em}
+.rr.js-reveal .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rr.js-reveal .reveal.is-in{opacity:1;transform:none}
+.ds-cover{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;flex:1}
+.ds-cell{border-radius:12px;border:1px solid var(--mock-line);padding:14px;display:flex;flex-direction:column;gap:10px;justify-content:center}
+.ds-pill{display:block;height:26px;border-radius:999px;background:var(--mock-soft)}
+.ds-pill.on{background:var(--mock-strong)}
+.ds-pill.out{background:transparent;border:2px solid var(--mock-strong)}
+.ds-sw{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.ds-sw i{aspect-ratio:1;border-radius:8px}
+@media (max-width:900px){
+.facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+.fact{border-right:0;border-bottom:1px solid var(--line)}
+.cs-sec{grid-template-columns:minmax(0,1fr)}
+.cover{aspect-ratio:4/3}
+.cover-mock{width:86%}
+}
+@media (max-width:600px){
+.wrap,.narrow{width:min(1200px,100% - 32px)}
+.facts{grid-template-columns:minmax(0,1fr)}
+.gal-grid{grid-template-columns:minmax(0,1fr)}
+.ds-cover{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.rr *{transition-duration:.01ms!important}}
+.cs-sub{font-family:'Hanken Grotesk','Manrope',system-ui,sans-serif;font-weight:500;font-size:22px;letter-spacing:-.02em;margin:0 0 10px}
+.cs-step + .cs-step{margin-top:32px;padding-top:28px;border-top:1px dashed var(--line)}
+.callout{padding:18px 22px;border-radius:12px;background:var(--mint-soft);border:1px solid var(--line);font-weight:600}
+.issues{margin:0 0 16px;padding-left:22px;display:flex;flex-direction:column;gap:8px}
+.issues li{font-size:16px;line-height:1.7;padding-left:4px}
+.issues li::marker{color:var(--accent-text)}
+.flow{list-style:none;counter-reset:flow;margin:20px 0 8px;padding:0}
+.flow li{counter-increment:flow;position:relative;padding:0 0 22px 52px;font-size:16px;line-height:1.7}
+.flow li::before{content:counter(flow);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--primary);color:var(--on-primary);font-weight:800;font-size:14px;display:grid;place-items:center}
+.flow li::after{content:"";position:absolute;left:15px;top:36px;bottom:4px;width:2px;background:var(--line)}
+.flow li:last-child::after{display:none}
+.inline-link{color:var(--accent-text);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.cs-fig{margin:24px 0 0}
+.cs-fig img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
+.fig-ph{aspect-ratio:16/9;border-radius:12px;border:1px dashed var(--line-strong);background:var(--thumb-bg);display:grid;place-items:center;color:var(--muted);font-size:15px;font-weight:600;padding:16px;text-align:center}
+.cs-fig figcaption{margin-top:10px;font-size:13px;color:var(--muted);line-height:1.5}
+.lang-switch{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--line);border-radius:999px;height:44px;box-sizing:border-box}
+.lang-switch a{display:grid;place-items:center;min-width:36px;height:36px;padding:0 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;color:var(--muted);text-decoration:none;transition:background-color .2s,color .2s}
+.lang-switch a:hover{color:var(--text);background:var(--hover-bg)}
+.lang-switch a.is-active{background:var(--mint);color:#0A3F2E}
+.lang-switch a:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+@media (max-width:440px){.hd-actions{gap:4px}.lang-switch{height:40px}.lang-switch a{min-width:30px;height:32px;padding:0 6px;font-size:11px}.hd .icon-btn{width:40px;height:40px}}
+.rr .brand{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:28px;letter-spacing:-.01em}
+.rr .brand em{font-style:italic}
+.rr .hd.is-scrolled .brand{font-size:25px}
+@media (max-width:760px){.rr .brand,.rr .hd.is-scrolled .brand{font-size:24px}}
+/* fundo pontilhado em todo o site */
+.rr{background-color:var(--bg);background-image:radial-gradient(circle,var(--dot) 1.15px,transparent 1.6px);background-size:24px 24px;background-position:-12px -12px;min-height:100vh}
+.rr .section:not(.ct2),.rr .ft,.rr .cs,.rr .gallery,.rr .next-wrap{background-color:transparent!important}
+#sobre::before{display:none}
+/* pontilhado contínuo, sem emendas entre seções */
+.rr .canvas-bg{background:transparent!important}
+.rr .hero,.rr .c-hero{background:transparent!important}
+.rr #sobre{overflow:visible;overflow-x:clip}
+.rr #sobre::after{-webkit-mask-image:radial-gradient(closest-side,#000 55%,transparent);mask-image:radial-gradient(closest-side,#000 55%,transparent)}
+/* footer verde */
+.rr footer.ft{background-color:#0D2E23!important;background-image:radial-gradient(circle,rgba(168,230,207,.14) 1px,transparent 1.6px);background-size:22px 22px;border-top:1px solid rgba(238,248,243,.12);color:rgba(238,248,243,.72)}
+.rr[data-theme="dark"] footer.ft{background-color:#102920!important}
+.rr footer.ft .ft-in{color:rgba(238,248,243,.72)}
+.rr footer.ft a{color:#EEF8F3}
+.rr footer.ft a:hover{color:#A8E6CF}
+/* páginas de projeto: sem pontilhado */
+.rr{background-image:none!important}
+.rr footer.ft{background-image:none}
+/* menu mais transparente */
+.rr{--glass:rgba(247,250,248,.16)!important;--sheen:.22!important}
+.rr[data-theme="dark"]{--glass:rgba(18,36,28,.2)!important;--sheen:.08!important}
+.rr .hd.is-scrolled .hd-bar{-webkit-backdrop-filter:blur(14px) saturate(160%);backdrop-filter:blur(14px) saturate(160%)}
+/* verde mais claro no contato e footer */
+.rr .ct2{--ct-bg:#1B5E48}
+.rr[data-theme="dark"] .ct2{--ct-bg:#164A39}
+.rr footer.ft{background-color:#1B5E48!important}
+.rr[data-theme="dark"] footer.ft{background-color:#164A39!important}
+/* footer volta ao padrão claro */
+.rr footer.ft,.rr[data-theme="dark"] footer.ft{background-color:transparent!important;background-image:none!important;border-top:1px solid var(--line);color:var(--muted)}
+.rr footer.ft .ft-in{color:var(--muted)}
+.rr footer.ft a{color:var(--text)}
+.rr footer.ft a:hover{color:var(--accent-text)}
+
+/* footer mais compacto */
+.rr footer.ft{padding-top:20px!important;padding-bottom:20px!important}
+
+/* infos do projeto: colunas dividem a largura toda */
+@media (min-width:901px){.rr .facts{display:flex}.rr .facts .fact{flex:1 1 auto;min-width:0}.rr .facts .fact dd{text-wrap:pretty}.rr .facts .fact:nth-child(-n+3){flex-shrink:0}}
+@media (min-width:1200px){.rr .facts .fact:has(dd br){flex-shrink:0}}
+
+/* marca-texto dos pontos principais */
+.rr .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(247,213,78,.5) 46%,rgba(247,213,78,.5) 94%,transparent 94%);color:inherit;padding:0 .08em;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.rr[data-theme="dark"] .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(247,213,78,.24) 46%,rgba(247,213,78,.24) 94%,transparent 94%)}
+</style>
+</head>
+<body>
+<div class="rr" data-tpl-data-theme="{{theme}}" data-ref="setRoot">
+<a class="skip" href="#conteudo">Skip to content</a>
+<header data-tpl-class="hd {{hdClass}}">
+  <div class="hd-bar">
+    <a class="brand" href="../../en/index.html" aria-label="Raquel Rebouças, home page">Raquel <em>Rebouças</em></a>
+    <nav class="hd-nav" aria-label="Main">
+      <a href="../../en/index.html" class="is-active" aria-current="page">Projects</a>
+      <a href="../../en/index.html">About me</a>
+      <a href="../../en/index.html">Writing</a>
+      <a href="../../en/index.html">Contact</a>
+    </nav>
+    <div class="hd-actions">
+      <nav class="lang-switch" aria-label="Language"><a href="../../cases/1ds.html" lang="pt-BR" hreflang="pt-BR" title="Português">PT</a><a href="../../en/cases/1ds.html" class="is-active" aria-current="page" lang="en" title="English">EN</a></nav>
+      <button class="icon-btn" type="button" data-on-click="toggleTheme" data-tpl-aria-label="{{themeLabel}}" data-tpl-title="{{themeLabel}}">
+        <dc-if data-if="isDark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg></dc-if>
+        <dc-if data-if="isLight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"></path></svg></dc-if>
+      </button>
+      <button class="icon-btn menu-btn" type="button" data-on-click="toggleMenu" data-tpl-aria-expanded="{{menuOpen}}" aria-controls="menu-mobile" data-tpl-aria-label="{{menuLabel}}">
+        <dc-if data-if="menuOpen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></dc-if>
+        <dc-if data-if="menuClosed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></dc-if>
+      </button>
+    </div>
+  </div>
+  <dc-if data-if="menuOpen">
+    <nav id="menu-mobile" class="hd-menu" aria-label="Menu">
+      <a href="../../en/index.html">Projects</a><a href="../../en/index.html">About me</a><a href="../../en/index.html">Writing</a><a href="../../en/index.html">Contact</a>
+    </nav>
+  </dc-if>
+</header>
+
+<main id="conteudo">
+  <section class="c-hero canvas-bg">
+    <div class="narrow">
+      <a class="back" href="../../en/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>Back to projects</a>
+      <div class="reveal">
+        <p class="c-kicker"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 1.5v13M11.5 1.5v13M1.5 4.5h13M1.5 11.5h13"></path></svg>Case 01 · 1Doc</p>
+        <h1 class="display c-title">1DS: the 1Doc <em>Design System</em></h1>
+        <p class="c-summary">From visual identity to tokens in Figma, and from a library adapted from PrimeVue to a system that designers and AI evolve together, right in the code.</p>
+        <ul class="tags"><li>Design System</li><li>AI</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="cover reveal" role="img" aria-label="Case cover image (placeholder)">
+      <div class="cover-mock">
+        <div class="mock-bar"><i></i><i></i><i></i><b></b></div>
+        <div class="ds-cover">
+          <div class="ds-cell"><span class="ds-pill on"></span><span class="ds-pill out"></span><span class="ds-pill"></span></div>
+          <div class="ds-cell"><div class="ds-sw"><i style="background: #0A6447"></i><i style="background: #0E7C5A"></i><i style="background: #4FBF95"></i><i style="background: #A8E6CF"></i><i style="background: #E3F7EE"></i></div><span class="ln strong" style="width: 50%"></span><span class="ln" style="width: 80%"></span></div>
+          <div class="ds-cell"><span class="ln strong" style="width: 40%"></span><span class="ln"></span><span class="ln" style="width: 70%"></span></div>
+        </div>
+        <p class="ph-label">[Case cover image]</p>
+      </div>
+    </div>
+
+    <dl class="facts reveal">
+      <div class="fact"><dt>Company</dt><dd>1Doc · Softplan</dd></div>
+      <div class="fact"><dt>My role</dt><dd>Product Designer</dd></div>
+      <div class="fact"><dt>Team</dt><dd>1Doc design team</dd></div>
+      <div class="fact"><dt>Tools</dt><dd>Figma · Claude Code · GitLab</dd></div>
+    </dl>
+  </div>
+
+  <div class="narrow cs">
+    <section class="cs-sec reveal" aria-labelledby="s1"><div><span class="cs-num">01</span><h2 id="s1" class="cs-h">Context</h2></div><div class="cs-body">
+      <p>1DS was built in parallel with the platform redesign. It started as an adaptation of the PrimeVue library and, over time, the engineering team took over component development with the help of AI.</p>
+      <p>I share more about how 1DS was created and how it evolved <a class="inline-link" href="https://www.linkedin.com/pulse/utilizando-ia-para-escalar-design-systems-em-times-enxutos-rebou%C3%A7as-ykcof" target="_blank" rel="noopener">in this article (in Portuguese)<span class="sr-only"> (opens in a new tab)</span></a>.</p>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s2"><div><span class="cs-num">02</span><h2 id="s2" class="cs-h">Foundation</h2></div><div class="cs-body">
+      <p><mark class="hl">I created the visual identity and the name of 1DS</mark>, defining its personality and communication standards.</p>
+      <p>I also <mark class="hl">structured the Figma libraries, creating the tokens and the relationships between them</mark>, to ensure consistency and flexibility as the interfaces evolved. Key deliverables included:</p>
+      <ul class="issues">
+        <li>Organizing the primitive colors (primitive tokens) and the semantic color variants.</li>
+        <li>Creating the typography and shadow tokens.</li>
+        <li>Structuring the libraries and the component documentation standard.</li>
+        <li>Maintaining the components originally built from PrimeVue: adapting styles, applying tokens, and organizing their structure.</li>
+      </ul>
+      <p>Before 1DS launched, <mark class="hl">I built all the components in Figma</mark>, applying properties and variables.</p>
+      <p class="callout" style="margin-top: 24px">This structure created a consistent foundation for new components and for maintaining the interfaces. <mark class="hl">The Figma documentation is what made it possible to start developing 1DS with AI.</mark></p>
+      <p style="margin-top: 16px">Over time, the process evolved: today the whole team uses AI and agents to build components, push changes, and update documentation. That’s what lets <mark class="hl">a lean, 4-person design team maintain and scale the system</mark>.</p>
+      <figure class="cs-fig"><div class="fig-ph" role="img" aria-label="Library organization in Figma (placeholder)">[Library organization in Figma]</div><figcaption>Structure of the 1DS libraries in Figma: primitive tokens, semantic tokens, and themes.</figcaption></figure>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s3"><div><span class="cs-num">03</span><h2 id="s3" class="cs-h">Challenge</h2></div><div class="cs-body">
+      <p>As AI was adopted in development, the engineering team began implementing components with Claude Code through a specialized agent, and shipping the project via GitLab.</p>
+      <p>Because this process depended entirely on the engineering team, <mark class="hl">we hit a limit on how far and how fast the Design System could evolve</mark>.</p>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s4"><div><span class="cs-num">04</span><h2 id="s4" class="cs-h">Solution</h2></div><div class="cs-body">
+      <div class="cs-step">
+        <h3 class="cs-sub">Autonomy for the Design team</h3>
+        <p>The solution was to give the Design team more autonomy: <mark class="hl">designers themselves started using the agents to maintain the code libraries, open merge requests (MRs)</mark>, and take part directly in reviewing and approving changes.</p>
+        <figure class="cs-fig"><div class="fig-ph" role="img" aria-label="Examples of components built with AI (placeholder)">[Examples of components built with AI]</div><figcaption>Components I built with the help of AI, following 1DS tokens and conventions.</figcaption></figure>
+      </div>
+      <div class="cs-step">
+        <h3 class="cs-sub">A skill to bring code and Figma closer together</h3>
+        <p>Along the way, I spotted another gap: components implemented in code didn’t always make it into the Figma libraries, creating a mismatch between the system used in development and the one available for designing interfaces.</p>
+        <p>To solve this, <mark class="hl">I built a Claude Code skill tailored to 1DS visual standards and guidelines</mark>. With it, you can:</p>
+        <ol class="flow">
+          <li>Build interfaces using existing components.</li>
+          <li>Create new components that follow Design System conventions.</li>
+          <li>Organize documentation in Figma using a predefined structure.</li>
+        </ol>
+        <p>The skill is versioned in the project folder on GitLab and updated with every Claude Code working session, keeping its instructions in step with the system as it evolves.</p>
+        <figure class="cs-fig"><div class="fig-ph" role="img" aria-label="Example screen generated with the Figma skill (placeholder)">[Example screen generated with the Figma skill]</div><figcaption>A screen created with the 1DS skill, using the system's components and documentation.</figcaption></figure>
+      </div>
+      <div class="cs-step">
+        <h3 class="cs-sub">Building components with AI</h3>
+        <p>With the skills and agents in place, creating a component now follows a well-defined flow, <mark class="hl">from mapping the need all the way to shipping it in code and documentation</mark>:</p>
+        <ol class="flow">
+          <li><strong>Map the need.</strong> Identify the component to be created and assess whether it belongs in the Design System and will be reused across screens.</li>
+          <li><strong>Research references.</strong> Look at how systems like Material Design, Carbon, Atlassian, and Animália solve the same component.</li>
+          <li><strong>Write a structured prompt.</strong> Describe the component clearly and in an organized way: purpose, anatomy, variations, states, and usage rules.</li>
+          <li><strong>Create it in Figma.</strong> Use the Figma skill together with the 1DS skill to generate the component following the system’s standards and create its documentation sheet.</li>
+          <li><strong>Review and refine.</strong> Review the component, test its usage, and apply Figma properties such as variants, booleans, and text.</li>
+          <li><strong>Bring it to code.</strong> Build the component in code with the 1DS development skill.</li>
+          <li><strong>Open the MR.</strong> Push the merge request to GitLab following the team’s defined steps, request review, and publish.</li>
+          <li><strong>Integrate and document.</strong> Bring the component into the Vue project and update the 1DS documentation.</li>
+        </ol>
+      </div>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s5"><div><span class="cs-num">05</span><h2 id="s5" class="cs-h">Next steps</h2></div><div class="cs-body">
+      <ul class="issues">
+        <li>Review and improve components against accessibility criteria.</li>
+        <li>Expand usage guidelines, detailing each component’s properties, variants, states, and expected behaviors.</li>
+      </ul>
+    </div></section>
+
+  </div>
+
+  <div class="wrap next-wrap">
+    <a class="next reveal" href="../../en/cases/temporalidade-documental.html">
+      <div><p class="next-k">Next project →</p><p class="next-t">Document Retention Schedules</p></div>
+      <span class="next-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+    </a>
+  </div>
+</main>
+
+<footer class="ft">
+  <div class="wrap ft-in">
+    <p style="margin: 0">© 2026 Raquel Rebouças</p>
+    <p style="margin: 0">São Paulo, Brazil</p>
+  </div>
+</footer>
+</div>
+<script src="../../assets/dc-runtime.js"></script>
+<script>
+class Component extends DCLogic {
+  state = { theme: null, stored: null, sys: 'light', scrolled: false, menuOpen: false };
+  setRoot = (el) => { if (el) this.rootEl = el; };
+  resolveTheme() {
+    const s = this.state || {};
+    if (s.theme) return s.theme;
+    const p = this.props && this.props.themePreview;
+    if (p === 'light' || p === 'dark') return p;
+    return s.stored || s.sys || 'light';
+  }
+  toggleTheme = () => {
+    const next = this.resolveTheme() === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('rr-theme', next); } catch (e) {}
+    this.setState({ theme: next });
+  };
+  toggleMenu = () => { this.setState({ menuOpen: !this.state.menuOpen }); };
+  componentDidMount() {
+    this.cleanups = [];
+    const mm = (q) => (window.matchMedia ? window.matchMedia(q) : { matches: false });
+    const reduce = mm('(prefers-reduced-motion: reduce)').matches;
+    let stored = null;
+    try { stored = localStorage.getItem('rr-theme'); } catch (e) {}
+    if (stored !== 'light' && stored !== 'dark') stored = null;
+    const mq = mm('(prefers-color-scheme: dark)');
+    const onMq = (e) => this.setState({ sys: e.matches ? 'dark' : 'light' });
+    if (mq.addEventListener) { mq.addEventListener('change', onMq); this.cleanups.push(() => mq.removeEventListener('change', onMq)); }
+    this.setState({ stored: stored, sys: mq.matches ? 'dark' : 'light' });
+    const onScroll = (e) => {
+      let y = window.scrollY || document.documentElement.scrollTop || 0;
+      const t = e && e.target;
+      if (t && t !== document && typeof t.scrollTop === 'number') y = Math.max(y, t.scrollTop);
+      const sc = y > 24;
+      if (sc !== this.state.scrolled) this.setState({ scrolled: sc });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+    this.cleanups.push(() => { window.removeEventListener('scroll', onScroll); document.removeEventListener('scroll', onScroll, true); });
+    onScroll();
+    const root = this.rootEl || document.querySelector('.rr');
+    if (root && !reduce && 'IntersectionObserver' in window && (window.innerHeight || 0) < 1400) {
+      root.classList.add('js-reveal');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+      }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+      root.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+      this.cleanups.push(() => io.disconnect());
+    }
+  }
+  componentWillUnmount() { (this.cleanups || []).forEach((f) => { try { f(); } catch (e) {} }); }
+  renderVals() {
+    const s = this.state || {};
+    const theme = this.resolveTheme();
+    return {
+      setRoot: this.setRoot, theme: theme,
+      isDark: theme === 'dark', isLight: theme !== 'dark',
+      themeLabel: theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme',
+      toggleTheme: this.toggleTheme,
+      hdClass: s.scrolled ? 'is-scrolled' : '',
+      menuOpen: !!s.menuOpen, menuClosed: !s.menuOpen,
+      menuLabel: s.menuOpen ? 'Close menu' : 'Open menu',
+      toggleMenu: this.toggleMenu
+    };
+  }
+}
+DC.mount(Component, {"themePreview": "auto"});
+</script>
+</body>
+</html>

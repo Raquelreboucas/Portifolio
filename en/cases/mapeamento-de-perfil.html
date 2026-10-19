@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profile mapping - Admin users · Raquel Rebouças</title>
+<meta name="description" content="Portfolio of Raquel Rebouças, Product Designer.">
+<style>dc-if{display:contents}dc-if[hidden]{display:none!important}html,body{margin:0}</style>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Hanken+Grotesk:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Caveat:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0}
+body:has(.rr[data-theme="light"]){background:#F7FAF8}
+body:has(.rr[data-theme="dark"]){background:#0B1712}
+.rr{--bg:#F7FAF8;--surface:#FFFFFF;--surface-2:#EEF6F1;--text:#10221B;--muted:#4A5E55;--line:rgba(16,34,27,.12);--line-strong:rgba(16,34,27,.28);--primary:#0E7C5A;--primary-hover:#0A6447;--on-primary:#FFFFFF;--accent-text:#0E7C5A;--mint:#A8E6CF;--mint-soft:#E3F7EE;--tag-text:#0A6447;--dot:rgba(16,34,27,.17);--hover-bg:rgba(14,124,90,.08);--glass:rgba(247,250,248,.6);--glass-border:rgba(255,255,255,.75);--glass-hi:rgba(255,255,255,.9);--sheen:.55;--shadow-c:rgba(14,60,40,.18);--thumb-bg:#D3F2E4;--mock-surface:#FFFFFF;--mock-line:#D6EEE2;--mock-soft:#E3F7EE;--mock-strong:#0E7C5A;--card-glow:rgba(14,124,90,.38);
+background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;transition:background-color .3s ease,color .3s ease}
+.rr[data-theme="dark"]{--bg:#0B1712;--surface:#12241C;--surface-2:#173026;--text:#E6F2EC;--muted:#A6BDB2;--line:rgba(230,242,236,.12);--line-strong:rgba(230,242,236,.3);--primary:#A8E6CF;--primary-hover:#C9F2E1;--on-primary:#0B1712;--accent-text:#A8E6CF;--mint-soft:#173026;--tag-text:#A8E6CF;--dot:rgba(230,242,236,.14);--hover-bg:rgba(168,230,207,.1);--glass:rgba(18,36,28,.55);--glass-border:rgba(255,255,255,.12);--glass-hi:rgba(255,255,255,.14);--sheen:.14;--shadow-c:rgba(0,0,0,.5);--thumb-bg:#173026;--mock-surface:#1C3B2F;--mock-line:#2B5546;--mock-soft:#234838;--mock-strong:#A8E6CF;--card-glow:rgba(168,230,207,.22)}
+a{color:#0E7C5A}a:hover{color:#0A6447}
+.rr a{color:var(--accent-text)}.rr a:hover{color:var(--primary-hover)}
+.rr :focus-visible{outline:2.5px solid var(--primary);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:16px;top:-60px;z-index:100;background:var(--primary);color:var(--on-primary)!important;padding:10px 16px;border-radius:12px;font-weight:700;text-decoration:none}
+.skip:focus{top:16px}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+.narrow{width:min(1040px,100% - 48px);margin-inline:auto}
+.display{font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:-.015em;line-height:1}
+.display em{font-style:italic;color:var(--accent-text)}
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;flex-direction:column;align-items:center;padding:0;transition:padding .3s ease-out;pointer-events:none}
+.hd-bar{pointer-events:auto;position:relative;width:100%;max-width:1600px;height:84px;padding:0 40px;display:flex;align-items:center;gap:24px;border:1px solid transparent;border-radius:0;background:transparent;transition:max-width .3s ease-out,height .3s ease-out,padding .3s ease-out,border-radius .3s ease-out,background-color .3s ease-out,border-color .3s ease-out,box-shadow .3s ease-out,-webkit-backdrop-filter .3s ease-out,backdrop-filter .3s ease-out}
+.hd-bar::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;background:linear-gradient(180deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 55%);transition:opacity .3s ease-out}
+.hd.is-scrolled{padding-top:16px}
+.hd.is-scrolled .hd-bar,.hd-menu{background:var(--glass);border-color:var(--glass-border);-webkit-backdrop-filter:blur(18px) saturate(180%);backdrop-filter:blur(18px) saturate(180%);box-shadow:inset 0 1px 0 var(--glass-hi),0 12px 32px -12px var(--shadow-c),0 2px 6px -2px var(--shadow-c)}
+.hd.is-scrolled .hd-bar{max-width:940px;height:60px;padding:0 8px 0 24px;border-radius:999px}
+.hd.is-scrolled .hd-bar::before{opacity:var(--sheen)}
+.brand{font-family:'Instrument Serif',Georgia,serif;font-size:28px;line-height:1;color:var(--text)!important;text-decoration:none;white-space:nowrap;transition:font-size .3s ease-out}
+.brand em{font-style:italic}
+.hd.is-scrolled .brand{font-size:24px}
+.hd-nav{flex:1;display:flex;justify-content:center;gap:2px}
+.rr .hd-nav a{color:var(--text);text-decoration:none;font-weight:500;font-size:15px;padding:9px 14px;border-radius:999px;transition:background-color .2s;white-space:nowrap}
+.rr .hd-nav a:hover{background:var(--hover-bg);color:var(--text)}
+.rr .hd-nav a.is-active{background:var(--mint-soft);color:var(--tag-text);font-weight:700}
+.hd-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{width:44px;height:44px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--text);display:grid;place-items:center;cursor:pointer;padding:0}
+.icon-btn:hover{background:var(--hover-bg)}
+.icon-btn svg{width:20px;height:20px}
+.menu-btn{display:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 26px;border-radius:999px;font-family:inherit;font-weight:700;font-size:16px;line-height:1;text-decoration:none;cursor:pointer;border:1.5px solid transparent;transition:background-color .2s,transform .2s,box-shadow .2s,border-color .2s;white-space:nowrap}
+.btn svg{width:18px;height:18px}
+.rr .btn-primary{background:var(--primary);color:var(--on-primary)}
+.rr .btn-primary:hover{background:var(--primary-hover);color:var(--on-primary);transform:translateY(-2px)}
+.rr .btn-ghost{border-color:var(--line-strong);color:var(--text);background:var(--surface)}
+.rr .btn-ghost:hover{border-color:var(--text);color:var(--text)}
+.hd-cta{min-height:44px;padding:0 20px;font-size:15px}
+.hd-menu{pointer-events:auto;display:none;flex-direction:column;gap:2px;margin-top:8px;width:100%;padding:8px;border:1px solid var(--glass-border);border-radius:24px}
+.rr .hd-menu a{display:flex;align-items:center;min-height:48px;padding:0 16px;border-radius:16px;color:var(--text);text-decoration:none;font-weight:600}
+@media (max-width:920px){
+.hd,.hd.is-scrolled{padding:12px 12px 0}
+.hd .hd-bar,.hd.is-scrolled .hd-bar{max-width:none;height:60px;padding:0 8px 0 20px;border-radius:999px;background:var(--glass);border-color:var(--glass-border);-webkit-backdrop-filter:blur(18px) saturate(180%);backdrop-filter:blur(18px) saturate(180%);box-shadow:inset 0 1px 0 var(--glass-hi),0 12px 32px -12px var(--shadow-c)}
+.hd-nav,.hd-cta{display:none}
+.menu-btn{display:grid}
+.brand,.hd.is-scrolled .brand{font-size:23px;flex:1}
+.hd-menu{display:flex}
+}
+.canvas-bg{background-color:var(--bg);background-image:radial-gradient(circle,var(--dot) 1.15px,transparent 1.6px);background-size:24px 24px;background-position:-12px -12px}
+.back{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px 0 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-weight:700;font-size:15px;text-decoration:none}
+.rr .back{color:var(--text)}
+.rr .back:hover{color:var(--text);background:var(--hover-bg)}
+.back svg{width:18px;height:18px}
+.c-hero{padding:136px 0 64px}
+.c-kicker{display:inline-flex;align-items:center;gap:8px;margin:44px 0 18px;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text)}
+.c-kicker svg{width:16px;height:16px}
+.c-title{font-size:clamp(52px,8vw,112px);margin:0;max-width:100%}
+.c-summary{font-size:clamp(19px,1.8vw,23px);line-height:1.55;color:var(--muted);max-width:720px;margin:28px 0 0}
+.tags{list-style:none;padding:0;margin:28px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.tags li{font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;background:var(--mint-soft);color:var(--tag-text)}
+.cover{border-radius:32px;overflow:hidden;background:var(--thumb-bg);aspect-ratio:16/8;display:grid;place-items:center;background-image:radial-gradient(circle,rgba(14,124,90,.16) 1px,transparent 1.5px);background-size:22px 22px;border:1px solid var(--line)}
+.cover-mock{width:min(76%,860px);aspect-ratio:16/9;background:var(--mock-surface);border:1px solid var(--mock-line);border-radius:18px;box-shadow:0 40px 80px -40px rgba(16,34,27,.45);padding:22px;display:flex;flex-direction:column;gap:16px}
+.mock-bar{display:flex;gap:7px;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--mock-line)}
+.mock-bar i{width:10px;height:10px;border-radius:50%;background:var(--mock-line)}
+.mock-bar b{margin-left:12px;height:10px;width:28%;border-radius:5px;background:var(--mock-soft)}
+.ph-label{margin:auto;font-size:15px;font-weight:700;color:var(--muted);text-align:center}
+.ln{display:block;height:10px;border-radius:5px;background:var(--mock-soft)}
+.ln.strong{background:var(--mock-strong)}
+.facts{margin:56px 0 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:24px;background:var(--surface);overflow:hidden}
+.fact{padding:24px 24px 26px;border-right:1px solid var(--line)}
+.fact:last-child{border-right:0}
+.fact dt{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.fact dd{margin:0;font-size:16px;font-weight:600}
+.cs{padding:clamp(72px,9vw,120px) 0 0}
+.cs-sec{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,5vw,72px);padding:44px 0;border-top:1px solid var(--line)}
+.cs-num{display:block;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:22px;color:var(--accent-text);margin-bottom:6px}
+.cs-h{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(34px,3.6vw,48px);line-height:1.05;margin:0;letter-spacing:-.01em}
+.cs-body p{margin:0 0 16px;font-size:18px;line-height:1.75}
+.cs-body p:last-child{margin-bottom:0}
+.ph{color:var(--muted)}
+.gallery{padding:clamp(72px,9vw,120px) 0 0}
+.gal-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:32px}
+.gal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.gal-grid figure{margin:0}
+.gal-grid figure.wide{grid-column:1 / -1}
+.gal-img{border-radius:24px;background:var(--thumb-bg);border:1px solid var(--line);aspect-ratio:4/3;display:grid;place-items:center;color:var(--muted);font-weight:700;font-size:15px;background-image:radial-gradient(circle,rgba(14,124,90,.16) 1px,transparent 1.5px);background-size:20px 20px}
+.gal-grid figure.wide .gal-img{aspect-ratio:21/9}
+.gal-grid figcaption{margin-top:12px;font-size:15px;color:var(--muted)}
+.next-wrap{padding:clamp(88px,10vw,140px) 0}
+.rr .next{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:clamp(28px,4vw,48px);border-radius:32px;background:var(--surface);border:1px solid var(--line);color:var(--text);text-decoration:none;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.rr .next:hover,.rr .next:focus-visible{color:var(--text);transform:translateY(-4px);border-color:var(--mint);box-shadow:0 32px 56px -26px var(--card-glow)}
+.next-k{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text);margin:0 0 10px}
+.next-t{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(36px,4.6vw,64px);line-height:1;margin:0}
+.next-arrow{width:72px;height:72px;border-radius:50%;background:var(--primary);color:var(--on-primary);display:grid;place-items:center;flex:none;transition:transform .35s ease}
+.next-arrow svg{width:28px;height:28px}
+.next:hover .next-arrow{transform:translateX(6px)}
+.ft{border-top:1px solid var(--line);padding:32px 0}
+.ft-in{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:15px;color:var(--muted)}
+.ft-links{display:flex;gap:20px}
+.rr .ft-links a{color:var(--text);font-weight:600;text-decoration:none}
+.rr .ft-links a:hover{color:var(--accent-text);text-decoration:underline}
+.rr .c-title,.rr .cs-h,.rr .next-t,.rr .gal-head .display{font-family:'Hanken Grotesk','Manrope',system-ui,sans-serif;font-weight:400;letter-spacing:-.045em;line-height:1.02}
+.rr .c-title em{font-style:normal;color:var(--accent-text)}
+.rr .c-title{font-size:clamp(42px,5.8vw,80px);letter-spacing:-.05em}
+.rr .cs-h{font-size:clamp(26px,2.5vw,34px)}
+.rr{font-size:16px}
+.brand em{font-style:normal}
+.rr .hd-nav a.is-active{background:var(--mint);color:#0A3F2E}
+.rr{--glass:rgba(247,250,248,.38)}
+.rr[data-theme="dark"]{--glass:rgba(18,36,28,.36)}
+.rr .display em,.rr .c-title em{color:var(--text)}
+.wrap{width:min(1120px,100% - 2 * clamp(24px,7vw,128px))}
+.narrow{width:min(960px,100% - 2 * clamp(24px,7vw,128px))}
+.hd-bar{padding:0 clamp(24px,5vw,80px)}
+.c-summary{font-size:clamp(16px,1.4vw,19px)}
+.cs-body p{font-size:16px}
+.fact dd{font-size:15px}
+.tags li{font-size:12px}
+.rr .next-t{font-size:clamp(30px,3.6vw,50px)}
+@media (max-width:600px){.wrap,.narrow{width:calc(100% - 40px)}}
+.rr .cs-num{font-family:'Manrope',system-ui,sans-serif;font-style:normal;font-weight:700;font-size:15px;letter-spacing:.06em}
+.rr.js-reveal .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rr.js-reveal .reveal.is-in{opacity:1;transform:none}
+.cs-body > p + p{margin-top:0}
+.cs-sub{font-family:'Hanken Grotesk','Manrope',system-ui,sans-serif;font-weight:500;font-size:22px;letter-spacing:-.02em;margin:0 0 10px}
+.cs-step + .cs-step{margin-top:32px;padding-top:28px;border-top:1px dashed var(--line)}
+.quote{margin:16px 0 0;padding:4px 0 4px 20px;border-left:3px solid var(--mint);font-size:16px;line-height:1.65;font-style:italic;color:var(--text)}
+.quote cite{display:block;margin-top:6px;font-style:normal;font-size:13px;font-weight:700;color:var(--muted)}
+.callout{padding:18px 22px;border-radius:12px;background:var(--mint-soft);border:1px solid var(--line);font-weight:600}
+.people{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:20px}
+.people li{padding:0;border:0;background:none}
+.people .who{display:block;font-weight:800;font-size:15px;margin-bottom:4px}
+.people p{margin:0;font-size:16px;line-height:1.7;color:var(--text)}
+.profiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0 8px}
+.profile{padding:18px;border-radius:12px;border:1px solid var(--line);background:var(--surface)}
+.profile h4{margin:4px 0 6px;font-size:16px;font-weight:800}
+.profile p{margin:0;font-size:14px;line-height:1.6;color:var(--muted)}
+.p-k{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-text)}
+.tools{display:flex;flex-direction:column;gap:12px}
+.tool{padding:20px;border-radius:12px;border:1px solid var(--line);background:var(--surface)}
+.tool h4{margin:0 0 6px;font-size:17px;font-weight:800}
+.tool p{margin:0;font-size:15px;line-height:1.65}
+.issues{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.issues li{position:relative;padding:14px 16px 14px 40px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-size:16px;line-height:1.6}
+.issues li::before{content:"";position:absolute;left:16px;top:22px;width:10px;height:10px;border-radius:50%;background:var(--primary)}
+.flow{list-style:none;counter-reset:flow;margin:24px 0 0;padding:0}
+.flow li{counter-increment:flow;position:relative;padding:0 0 22px 52px;font-size:16px;line-height:1.7}
+.flow li::before{content:counter(flow);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--primary);color:var(--on-primary);font-weight:800;font-size:14px;display:grid;place-items:center}
+.flow li::after{content:"";position:absolute;left:15px;top:36px;bottom:4px;width:2px;background:var(--line)}
+.flow li:last-child::after{display:none}
+@media (max-width:900px){.profiles{grid-template-columns:minmax(0,1fr)}}
+.script{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+.script-block{padding:20px;border-radius:12px;border:1px solid var(--line);background:var(--surface)}
+.script-block h4{margin:2px 0 10px;font-size:16px;font-weight:800}
+.script-block ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.script-block li{font-size:15px;line-height:1.6;padding-left:4px}
+.script-block li::marker{color:var(--accent-text);font-weight:700}
+.feat{margin:12px 0 0;padding-left:22px;display:flex;flex-direction:column;gap:10px}
+.feat li{font-size:16px;line-height:1.7;padding-left:4px}
+.feat li::marker{color:var(--accent-text)}
+.feat strong{font-weight:800}
+.cs-fig{margin:24px 0 0}
+.cs-fig img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
+.cs-fig figcaption{margin-top:10px;font-size:13px;color:var(--muted);line-height:1.5}
+.taglist{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.taglist li{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-size:15px;font-weight:700}
+.taglist i{width:12px;height:12px;border-radius:50%;flex:none}
+.taglist span{margin-left:auto;font-size:13px;font-weight:700;color:var(--muted);padding:2px 10px;border-radius:999px;background:var(--mint-soft)}
+
+.ds-cover{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;flex:1}
+.ds-cell{border-radius:12px;border:1px solid var(--mock-line);padding:14px;display:flex;flex-direction:column;gap:10px;justify-content:center}
+.ds-pill{display:block;height:26px;border-radius:999px;background:var(--mock-soft)}
+.ds-pill.on{background:var(--mock-strong)}
+.ds-pill.out{background:transparent;border:2px solid var(--mock-strong)}
+.ds-sw{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.ds-sw i{aspect-ratio:1;border-radius:8px}
+@media (max-width:900px){
+.facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+.fact{border-right:0;border-bottom:1px solid var(--line)}
+.cs-sec{grid-template-columns:minmax(0,1fr)}
+.cover{aspect-ratio:4/3}
+.cover-mock{width:86%}
+}
+@media (max-width:600px){
+.wrap,.narrow{width:min(1200px,100% - 32px)}
+.facts{grid-template-columns:minmax(0,1fr)}
+.gal-grid{grid-template-columns:minmax(0,1fr)}
+.ds-cover{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.rr *{transition-duration:.01ms!important}}
+.status{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column}
+.status li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;align-items:start;padding:18px 0;border-top:1px solid var(--line)}
+.status li:last-child{border-bottom:1px solid var(--line)}
+.status strong{display:block;font-size:16px;font-weight:800;margin-bottom:4px}
+.status p{margin:0;font-size:16px;line-height:1.65;color:var(--muted)}
+.st{justify-self:start;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 10px;border-radius:999px;margin-top:1px}
+.st-done{background:var(--mint-soft);color:var(--accent-text)}
+.st-next{border:1px solid var(--line);color:var(--muted)}
+@media (max-width:600px){.status li{grid-template-columns:minmax(0,1fr);gap:8px}}
+.lang-switch{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--line);border-radius:999px;height:44px;box-sizing:border-box}
+.lang-switch a{display:grid;place-items:center;min-width:36px;height:36px;padding:0 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;color:var(--muted);text-decoration:none;transition:background-color .2s,color .2s}
+.lang-switch a:hover{color:var(--text);background:var(--hover-bg)}
+.lang-switch a.is-active{background:var(--mint);color:#0A3F2E}
+.lang-switch a:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+@media (max-width:440px){.hd-actions{gap:4px}.lang-switch{height:40px}.lang-switch a{min-width:30px;height:32px;padding:0 6px;font-size:11px}.hd .icon-btn{width:40px;height:40px}}
+.rr .brand{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:28px;letter-spacing:-.01em}
+.rr .brand em{font-style:italic}
+.rr .hd.is-scrolled .brand{font-size:25px}
+@media (max-width:760px){.rr .brand,.rr .hd.is-scrolled .brand{font-size:24px}}
+/* fundo pontilhado em todo o site */
+.rr{background-color:var(--bg);background-image:radial-gradient(circle,var(--dot) 1.15px,transparent 1.6px);background-size:24px 24px;background-position:-12px -12px;min-height:100vh}
+.rr .section:not(.ct2),.rr .ft,.rr .cs,.rr .gallery,.rr .next-wrap{background-color:transparent!important}
+#sobre::before{display:none}
+/* pontilhado contínuo, sem emendas entre seções */
+.rr .canvas-bg{background:transparent!important}
+.rr .hero,.rr .c-hero{background:transparent!important}
+.rr #sobre{overflow:visible;overflow-x:clip}
+.rr #sobre::after{-webkit-mask-image:radial-gradient(closest-side,#000 55%,transparent);mask-image:radial-gradient(closest-side,#000 55%,transparent)}
+/* footer verde */
+.rr footer.ft{background-color:#0D2E23!important;background-image:radial-gradient(circle,rgba(168,230,207,.14) 1px,transparent 1.6px);background-size:22px 22px;border-top:1px solid rgba(238,248,243,.12);color:rgba(238,248,243,.72)}
+.rr[data-theme="dark"] footer.ft{background-color:#102920!important}
+.rr footer.ft .ft-in{color:rgba(238,248,243,.72)}
+.rr footer.ft a{color:#EEF8F3}
+.rr footer.ft a:hover{color:#A8E6CF}
+/* páginas de projeto: sem pontilhado */
+.rr{background-image:none!important}
+.rr footer.ft{background-image:none}
+/* menu mais transparente */
+.rr{--glass:rgba(247,250,248,.16)!important;--sheen:.22!important}
+.rr[data-theme="dark"]{--glass:rgba(18,36,28,.2)!important;--sheen:.08!important}
+.rr .hd.is-scrolled .hd-bar{-webkit-backdrop-filter:blur(14px) saturate(160%);backdrop-filter:blur(14px) saturate(160%)}
+/* verde mais claro no contato e footer */
+.rr .ct2{--ct-bg:#1B5E48}
+.rr[data-theme="dark"] .ct2{--ct-bg:#164A39}
+.rr footer.ft{background-color:#1B5E48!important}
+.rr[data-theme="dark"] footer.ft{background-color:#164A39!important}
+/* footer volta ao padrão claro */
+.rr footer.ft,.rr[data-theme="dark"] footer.ft{background-color:transparent!important;background-image:none!important;border-top:1px solid var(--line);color:var(--muted)}
+.rr footer.ft .ft-in{color:var(--muted)}
+.rr footer.ft a{color:var(--text)}
+.rr footer.ft a:hover{color:var(--accent-text)}
+
+/* capa ilustrada */
+.cover.cover-art{aspect-ratio:2/1;padding:0;background:#EAF5EF;border:1px solid var(--line)}
+.cover-art img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* footer mais compacto */
+.rr footer.ft{padding-top:20px!important;padding-bottom:20px!important}
+
+/* infos do projeto: colunas dividem a largura toda */
+@media (min-width:901px){.rr .facts{display:flex}.rr .facts .fact{flex:1 1 auto;min-width:0}.rr .facts .fact dd{text-wrap:pretty}.rr .facts .fact:nth-child(-n+3){flex-shrink:0}}
+@media (min-width:1200px){.rr .facts .fact:has(dd br){flex-shrink:0}}
+
+/* marca-texto dos pontos principais */
+.rr .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(247,213,78,.5) 46%,rgba(247,213,78,.5) 94%,transparent 94%);color:inherit;padding:0 .08em;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.rr[data-theme="dark"] .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(247,213,78,.24) 46%,rgba(247,213,78,.24) 94%,transparent 94%)}
+</style>
+</head>
+<body>
+<div class="rr" data-tpl-data-theme="{{theme}}" data-ref="setRoot">
+<a class="skip" href="#conteudo">Skip to content</a>
+<header data-tpl-class="hd {{hdClass}}">
+  <div class="hd-bar">
+    <a class="brand" href="../../en/index.html" aria-label="Raquel Rebouças, home page">Raquel <em>Rebouças</em></a>
+    <nav class="hd-nav" aria-label="Main">
+      <a href="../../en/index.html" class="is-active" aria-current="page">Projects</a>
+      <a href="../../en/index.html">About me</a>
+      <a href="../../en/index.html">Writing</a>
+      <a href="../../en/index.html">Contact</a>
+    </nav>
+    <div class="hd-actions">
+      <nav class="lang-switch" aria-label="Language"><a href="../../cases/mapeamento-de-perfil.html" lang="pt-BR" hreflang="pt-BR" title="Português">PT</a><a href="../../en/cases/mapeamento-de-perfil.html" class="is-active" aria-current="page" lang="en" title="English">EN</a></nav>
+      <button class="icon-btn" type="button" data-on-click="toggleTheme" data-tpl-aria-label="{{themeLabel}}" data-tpl-title="{{themeLabel}}">
+        <dc-if data-if="isDark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg></dc-if>
+        <dc-if data-if="isLight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"></path></svg></dc-if>
+      </button>
+      <button class="icon-btn menu-btn" type="button" data-on-click="toggleMenu" data-tpl-aria-expanded="{{menuOpen}}" aria-controls="menu-mobile" data-tpl-aria-label="{{menuLabel}}">
+        <dc-if data-if="menuOpen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></dc-if>
+        <dc-if data-if="menuClosed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></dc-if>
+      </button>
+    </div>
+  </div>
+  <dc-if data-if="menuOpen">
+    <nav id="menu-mobile" class="hd-menu" aria-label="Menu">
+      <a href="../../en/index.html">Projects</a><a href="../../en/index.html">About me</a><a href="../../en/index.html">Writing</a><a href="../../en/index.html">Contact</a>
+    </nav>
+  </dc-if>
+</header>
+
+<main id="conteudo">
+  <section class="c-hero canvas-bg">
+    <div class="narrow">
+      <a class="back" href="../../en/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>Back to projects</a>
+      <div class="reveal">
+        <p class="c-kicker"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 1.5v13M11.5 1.5v13M1.5 4.5h13M1.5 11.5h13"></path></svg>Case 05 · 1Doc</p>
+        <h1 class="display c-title">Profile mapping: <em>admin users</em></h1>
+        <p class="c-summary">A qualitative study with city hall administrators and the Customer Success team to understand who manages 1Doc, how they work, and where the platform still gets in the way of their day-to-day.</p>
+        <ul class="tags"><li>UX research</li><li>Interviews</li><li>GovTech</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="cover cover-art reveal">
+      <img src="../../assets/mapeamento-capa.jpg" alt="Case illustration: an administrator profile card connected to interview quotes and research insights, such as role overload, permission control, attachment signing, inbox search and credentials." width="3200" height="1600">
+    </div>
+
+    <dl class="facts reveal">
+      <div class="fact"><dt>Company</dt><dd>1Doc · Softplan</dd></div>
+      <div class="fact"><dt>My role</dt><dd>Product Designer</dd></div>
+      <div class="fact"><dt>Timeline</dt><dd>Q1 - 2025</dd></div>
+      
+      <div class="fact"><dt>Methods</dt><dd>Semi-structured interviews · Synthesis</dd></div>
+    </dl>
+  </div>
+
+  <div class="narrow cs">
+    <section class="cs-sec reveal" aria-labelledby="s1"><div><span class="cs-num">01</span><h2 id="s1" class="cs-h">Goal</h2></div><div class="cs-body">
+      <p><mark class="hl">Identify the different profiles of 1Doc admin users</mark>, understand how they behave day to day, and map the main challenges, opportunities, and improvement ideas around using the platform.</p>
+      <p>We interviewed city hall administrators and a Customer Success analyst at 1Doc, so we could <mark class="hl">cross-reference the firsthand experience of people using the platform with the requests that most often reach the account team</mark>.</p>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s2"><div><span class="cs-num">02</span><h2 id="s2" class="cs-h">Participants</h2></div><div class="cs-body">
+      <ol class="people">
+        <li><span class="who">P1 · Americana (SP)</span><p>Career civil servant and director of the general services unit at the Department of Administration. Also works on records management and citizen services.</p></li>
+        <li><span class="who">P2 · Araraquara (SP)</span><p>Head of an IT subdivision, responsible for administering 1Doc and for routing digital processes.</p></li>
+        <li><span class="who">P3 · Baependi (MG)</span><p>Former head of the purchasing department and current treasurer, working in financial management.</p></li>
+        <li><span class="who">P4 · 1Doc Customer Success</span><p>Law graduate with an MBA in Process Management and Engineering. Part of the Customer Success team.</p></li>
+      </ol>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="sm"><div><span class="cs-num">03</span><h2 id="sm" class="cs-h">Methods</h2></div><div class="cs-body">
+      <h3 class="cs-sub">Semi-structured interviews</h3>
+      <p>The interviews were held over video call, following a semi-structured script. The questions guided the conversation while leaving room for participants to bring up real situations from their daily work.</p>
+      <div class="script">
+        <div class="script-block">
+          <span class="p-k">Block 1</span>
+          <h4>Professional and technology background</h4>
+          <ol>
+            <li>What is your background, and what is your role on the team?</li>
+          </ol>
+        </div>
+        <div class="script-block">
+          <span class="p-k">Block 2</span>
+          <h4>Routine and activities</h4>
+          <ol>
+            <li>What are the main activities you carry out?</li>
+            <li>What kinds of setup need to be done in the client’s environment?</li>
+            <li>What difficulties do you run into when setting these up?</li>
+            <li>What are the main tools you use to meet these needs?</li>
+            <li>Have you used the platform’s notification engine? If so, how? Do you understand how it works?</li>
+            <li>Is there any other feature you feel the platform is missing?</li>
+            <li>Could any feature be clearer or more automated to make your work easier?</li>
+            <li>Is there anything that would help clients become more self-sufficient and rely less on support?</li>
+            <li>Is there anything you’d like to add about your experience, or any suggestions for improvement?</li>
+          </ol>
+        </div>
+      </div>
+
+      <h3 class="cs-sub" style="margin-top: 40px">Synthesis with Marvin</h3>
+      <p>The recordings were organized in Marvin, a research repository tool that transcribes videos and supports analysis. With it, I was able to:</p>
+      <ul class="feat">
+        <li><strong>Tag excerpts:</strong> Every relevant quote became a categorized note, which made it easier to spot patterns across participants.</li>
+        <li><strong>Find quotes by label:</strong> During synthesis, filtering by a tag was enough to gather every quote on that theme.</li>
+        <li><strong>Search transcripts with AI:</strong> The search runs across every video and jumps straight to the exact timestamp of each excerpt.</li>
+        <li><strong>Keep a living repository:</strong> When starting a new discovery, I can check whether any client has already talked about the topic.</li>
+      </ul>
+      <figure class="cs-fig">
+        <img src="../../assets/marvin-gravacao.jpg" alt="Marvin screen showing an interview recording, the timestamped transcript by speaker, and AI-generated notes categorized with the tags Profile and activities and Platform usage." loading="lazy">
+        <figcaption>Recording, transcript, and categorized notes in Marvin. Faces and names blurred to protect participants.</figcaption>
+      </figure>
+      <p style="margin-top: 32px">The quotes were grouped under five tags, which shaped the synthesis and the following sections of this case:</p>
+      <ul class="taglist">
+        <li><i style="background: #4CC21E"></i>Profile and activities<span>13 notes</span></li>
+        <li><i style="background: #1E8BF0"></i>Platform usage<span>5 notes</span></li>
+        <li><i style="background: #8A5CE6"></i>Use of admin tools<span>11 notes</span></li>
+        <li><i style="background: #F0386B"></i>Problems and difficulties encountered<span>12 notes</span></li>
+        <li><i style="background: #5B3AA8"></i>Improvement and feature suggestions<span>10 notes</span></li>
+      </ul>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s3"><div><span class="cs-num">04</span><h2 id="s3" class="cs-h">Who the administrators are</h2></div><div class="cs-body">
+      <p>Administrators set up users, departments, and subjects, along with specific modules such as protocols, document issuance, and org charts. <mark class="hl">But the profile varies a lot from one city hall to another.</mark> Based on our conversations with admins, we identified the following profiles:&nbsp;</p>
+      <div class="profiles">
+        <article class="profile"><span class="p-k">Profile 1</span><h4>Dedicated team</h4><p>Larger city halls, like Araraquara, have a department solely for managing the platform, with tighter control and their own processes.</p></article>
+        <article class="profile"><span class="p-k">Profile 2</span><h4>Wearing many hats</h4><p><mark class="hl">The administrator is also a chief of staff, undersecretary, or treasurer.</mark> Short on time, they lean more on support.</p></article>
+        <article class="profile"><span class="p-k">Profile 3</span><h4>Decentralized management</h4><p>In Americana, level 1 users manage their own departments, and the administrator helps with adding users and giving guidance.</p></article>
+      </div>
+      <blockquote class="quote">“A lot of administrators are chiefs of staff, undersecretaries, people with a ton on their plate. They’re not going to stop and do it. They go to support, support says it’s the administrator’s job, and then a lot of them come to us and ask.”<cite>P4 · Customer Success</cite></blockquote>
+      <blockquote class="quote">“We made the work more decentralized, so each manager handles their own area, and we take care of the big-picture stuff. We do about sixty, seventy percent here; the rest is done by everyone else.”<cite>P1 · Americana</cite></blockquote>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s4"><div><span class="cs-num">05</span><h2 id="s4" class="cs-h">Pain points</h2></div><div class="cs-body">
+      <div class="cs-step">
+        <h3 class="cs-sub">Permission control</h3>
+        <p>Where user management is centralized, there’s more concern about permissions, especially level 1 ones. <mark class="hl">The platform charges per active user</mark>, and accounts can be created for people who shouldn’t have access to certain modules. This leads to periodic audits and in-house control processes.</p>
+        <blockquote class="quote">“We could use something in between level one and level two. We send out a responsibility agreement, because of the LGPD, for staff to sign. With level one able to create users, it’s already happened that people created them without us having any control.”<cite>P2 · Araraquara</cite></blockquote>
+      </div>
+      <div class="cs-step">
+        <h3 class="cs-sub">Signing multiple attachments</h3>
+        <p>Today, the only option is to sign all of a process’s attachments at once. <mark class="hl">To sign just one, users have to find the file, download it, sign it, and attach it again.</mark></p>
+        <blockquote class="quote">“Big city halls ask me: I’ve got a process with thirty attachments, do I have to sign all thirty?”<cite>P4 · Customer Success</cite></blockquote>
+      </div>
+      <div class="cs-step">
+        <h3 class="cs-sub">Searching the external inbox</h3>
+        <p>External users can’t <mark class="hl">search by process number or by applicant name</mark>. The inbox only shows the user’s own name, which makes things hard for anyone tracking many requests.</p>
+        <blockquote class="quote">“An engineer of record has eight hundred processes in his inbox, all under his name. Most of them keep a separate Excel spreadsheet just to know that filing 50 belongs to one applicant and 51 to another.”<cite>P1 · Americana</cite></blockquote>
+      </div>
+      <div class="cs-step">
+        <h3 class="cs-sub">Setting up credentials and ID cards</h3>
+        <p>Clients frequently ask for ID cards and credentials that don’t yet have a template on the platform. Many send the template as a PDF, which doesn’t convert well to DOCX, and <mark class="hl">setup becomes a bottleneck for support</mark>.</p>
+        <blockquote class="quote">“If we take that PDF and convert it to Word, it gets distorted and we can’t set it up. If we had our own standard template, I’m sure they’d go with it.”<cite>P4 · Customer Success</cite></blockquote>
+      </div>
+      <div class="cs-step">
+        <h3 class="cs-sub">Using Stages</h3>
+        <p>The Stages feature doesn’t allow a stage to be edited without removing every process linked to it. In the public sector, changes of secretaries and reorganizations shift workflows often, and <mark class="hl">the city hall ended up abandoning the feature</mark>.</p>
+        <blockquote class="quote">“Nothing stays put. A new secretary comes in and wants to change a bunch of things. If you have to edit the stage, you have to pull out everything inside it.”<cite>P1 · Americana</cite></blockquote>
+      </div>
+      <div class="cs-step">
+        <h3 class="cs-sub">Archiving</h3>
+        <p>Many clients don’t understand the difference between “archive” and “archive and stop following,” which skews the efficiency metrics on the dashboards.</p>
+        <blockquote class="quote">“In every training session I sit in on, this causes confusion.”<cite>P4 · Customer Success</cite></blockquote>
+      </div>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s5"><div><span class="cs-num">06</span><h2 id="s5" class="cs-h">What they think of the admin tools</h2></div><div class="cs-body">
+      <div class="tools">
+        <article class="tool">
+          <h4>Analytics</h4>
+          <p>Reports still don’t <mark class="hl">match the real numbers</mark>, and metrics like user inactivity raise questions about which parameter is being used. In city halls with small teams, the tool ends up rarely used.</p>
+          <blockquote class="quote">“If I pull a report in advanced search, I get five hundred records; in analytics it’s three, four hundred. It started at ten, got to ninety, but it’s not at a hundred.”<cite>P1 · Americana</cite></blockquote>
+        </article>
+        <article class="tool">
+          <h4>Documents report</h4>
+          <p>The new version makes it easier to extract fields, which usually end up in spreadsheets and charts. Since it was recent, there wasn’t a settled opinion on it yet.</p>
+        </article>
+        <article class="tool">
+          <h4>Logs report</h4>
+          <p>The process number is missing from the main screen, the labels don’t make it clear which action was taken, and searches with more than two thousand rows can’t be exported.</p>
+          <blockquote class="quote">“I don’t know all the technical terms in there. I have to open a ticket to ask.”<cite>P2 · Araraquara</cite></blockquote>
+        </article>
+      </div>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s6"><div><span class="cs-num">07</span><h2 id="s6" class="cs-h">User improvement suggestions</h2></div><div class="cs-body">
+      <ul class="issues">
+        <li><strong>Edit the subject after creation.</strong> Today, a typo in a memo’s title means either routing it as is or archiving it and creating a new one.</li>
+        <li><strong>Template search and sharing.</strong> Search templates by title and share them with specific inboxes, not just your own or all of them.</li>
+        <li><strong>ID card module.</strong> A dedicated module would boost issuance. In Macapá, three templates set up in one day produced over a hundred ID cards the next. Araraquara even adapted the certificates module to create credentials.</li>
+        <li><strong>Rejected attachments in the process tree.</strong> A “rejected” stamp would prevent confusion between similar attachments.</li>
+      </ul>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s7"><div><span class="cs-num">08</span><h2 id="s7" class="cs-h">Conclusion and opportunities</h2></div><div class="cs-body">
+      <p>1Doc plays an essential role in digitizing public agencies and managing their records, but those who administer it still face significant challenges. Profiles range from entire teams dedicated to the tool to professionals juggling several roles.</p>
+      <p class="callout">Those who centralize management want more control over permissions. Those who decentralize need usability that gives department users autonomy.</p>
+      <ol class="flow">
+        
+        
+        
+        
+      </ol>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s9"><div><span class="cs-num">09</span><h2 id="s9" class="cs-h">What happened next</h2></div><div class="cs-body">
+      <p>The research was conducted in April 2025. Since then, <mark class="hl">it has served as a foundation for the roadmap: some of the opportunities have already shipped</mark>, and the rest remain mapped in the backlog.</p>
+      <ul class="status">
+        <li><span class="st st-done">Delivered</span><div><strong>Search and filters in the external inbox</strong><p>Improvements to search and filters to find requests faster.</p></div></li>
+        <li><span class="st st-done">Addressed</span><div><strong>Rejected items in the document tree</strong><p>Handling of rejected documents within the process’s document tree.</p></div></li>
+        <li><span class="st st-next">Mapped</span><div><strong>Other opportunities</strong><p>Still documented and awaiting prioritization with the product team. Some requests, such as editing an issued document, are more complex, because the public sector requires transparency and integrity of documents.</p></div></li>
+      </ul>
+    </div></section>
+  </div>
+
+  <div class="wrap next-wrap">
+    <a class="next reveal" href="../../en/cases/1ds.html">
+      <div><p class="next-k">Next project →</p><p class="next-t">1DS: 1Doc’s Design System</p></div>
+      <span class="next-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+    </a>
+  </div>
+</main>
+
+<footer class="ft">
+  <div class="wrap ft-in">
+    <p style="margin: 0">© 2026 Raquel Rebouças</p>
+    <p style="margin: 0">São Paulo, Brazil</p>
+  </div>
+</footer>
+</div>
+<script src="../../assets/dc-runtime.js"></script>
+<script>
+class Component extends DCLogic {
+  state = { theme: null, stored: null, sys: 'light', scrolled: false, menuOpen: false };
+  setRoot = (el) => { if (el) this.rootEl = el; };
+  resolveTheme() {
+    const s = this.state || {};
+    if (s.theme) return s.theme;
+    const p = this.props && this.props.themePreview;
+    if (p === 'light' || p === 'dark') return p;
+    return s.stored || s.sys || 'light';
+  }
+  toggleTheme = () => {
+    const next = this.resolveTheme() === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('rr-theme', next); } catch (e) {}
+    this.setState({ theme: next });
+  };
+  toggleMenu = () => { this.setState({ menuOpen: !this.state.menuOpen }); };
+  componentDidMount() {
+    this.cleanups = [];
+    const mm = (q) => (window.matchMedia ? window.matchMedia(q) : { matches: false });
+    const reduce = mm('(prefers-reduced-motion: reduce)').matches;
+    let stored = null;
+    try { stored = localStorage.getItem('rr-theme'); } catch (e) {}
+    if (stored !== 'light' && stored !== 'dark') stored = null;
+    const mq = mm('(prefers-color-scheme: dark)');
+    const onMq = (e) => this.setState({ sys: e.matches ? 'dark' : 'light' });
+    if (mq.addEventListener) { mq.addEventListener('change', onMq); this.cleanups.push(() => mq.removeEventListener('change', onMq)); }
+    this.setState({ stored: stored, sys: mq.matches ? 'dark' : 'light' });
+    const onScroll = (e) => {
+      let y = window.scrollY || document.documentElement.scrollTop || 0;
+      const t = e && e.target;
+      if (t && t !== document && typeof t.scrollTop === 'number') y = Math.max(y, t.scrollTop);
+      const sc = y > 24;
+      if (sc !== this.state.scrolled) this.setState({ scrolled: sc });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+    this.cleanups.push(() => { window.removeEventListener('scroll', onScroll); document.removeEventListener('scroll', onScroll, true); });
+    onScroll();
+    const root = this.rootEl || document.querySelector('.rr');
+    if (root && !reduce && 'IntersectionObserver' in window && (window.innerHeight || 0) < 1400) {
+      root.classList.add('js-reveal');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+      }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+      root.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+      this.cleanups.push(() => io.disconnect());
+    }
+  }
+  componentWillUnmount() { (this.cleanups || []).forEach((f) => { try { f(); } catch (e) {} }); }
+  renderVals() {
+    const s = this.state || {};
+    const theme = this.resolveTheme();
+    return {
+      setRoot: this.setRoot, theme: theme,
+      isDark: theme === 'dark', isLight: theme !== 'dark',
+      themeLabel: theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme',
+      toggleTheme: this.toggleTheme,
+      hdClass: s.scrolled ? 'is-scrolled' : '',
+      menuOpen: !!s.menuOpen, menuClosed: !s.menuOpen,
+      menuLabel: s.menuOpen ? 'Close menu' : 'Open menu',
+      toggleMenu: this.toggleMenu
+    };
+  }
+}
+DC.mount(Component, {"themePreview": "auto"});
+</script>
+</body>
+</html>

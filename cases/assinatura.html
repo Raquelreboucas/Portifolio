@@ -158,6 +158,105 @@ a{color:#0E7C5A}a:hover{color:#0A6447}
 .ds-cover{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.rr *{transition-duration:.01ms!important}}
+.lang-switch{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--line);border-radius:999px;height:44px;box-sizing:border-box}
+.lang-switch a{display:grid;place-items:center;min-width:36px;height:36px;padding:0 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;color:var(--muted);text-decoration:none;transition:background-color .2s,color .2s}
+.lang-switch a:hover{color:var(--text);background:var(--hover-bg)}
+.lang-switch a.is-active{background:var(--mint);color:#0A3F2E}
+.lang-switch a:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+@media (max-width:440px){.hd-actions{gap:4px}.lang-switch{height:40px}.lang-switch a{min-width:30px;height:32px;padding:0 6px;font-size:11px}.hd .icon-btn{width:40px;height:40px}}
+.rr .brand{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:28px;letter-spacing:-.01em}
+.rr .brand em{font-style:italic}
+.rr .hd.is-scrolled .brand{font-size:25px}
+@media (max-width:760px){.rr .brand,.rr .hd.is-scrolled .brand{font-size:24px}}
+/* fundo pontilhado em todo o site */
+.rr{background-color:var(--bg);background-image:radial-gradient(circle,var(--dot) 1.15px,transparent 1.6px);background-size:24px 24px;background-position:-12px -12px;min-height:100vh}
+.rr .section:not(.ct2),.rr .ft,.rr .cs,.rr .gallery,.rr .next-wrap{background-color:transparent!important}
+#sobre::before{display:none}
+/* pontilhado contínuo, sem emendas entre seções */
+.rr .canvas-bg{background:transparent!important}
+.rr .hero,.rr .c-hero{background:transparent!important}
+.rr #sobre{overflow:visible;overflow-x:clip}
+.rr #sobre::after{-webkit-mask-image:radial-gradient(closest-side,#000 55%,transparent);mask-image:radial-gradient(closest-side,#000 55%,transparent)}
+/* footer verde */
+.rr footer.ft{background-color:#0D2E23!important;background-image:radial-gradient(circle,rgba(168,230,207,.14) 1px,transparent 1.6px);background-size:22px 22px;border-top:1px solid rgba(238,248,243,.12);color:rgba(238,248,243,.72)}
+.rr[data-theme="dark"] footer.ft{background-color:#102920!important}
+.rr footer.ft .ft-in{color:rgba(238,248,243,.72)}
+.rr footer.ft a{color:#EEF8F3}
+.rr footer.ft a:hover{color:#A8E6CF}
+/* páginas de projeto: sem pontilhado */
+.rr{background-image:none!important}
+.rr footer.ft{background-image:none}
+/* menu mais transparente */
+.rr{--glass:rgba(247,250,248,.16)!important;--sheen:.22!important}
+.rr[data-theme="dark"]{--glass:rgba(18,36,28,.2)!important;--sheen:.08!important}
+.rr .hd.is-scrolled .hd-bar{-webkit-backdrop-filter:blur(14px) saturate(160%);backdrop-filter:blur(14px) saturate(160%)}
+/* verde mais claro no contato e footer */
+.rr .ct2{--ct-bg:#1B5E48}
+.rr[data-theme="dark"] .ct2{--ct-bg:#164A39}
+.rr footer.ft{background-color:#1B5E48!important}
+.rr[data-theme="dark"] footer.ft{background-color:#164A39!important}
+/* footer volta ao padrão claro */
+.rr footer.ft,.rr[data-theme="dark"] footer.ft{background-color:transparent!important;background-image:none!important;border-top:1px solid var(--line);color:var(--muted)}
+.rr footer.ft .ft-in{color:var(--muted)}
+.rr footer.ft a{color:var(--text)}
+.rr footer.ft a:hover{color:var(--accent-text)}
+
+/* footer mais compacto */
+.rr footer.ft{padding-top:20px!important;padding-bottom:20px!important}
+
+/* infos do projeto: colunas dividem a largura toda */
+@media (min-width:901px){.rr .facts{display:flex}.rr .facts .fact{flex:1 1 auto;min-width:0}.rr .facts .fact dd{text-wrap:pretty}.rr .facts .fact:nth-child(-n+3){flex-shrink:0}}
+@media (min-width:1200px){.rr .facts .fact:has(dd br){flex-shrink:0}}
+
+/* assinatura: componentes do case */
+.cs-sub{font-family:'Hanken Grotesk','Manrope',system-ui,sans-serif;font-weight:500;font-size:22px;letter-spacing:-.02em;margin:0 0 10px}
+.cs-step + .cs-step{margin-top:36px;padding-top:32px;border-top:1px dashed var(--line)}
+.callout{padding:18px 22px;border-radius:12px;background:var(--mint-soft);border:1px solid var(--line);font-weight:600}
+.stats{list-style:none;margin:24px 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.stats li{padding:18px;border-radius:12px;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;gap:4px}
+.stat-n{font-family:'Hanken Grotesk','Manrope',sans-serif;font-size:40px;line-height:1;letter-spacing:-.04em;color:var(--accent-text)}
+.stat-l{font-size:14px;color:var(--muted)}
+.sg-matrix{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0 4px}
+.sg-mx{padding:16px 18px 18px;border-radius:12px;border:1px solid var(--line);background:var(--surface)}
+.sg-mx-k{display:block;margin-bottom:12px;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.sg-mx.is-new .sg-mx-k{color:var(--accent-text)}
+.sg-mx table{width:100%;border-collapse:collapse;font-size:13px}
+.sg-mx th{font-weight:700;color:var(--muted);text-align:center;padding:6px 4px}
+.sg-mx th:first-child{text-align:left}
+.sg-mx td{text-align:center;padding:7px 4px;border-top:1px solid var(--line)}
+.sg-mx td:first-child{text-align:left;font-weight:700;color:var(--text)}
+.sg-mx .y{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--mint);color:#0A3F2E;font-weight:800;font-size:12px}
+.sg-mx .n{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--line)}
+@media (max-width:600px){.stats,.sg-matrix{grid-template-columns:minmax(0,1fr)}}
+
+/* assinatura: blocos de assinatura */
+.sg-blocks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0 4px}
+.sg-block{padding:16px 18px 18px;border-radius:12px;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;gap:12px}
+.sg-block-h{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.sg-block-h b{font-family:'Hanken Grotesk','Manrope',sans-serif;font-weight:600;font-size:17px}
+.sg-type{padding:4px 10px;border-radius:999px;background:var(--mint-soft);color:var(--tag-text);font-size:12px;font-weight:800;white-space:nowrap}
+.sg-row{display:flex;flex-direction:column;gap:6px}
+.sg-row > span{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.sg-chips{display:flex;flex-wrap:wrap;gap:6px}
+.sg-chips i{font-style:normal;padding:4px 10px;border-radius:8px;border:1px solid var(--line);font-size:13px;font-weight:700;color:var(--muted)}
+.sg-chips i.on{background:var(--mint);border-color:var(--mint);color:#0A3F2E}
+.sg-list{margin:12px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.sg-list li::marker{color:var(--accent-text)}
+.cs-body > p + .cs-step{margin-top:28px}
+.cs-step + .callout{margin-top:32px}
+@media (max-width:600px){.sg-blocks{grid-template-columns:minmax(0,1fr)}}
+
+/* assinatura: imagens ao longo do texto */
+.cs-fig{margin:24px 0 0}
+.cs-fig img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:0 20px 40px -28px var(--shadow-c)}
+.cs-fig figcaption{margin-top:10px;font-size:14px;color:var(--muted)}
+.fig-ph{border-radius:12px;background:var(--thumb-bg);border:1px dashed var(--line);aspect-ratio:16/9;display:grid;place-items:center;text-align:center;padding:16px;color:var(--muted);font-weight:700;font-size:14px;background-image:radial-gradient(circle,rgba(14,124,90,.16) 1px,transparent 1.5px);background-size:20px 20px}
+.cs-fig + p,.cs-fig + .callout{margin-top:24px}
+.rr .next-wrap{padding-top:clamp(56px,7vw,96px)}
+
+/* marca-texto dos pontos principais */
+.rr .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(247,213,78,.5) 46%,rgba(247,213,78,.5) 94%,transparent 94%);color:inherit;padding:0 .08em;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.rr[data-theme="dark"] .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(247,213,78,.24) 46%,rgba(247,213,78,.24) 94%,transparent 94%)}
 </style>
 </head>
 <body>
@@ -167,17 +266,17 @@ a{color:#0E7C5A}a:hover{color:#0A6447}
   <div class="hd-bar">
     <a class="brand" href="../index.html" aria-label="Raquel Rebouças, página inicial">Raquel <em>Rebouças</em></a>
     <nav class="hd-nav" aria-label="Principal">
+      <a href="../index.html" class="is-active" aria-current="page">Projetos</a>
       <a href="../index.html">Sobre mim</a>
-      <a href="../index.html" class="is-active" aria-current="page">Cases</a>
       <a href="../index.html">Textos</a>
       <a href="../index.html">Contato</a>
     </nav>
     <div class="hd-actions">
+      <nav class="lang-switch" aria-label="Idioma / Language"><a href="../cases/assinatura.html" class="is-active" aria-current="page" lang="pt-BR" title="Português">PT</a><a href="../en/cases/assinatura.html" lang="en" hreflang="en" title="English">EN</a></nav>
       <button class="icon-btn" type="button" data-on-click="toggleTheme" data-tpl-aria-label="{{themeLabel}}" data-tpl-title="{{themeLabel}}">
         <dc-if data-if="isDark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg></dc-if>
         <dc-if data-if="isLight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"></path></svg></dc-if>
       </button>
-      <a class="btn btn-primary hd-cta" href="https://www.linkedin.com/in/raquelreboucas/" target="_blank" rel="noopener">LinkedIn<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg><span class="sr-only">(abre em nova aba)</span></a>
       <button class="icon-btn menu-btn" type="button" data-on-click="toggleMenu" data-tpl-aria-expanded="{{menuOpen}}" aria-controls="menu-mobile" data-tpl-aria-label="{{menuLabel}}">
         <dc-if data-if="menuOpen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></dc-if>
         <dc-if data-if="menuClosed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></dc-if>
@@ -186,7 +285,7 @@ a{color:#0E7C5A}a:hover{color:#0A6447}
   </div>
   <dc-if data-if="menuOpen">
     <nav id="menu-mobile" class="hd-menu" aria-label="Menu">
-      <a href="../index.html">Sobre mim</a><a href="../index.html">Cases</a><a href="../index.html">Textos</a><a href="../index.html">Contato</a>
+      <a href="../index.html">Projetos</a><a href="../index.html">Sobre mim</a><a href="../index.html">Textos</a><a href="../index.html">Contato</a>
     </nav>
   </dc-if>
 </header>
@@ -194,7 +293,7 @@ a{color:#0E7C5A}a:hover{color:#0A6447}
 <main id="conteudo">
   <section class="c-hero canvas-bg">
     <div class="narrow">
-      <a class="back" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>Voltar para cases</a>
+      <a class="back" href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>Voltar para projetos</a>
       <div class="reveal">
         <p class="c-kicker"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 1.5v13M11.5 1.5v13M1.5 4.5h13M1.5 11.5h13"></path></svg>Case 04 · 1Doc</p>
         <h1 class="display c-title"><em>Assinatura</em> 2.0</h1>
@@ -226,26 +325,91 @@ a{color:#0E7C5A}a:hover{color:#0A6447}
   </div>
 
   <div class="narrow cs">
-    <section class="cs-sec reveal" aria-labelledby="s1"><div><span class="cs-num">01</span><h2 id="s1" class="cs-h">Contexto</h2></div><div class="cs-body"><p class="ph">[Descreva o cenário: o produto, quem usa, em que momento da empresa o projeto começou e por que ele importava.]</p></div></section>
-    <section class="cs-sec reveal" aria-labelledby="s2"><div><span class="cs-num">02</span><h2 id="s2" class="cs-h">Problema</h2></div><div class="cs-body"><p class="ph">[Qual era a dor principal? Para quem? Que sinais ou dados mostravam o problema?]</p></div></section>
-    <section class="cs-sec reveal" aria-labelledby="s3"><div><span class="cs-num">03</span><h2 id="s3" class="cs-h">Processo e discovery</h2></div><div class="cs-body"><p class="ph">[Pesquisas, entrevistas, mapeamentos e workshops realizados. O que você aprendeu e como isso direcionou as decisões.]</p></div></section>
-    <section class="cs-sec reveal" aria-labelledby="s4"><div><span class="cs-num">04</span><h2 id="s4" class="cs-h">Solução</h2></div><div class="cs-body"><p class="ph">[A solução proposta, as principais decisões de design e os trade-offs considerados.]</p></div></section>
-    <section class="cs-sec reveal" aria-labelledby="s5"><div><span class="cs-num">05</span><h2 id="s5" class="cs-h">Resultados</h2></div><div class="cs-body"><p class="ph">[Impacto medido ou percebido: métricas, feedbacks de usuários e do time.]</p></div></section>
-    <section class="cs-sec reveal" aria-labelledby="s6"><div><span class="cs-num">06</span><h2 id="s6" class="cs-h">Aprendizados</h2></div><div class="cs-body"><p class="ph">[O que você levaria para o próximo projeto e o que faria diferente.]</p></div></section>
+    <section class="cs-sec reveal" aria-labelledby="s1"><div><span class="cs-num">01</span><h2 id="s1" class="cs-h">Contexto</h2></div><div class="cs-body">
+      <p>A 1Doc é uma plataforma de gestão de processos e documentos usada por órgãos públicos para digitalizar processos, documentos e comunicações.</p>
+      <p>Ela reúne diferentes módulos, como processos administrativos, memorandos e circulares. Ao longo da tramitação, é comum que um documento precise ser assinado por várias pessoas ou setores antes de o processo seguir.</p>
+      <p>Na administração pública, essa etapa envolve servidores, secretários, gestores e autoridades, cada um com uma responsabilidade diferente sobre os documentos.</p>
+    </div></section>
+    <section class="cs-sec reveal" aria-labelledby="s2"><div><span class="cs-num">02</span><h2 id="s2" class="cs-h">O modelo de assinatura anterior</h2></div><div class="cs-body">
+      <p>Desde o início da plataforma, a assinatura funcionava como uma etapa única: ao enviar um processo para assinatura, <mark class="hl">todos os documentos eram reunidos em um só PDF, e todos os participantes assinavam o mesmo conteúdo</mark>.</p>
+        <figure class="cs-fig"><div class="fig-ph" role="img" aria-label="Imagem: assinador legado">[Imagem: assinador legado]</div><figcaption>[Legenda: tela do assinador anterior, com todos os documentos reunidos em um único PDF]</figcaption></figure>
+      <p>O modelo simplificava alguns fluxos, mas não refletia a complexidade dos processos reais, em que pessoas diferentes respondem por documentos diferentes.</p>
+      <p>Essa limitação aparecia com frequência na relação com os clientes. Poder assinar documentos individualmente <mark class="hl">estava entre os pedidos mais recorrentes recebidos pelo time de Customer Success</mark>, e o tema também pesava na insatisfação registrada nas pesquisas de CSAT.</p>
+      <p>Para entender essas insatisfações a fundo, <mark class="hl">conversamos com 5 clientes</mark>.</p>
+      <ul class="stats"><li><span class="stat-n">5</span><span class="stat-l">clientes entrevistados</span></li><li><span class="stat-n">1</span><span class="stat-l">PDF único com todos os documentos</span></li><li><span class="stat-n">~40</span><span class="stat-l">assinantes em alguns processos</span></li></ul>
+      <p class="callout">O modelo tratava a assinatura como uma ação única, enquanto os processos públicos exigiam combinações diferentes de documentos, pessoas, tipos de assinatura e regras de execução.</p>
+    </div></section>
+    <section class="cs-sec reveal" aria-labelledby="s3"><div><span class="cs-num">03</span><h2 id="s3" class="cs-h">O que não funcionava</h2></div><div class="cs-body">
+      <div class="cs-step">
+        <h3 class="cs-sub">Todos assinavam tudo</h3>
+        <p>Todos os participantes assinavam o conjunto completo de documentos, <mark class="hl">mesmo quando eram responsáveis por apenas um deles</mark>.</p>
+        <p>Um setor podia precisar assinar só o documento 1, outro só o documento 2, e o prefeito apenas o documento 3. Ainda assim, todos assinavam tudo.</p>
+        <div class="sg-matrix" role="group" aria-label="Comparação entre quem assinava e quem precisava assinar cada documento"><div class="sg-mx"><span class="sg-mx-k">Como era: todos assinam tudo</span><table><thead><tr><th></th><th>Doc 1</th><th>Doc 2</th><th>Doc 3</th></tr></thead><tbody><tr><td>Setor A</td><td><span class="y" aria-label="assina">✓</span></td><td><span class="y" aria-label="assina">✓</span></td><td><span class="y" aria-label="assina">✓</span></td></tr><tr><td>Setor B</td><td><span class="y" aria-label="assina">✓</span></td><td><span class="y" aria-label="assina">✓</span></td><td><span class="y" aria-label="assina">✓</span></td></tr><tr><td>Prefeito</td><td><span class="y" aria-label="assina">✓</span></td><td><span class="y" aria-label="assina">✓</span></td><td><span class="y" aria-label="assina">✓</span></td></tr></tbody></table></div><div class="sg-mx is-new"><span class="sg-mx-k">O que o processo pedia</span><table><thead><tr><th></th><th>Doc 1</th><th>Doc 2</th><th>Doc 3</th></tr></thead><tbody><tr><td>Setor A</td><td><span class="y" aria-label="assina">✓</span></td><td><span class="n" aria-hidden="true"></span></td><td><span class="n" aria-hidden="true"></span></td></tr><tr><td>Setor B</td><td><span class="n" aria-hidden="true"></span></td><td><span class="y" aria-label="assina">✓</span></td><td><span class="n" aria-hidden="true"></span></td></tr><tr><td>Prefeito</td><td><span class="n" aria-hidden="true"></span></td><td><span class="n" aria-hidden="true"></span></td><td><span class="y" aria-label="assina">✓</span></td></tr></tbody></table></div></div>
+        <p>O resultado eram assinaturas desnecessárias e pessoas validando documentos que não tinham relação com o seu papel no processo.</p>
+      </div>
+      <div class="cs-step">
+        <h3 class="cs-sub">O tipo de assinatura dependia do contexto</h3>
+        <p>Nem todos podiam usar o mesmo tipo de assinatura. Em alguns casos, prefeitos, secretários e outros responsáveis precisavam de um certificado digital ICP-Brasil; em outros, a assinatura eletrônica da 1Doc bastava.</p>
+        <p>Se alguém assinasse com o método errado, <mark class="hl">o processo era cancelado e todos os participantes precisavam assinar de novo</mark>.</p>
+        <figure class="cs-fig"><div class="fig-ph" role="img" aria-label="Imagem: escolha do tipo de assinatura">[Imagem: escolha do tipo de assinatura]</div><figcaption>[Legenda: tela em que o participante escolhe entre a assinatura 1Doc e o certificado ICP-Brasil]</figcaption></figure>
+        <p class="callout">O desafio não era só escolher um tipo de assinatura, mas garantir que cada pessoa usasse o método certo para aquele documento e contexto.</p>
+      </div>
+      <div class="cs-step">
+        <h3 class="cs-sub">As assinaturas ficavam bloqueadas</h3>
+        <p>O modelo também tinha uma trava: <mark class="hl">ninguém conseguia assinar enquanto outra pessoa estivesse assinando</mark>.</p>
+        <p>Em processos com muitos participantes, isso gerava um efeito cascata, em que cada pessoa dependia da anterior para conseguir assinar. Com dezenas de assinantes (em alguns casos, cerca de 40), <mark class="hl">o processo ficava lento e cheio de gargalos</mark>.</p>
+      </div>
+      <div class="cs-step">
+        <h3 class="cs-sub">Documentos incompatíveis interrompiam o processo</h3>
+        <p>Os próprios arquivos também causavam problemas. PDFs com camadas complexas, gráficos, imagens, senhas ou outras estruturas podiam ser incompatíveis com o assinador.</p>
+        <p>Para contornar, muitos clientes recorriam a conversores e editores de PDF externos, que às vezes criavam novas incompatibilidades.</p>
+        <p>Quando isso acontecia, <mark class="hl">era preciso interromper o processo, corrigir o documento e fazer uma nova emissão</mark>.</p>
+      </div>
+    </div></section>
+    <section class="cs-sec reveal" aria-labelledby="s4"><div><span class="cs-num">04</span><h2 id="s4" class="cs-h">Solução</h2></div><div class="cs-body">
+      <p>A proposta foi <mark class="hl">transformar a assinatura em uma etapa configurável</mark>, capaz de acompanhar a complexidade dos processos públicos.</p>
+      <div class="cs-step">
+        <h3 class="cs-sub">Blocos de assinatura</h3>
+        <p>Na emissão, <mark class="hl">o usuário passa a montar blocos de assinatura</mark>. Em cada bloco, ele define quem assina, quais documentos essas pessoas devem assinar e o tipo de assinatura exigido.</p>
+        <p>No exemplo abaixo, os usuários 1, 2 e 3 assinam os três documentos, enquanto o usuário 4 assina apenas o documento 2.</p>
+        <div class="sg-blocks" role="group" aria-label="Exemplo de dois blocos de assinatura"><div class="sg-block"><div class="sg-block-h"><b>Bloco 1</b><span class="sg-type">Assinatura 1Doc</span></div><div class="sg-row"><span>Quem assina</span><div class="sg-chips"><i class="on">Usuário 1</i><i class="on">Usuário 2</i><i class="on">Usuário 3</i></div></div><div class="sg-row"><span>Documentos</span><div class="sg-chips"><i class="on">Doc 1</i><i class="on">Doc 2</i><i class="on">Doc 3</i></div></div></div><div class="sg-block"><div class="sg-block-h"><b>Bloco 2</b><span class="sg-type">ICP-Brasil</span></div><div class="sg-row"><span>Quem assina</span><div class="sg-chips"><i class="on">Usuário 4</i></div></div><div class="sg-row"><span>Documentos</span><div class="sg-chips"><i>Doc 1</i><i class="on">Doc 2</i><i>Doc 3</i></div></div></div></div>
+        <p>Assim, é possível <mark class="hl">combinar setores, pessoas e tipos de assinatura diferentes em um mesmo processo</mark>.</p>
+        <figure class="cs-fig"><div class="fig-ph" role="img" aria-label="Imagem: criação dos blocos de assinatura">[Imagem: criação dos blocos de assinatura]</div><figcaption>[Legenda: emissão do processo com os blocos de assinatura configurados]</figcaption></figure>
+      </div>
+      <div class="cs-step">
+        <h3 class="cs-sub">Assinar ou recusar documento por documento</h3>
+        <p>Uma configuração define se todos os participantes devem assinar ou recusar todos os anexos de uma vez. Quando ela está desligada, <mark class="hl">cada pessoa pode assinar ou recusar os documentos individualmente</mark>.</p>
+        <figure class="cs-fig"><div class="fig-ph" role="img" aria-label="Imagem: assinar ou recusar por documento">[Imagem: assinar ou recusar por documento]</div><figcaption>[Legenda: assinador com as ações de assinar e recusar em cada documento]</figcaption></figure>
+      </div>
+      <div class="cs-step">
+        <h3 class="cs-sub">Fim da trava entre assinaturas</h3>
+        <p>No assinador, foi removida a trava que impedia uma pessoa de assinar enquanto outra estava assinando. <mark class="hl">As assinaturas 1Doc passam a ser processadas em uma fila assíncrona.</mark></p>
+        <p>A trava continua apenas na assinatura ICP-Brasil, por causa do hash gerado pelo certificado. Para evitar conflitos, <mark class="hl">criamos um socket que atualiza o status em tempo real</mark>: se alguém está assinando, a interface avisa e bloqueia a ação naquele momento.</p>
+        <figure class="cs-fig"><div class="fig-ph" role="img" aria-label="Imagem: aviso de assinatura em andamento">[Imagem: aviso de assinatura em andamento]</div><figcaption>[Legenda: aviso em tempo real quando outra pessoa está assinando com ICP-Brasil]</figcaption></figure>
+      </div>
+      <div class="cs-step">
+        <h3 class="cs-sub">Mais formas de assinar para usuários externos</h3>
+        <p>Usuários externos ganharam novas opções de assinatura:</p>
+        <ul class="sg-list"><li><strong>Gov.br:</strong> implementada primeiro no assinador legado, antes da conclusão da Assinatura 2.0, e que também estará disponível na nova jornada.</li><li><strong>Token por e-mail:</strong> a assinatura é confirmada com um token enviado para o e-mail do usuário.</li></ul>
+        <figure class="cs-fig"><div class="fig-ph" role="img" aria-label="Imagem: assinatura com Gov.br">[Imagem: assinatura com Gov.br]</div><figcaption>[Legenda: fluxo de assinatura do usuário externo com Gov.br]</figcaption></figure>
+      </div>
+      <div class="cs-step">
+        <h3 class="cs-sub">Uma fila de assinaturas própria</h3>
+        <p>Antes, os pedidos de assinatura ficavam misturados às notificações. <mark class="hl">Agora a fila de assinaturas ganha um espaço só para ela.</mark></p>
+        <p>O usuário também pode <mark class="hl">assinar várias solicitações diferentes em lote</mark>, e o assinador separa os tipos de assinatura em abas, para que sejam feitos por etapas.</p>
+        <figure class="cs-fig"><div class="fig-ph" role="img" aria-label="Imagem: fila de assinaturas">[Imagem: fila de assinaturas]</div><figcaption>[Legenda: nova fila de assinaturas, com assinatura em lote e abas por tipo de assinatura]</figcaption></figure>
+      </div>
+      <p class="callout">A nova jornada dá mais liberdade e autonomia na configuração dos processos e acompanha as complexidades que os processos públicos exigem.</p>
+    </div></section>
+    <section class="cs-sec reveal" aria-labelledby="s5"><div><span class="cs-num">05</span><h2 id="s5" class="cs-h">Resultados</h2></div><div class="cs-body">
+      <p class="callout">A nova jornada de assinatura ainda está em desenvolvimento. Os resultados entram aqui depois do lançamento.</p>
+    </div></section>
   </div>
 
-  <section class="wrap gallery" aria-labelledby="gal">
-    <div class="gal-head reveal"><h2 id="gal" class="display" style="font-size: clamp(40px, 5vw, 64px); margin: 0">Galeria</h2></div>
-    <div class="gal-grid">
-      <figure class="wide reveal"><div class="gal-img" role="img" aria-label="Imagem 1 (placeholder)">[Imagem 1]</div><figcaption>[Legenda da imagem 1]</figcaption></figure>
-      <figure class="reveal"><div class="gal-img" role="img" aria-label="Imagem 2 (placeholder)">[Imagem 2]</div><figcaption>[Legenda da imagem 2]</figcaption></figure>
-      <figure class="reveal"><div class="gal-img" role="img" aria-label="Imagem 3 (placeholder)">[Imagem 3]</div><figcaption>[Legenda da imagem 3]</figcaption></figure>
-    </div>
-  </section>
 
   <div class="wrap next-wrap">
     <a class="next reveal" href="../cases/mapeamento-de-perfil.html">
-      <div><p class="next-k">Próximo case →</p><p class="next-t" style="width: 718px">Mapeamento de perfil - Usuários Administradores</p></div>
+      <div><p class="next-k">Próximo projeto →</p><p class="next-t" style="max-width: 718px">Mapeamento de perfil - Usuários Administradores</p></div>
       <span class="next-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
     </a>
   </div>
@@ -299,7 +463,7 @@ class Component extends DCLogic {
     this.cleanups.push(() => { window.removeEventListener('scroll', onScroll); document.removeEventListener('scroll', onScroll, true); });
     onScroll();
     const root = this.rootEl || document.querySelector('.rr');
-    if (root && !reduce && 'IntersectionObserver' in window) {
+    if (root && !reduce && 'IntersectionObserver' in window && (window.innerHeight || 0) < 1400) {
       root.classList.add('js-reveal');
       const io = new IntersectionObserver((entries) => {
         entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });

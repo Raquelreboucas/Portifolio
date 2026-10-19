@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Document retention schedules · Raquel Rebouças</title>
+<meta name="description" content="Portfolio of Raquel Rebouças, Product Designer.">
+<style>dc-if{display:contents}dc-if[hidden]{display:none!important}html,body{margin:0}</style>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Hanken+Grotesk:wght@300;400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Caveat:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0}
+body:has(.rr[data-theme="light"]){background:#F7FAF8}
+body:has(.rr[data-theme="dark"]){background:#0B1712}
+.rr{--bg:#F7FAF8;--surface:#FFFFFF;--surface-2:#EEF6F1;--text:#10221B;--muted:#4A5E55;--line:rgba(16,34,27,.12);--line-strong:rgba(16,34,27,.28);--primary:#0E7C5A;--primary-hover:#0A6447;--on-primary:#FFFFFF;--accent-text:#0E7C5A;--mint:#A8E6CF;--mint-soft:#E3F7EE;--tag-text:#0A6447;--dot:rgba(16,34,27,.17);--hover-bg:rgba(14,124,90,.08);--glass:rgba(247,250,248,.6);--glass-border:rgba(255,255,255,.75);--glass-hi:rgba(255,255,255,.9);--sheen:.55;--shadow-c:rgba(14,60,40,.18);--thumb-bg:#D3F2E4;--mock-surface:#FFFFFF;--mock-line:#D6EEE2;--mock-soft:#E3F7EE;--mock-strong:#0E7C5A;--card-glow:rgba(14,124,90,.38);
+background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;transition:background-color .3s ease,color .3s ease}
+.rr[data-theme="dark"]{--bg:#0B1712;--surface:#12241C;--surface-2:#173026;--text:#E6F2EC;--muted:#A6BDB2;--line:rgba(230,242,236,.12);--line-strong:rgba(230,242,236,.3);--primary:#A8E6CF;--primary-hover:#C9F2E1;--on-primary:#0B1712;--accent-text:#A8E6CF;--mint-soft:#173026;--tag-text:#A8E6CF;--dot:rgba(230,242,236,.14);--hover-bg:rgba(168,230,207,.1);--glass:rgba(18,36,28,.55);--glass-border:rgba(255,255,255,.12);--glass-hi:rgba(255,255,255,.14);--sheen:.14;--shadow-c:rgba(0,0,0,.5);--thumb-bg:#173026;--mock-surface:#1C3B2F;--mock-line:#2B5546;--mock-soft:#234838;--mock-strong:#A8E6CF;--card-glow:rgba(168,230,207,.22)}
+a{color:#0E7C5A}a:hover{color:#0A6447}
+.rr a{color:var(--accent-text)}.rr a:hover{color:var(--primary-hover)}
+.rr :focus-visible{outline:2.5px solid var(--primary);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:16px;top:-60px;z-index:100;background:var(--primary);color:var(--on-primary)!important;padding:10px 16px;border-radius:12px;font-weight:700;text-decoration:none}
+.skip:focus{top:16px}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+.narrow{width:min(1040px,100% - 48px);margin-inline:auto}
+.display{font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:-.015em;line-height:1}
+.display em{font-style:italic;color:var(--accent-text)}
+.hd{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;flex-direction:column;align-items:center;padding:0;transition:padding .3s ease-out;pointer-events:none}
+.hd-bar{pointer-events:auto;position:relative;width:100%;max-width:1600px;height:84px;padding:0 40px;display:flex;align-items:center;gap:24px;border:1px solid transparent;border-radius:0;background:transparent;transition:max-width .3s ease-out,height .3s ease-out,padding .3s ease-out,border-radius .3s ease-out,background-color .3s ease-out,border-color .3s ease-out,box-shadow .3s ease-out,-webkit-backdrop-filter .3s ease-out,backdrop-filter .3s ease-out}
+.hd-bar::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;background:linear-gradient(180deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 55%);transition:opacity .3s ease-out}
+.hd.is-scrolled{padding-top:16px}
+.hd.is-scrolled .hd-bar,.hd-menu{background:var(--glass);border-color:var(--glass-border);-webkit-backdrop-filter:blur(18px) saturate(180%);backdrop-filter:blur(18px) saturate(180%);box-shadow:inset 0 1px 0 var(--glass-hi),0 12px 32px -12px var(--shadow-c),0 2px 6px -2px var(--shadow-c)}
+.hd.is-scrolled .hd-bar{max-width:940px;height:60px;padding:0 8px 0 24px;border-radius:999px}
+.hd.is-scrolled .hd-bar::before{opacity:var(--sheen)}
+.brand{font-family:'Instrument Serif',Georgia,serif;font-size:28px;line-height:1;color:var(--text)!important;text-decoration:none;white-space:nowrap;transition:font-size .3s ease-out}
+.brand em{font-style:italic}
+.hd.is-scrolled .brand{font-size:24px}
+.hd-nav{flex:1;display:flex;justify-content:center;gap:2px}
+.rr .hd-nav a{color:var(--text);text-decoration:none;font-weight:500;font-size:15px;padding:9px 14px;border-radius:999px;transition:background-color .2s;white-space:nowrap}
+.rr .hd-nav a:hover{background:var(--hover-bg);color:var(--text)}
+.rr .hd-nav a.is-active{background:var(--mint-soft);color:var(--tag-text);font-weight:700}
+.hd-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{width:44px;height:44px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--text);display:grid;place-items:center;cursor:pointer;padding:0}
+.icon-btn:hover{background:var(--hover-bg)}
+.icon-btn svg{width:20px;height:20px}
+.menu-btn{display:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 26px;border-radius:999px;font-family:inherit;font-weight:700;font-size:16px;line-height:1;text-decoration:none;cursor:pointer;border:1.5px solid transparent;transition:background-color .2s,transform .2s,box-shadow .2s,border-color .2s;white-space:nowrap}
+.btn svg{width:18px;height:18px}
+.rr .btn-primary{background:var(--primary);color:var(--on-primary)}
+.rr .btn-primary:hover{background:var(--primary-hover);color:var(--on-primary);transform:translateY(-2px)}
+.rr .btn-ghost{border-color:var(--line-strong);color:var(--text);background:var(--surface)}
+.rr .btn-ghost:hover{border-color:var(--text);color:var(--text)}
+.hd-cta{min-height:44px;padding:0 20px;font-size:15px}
+.hd-menu{pointer-events:auto;display:none;flex-direction:column;gap:2px;margin-top:8px;width:100%;padding:8px;border:1px solid var(--glass-border);border-radius:24px}
+.rr .hd-menu a{display:flex;align-items:center;min-height:48px;padding:0 16px;border-radius:16px;color:var(--text);text-decoration:none;font-weight:600}
+@media (max-width:920px){
+.hd,.hd.is-scrolled{padding:12px 12px 0}
+.hd .hd-bar,.hd.is-scrolled .hd-bar{max-width:none;height:60px;padding:0 8px 0 20px;border-radius:999px;background:var(--glass);border-color:var(--glass-border);-webkit-backdrop-filter:blur(18px) saturate(180%);backdrop-filter:blur(18px) saturate(180%);box-shadow:inset 0 1px 0 var(--glass-hi),0 12px 32px -12px var(--shadow-c)}
+.hd-nav,.hd-cta{display:none}
+.menu-btn{display:grid}
+.brand,.hd.is-scrolled .brand{font-size:23px;flex:1}
+.hd-menu{display:flex}
+}
+.canvas-bg{background-color:var(--bg);background-image:radial-gradient(circle,var(--dot) 1.15px,transparent 1.6px);background-size:24px 24px;background-position:-12px -12px}
+.back{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px 0 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-weight:700;font-size:15px;text-decoration:none}
+.rr .back{color:var(--text)}
+.rr .back:hover{color:var(--text);background:var(--hover-bg)}
+.back svg{width:18px;height:18px}
+.c-hero{padding:136px 0 64px}
+.c-kicker{display:inline-flex;align-items:center;gap:8px;margin:44px 0 18px;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text)}
+.c-kicker svg{width:16px;height:16px}
+.c-title{font-size:clamp(52px,8vw,112px);margin:0;max-width:100%}
+.c-summary{font-size:clamp(19px,1.8vw,23px);line-height:1.55;color:var(--muted);max-width:720px;margin:28px 0 0}
+.tags{list-style:none;padding:0;margin:28px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.tags li{font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;background:var(--mint-soft);color:var(--tag-text)}
+.cover{border-radius:32px;overflow:hidden;background:var(--thumb-bg);aspect-ratio:16/8;display:grid;place-items:center;background-image:radial-gradient(circle,rgba(14,124,90,.16) 1px,transparent 1.5px);background-size:22px 22px;border:1px solid var(--line)}
+.cover-mock{width:min(76%,860px);aspect-ratio:16/9;background:var(--mock-surface);border:1px solid var(--mock-line);border-radius:18px;box-shadow:0 40px 80px -40px rgba(16,34,27,.45);padding:22px;display:flex;flex-direction:column;gap:16px}
+.mock-bar{display:flex;gap:7px;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--mock-line)}
+.mock-bar i{width:10px;height:10px;border-radius:50%;background:var(--mock-line)}
+.mock-bar b{margin-left:12px;height:10px;width:28%;border-radius:5px;background:var(--mock-soft)}
+.ph-label{margin:auto;font-size:15px;font-weight:700;color:var(--muted);text-align:center}
+.ln{display:block;height:10px;border-radius:5px;background:var(--mock-soft)}
+.ln.strong{background:var(--mock-strong)}
+.facts{margin:56px 0 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.8fr) minmax(0,1.9fr);gap:0;border:1px solid var(--line);border-radius:24px;background:var(--surface);overflow:hidden}
+.fact{padding:24px 24px 26px;border-right:1px solid var(--line)}
+.fact:last-child{border-right:0}
+.fact dt{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.fact dd{margin:0;font-size:16px;font-weight:600}
+.cs{padding:clamp(72px,9vw,120px) 0 0}
+.cs-sec{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,5vw,72px);padding:44px 0;border-top:1px solid var(--line)}
+.cs-num{display:block;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:22px;color:var(--accent-text);margin-bottom:6px}
+.cs-h{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(34px,3.6vw,48px);line-height:1.05;margin:0;letter-spacing:-.01em}
+.cs-body p{margin:0 0 16px;font-size:18px;line-height:1.75}
+.cs-body p:last-child{margin-bottom:0}
+.ph{color:var(--muted)}
+.gallery{padding:clamp(72px,9vw,120px) 0 0}
+.gal-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:32px}
+.gal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.gal-grid figure{margin:0}
+.gal-grid figure.wide{grid-column:1 / -1}
+.gal-img{border-radius:24px;background:var(--thumb-bg);border:1px solid var(--line);aspect-ratio:4/3;display:grid;place-items:center;color:var(--muted);font-weight:700;font-size:15px;background-image:radial-gradient(circle,rgba(14,124,90,.16) 1px,transparent 1.5px);background-size:20px 20px}
+.gal-grid figure.wide .gal-img{aspect-ratio:21/9}
+.gal-grid figcaption{margin-top:12px;font-size:15px;color:var(--muted)}
+.next-wrap{padding:clamp(88px,10vw,140px) 0}
+.rr .next{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:clamp(28px,4vw,48px);border-radius:32px;background:var(--surface);border:1px solid var(--line);color:var(--text);text-decoration:none;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.rr .next:hover,.rr .next:focus-visible{color:var(--text);transform:translateY(-4px);border-color:var(--mint);box-shadow:0 32px 56px -26px var(--card-glow)}
+.next-k{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text);margin:0 0 10px}
+.next-t{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(36px,4.6vw,64px);line-height:1;margin:0}
+.next-arrow{width:72px;height:72px;border-radius:50%;background:var(--primary);color:var(--on-primary);display:grid;place-items:center;flex:none;transition:transform .35s ease}
+.next-arrow svg{width:28px;height:28px}
+.next:hover .next-arrow{transform:translateX(6px)}
+.ft{border-top:1px solid var(--line);padding:32px 0}
+.ft-in{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:15px;color:var(--muted)}
+.ft-links{display:flex;gap:20px}
+.rr .ft-links a{color:var(--text);font-weight:600;text-decoration:none}
+.rr .ft-links a:hover{color:var(--accent-text);text-decoration:underline}
+.rr .c-title,.rr .cs-h,.rr .next-t,.rr .gal-head .display{font-family:'Hanken Grotesk','Manrope',system-ui,sans-serif;font-weight:400;letter-spacing:-.045em;line-height:1.02}
+.rr .c-title em{font-style:normal;color:var(--accent-text)}
+.rr .c-title{font-size:clamp(42px,5.8vw,80px);letter-spacing:-.05em}
+.rr .cs-h{font-size:clamp(26px,2.5vw,34px)}
+.rr{font-size:16px}
+.brand em{font-style:normal}
+.rr .hd-nav a.is-active{background:var(--mint);color:#0A3F2E}
+.rr{--glass:rgba(247,250,248,.38)}
+.rr[data-theme="dark"]{--glass:rgba(18,36,28,.36)}
+.rr .display em,.rr .c-title em{color:var(--text)}
+.wrap{width:min(1120px,100% - 2 * clamp(24px,7vw,128px))}
+.narrow{width:min(960px,100% - 2 * clamp(24px,7vw,128px))}
+.hd-bar{padding:0 clamp(24px,5vw,80px)}
+.c-summary{font-size:clamp(16px,1.4vw,19px)}
+.cs-body p{font-size:16px}
+.fact dd{font-size:15px}
+.tags li{font-size:12px}
+.rr .next-t{font-size:clamp(30px,3.6vw,50px)}
+@media (max-width:600px){.wrap,.narrow{width:calc(100% - 40px)}}
+.rr .cs-num{font-family:'Manrope',system-ui,sans-serif;font-style:normal;font-weight:700;font-size:15px;letter-spacing:.06em}
+.rr.js-reveal .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rr.js-reveal .reveal.is-in{opacity:1;transform:none}
+.cover-window{gap:0;padding:16px 16px 0}
+.cover-window .mock-bar{padding-bottom:10px}
+.cover-screen{flex:1;min-height:0;overflow:hidden;border-radius:8px 8px 0 0;border:1px solid var(--mock-line);border-bottom:0}
+.cover-screen img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0%}
+.cs-body > p + p{margin-top:0}
+.cs-sub{font-family:'Hanken Grotesk','Manrope',system-ui,sans-serif;font-weight:500;font-size:22px;letter-spacing:-.02em;margin:0 0 10px}
+.cs-step + .cs-step{margin-top:36px;padding-top:32px;border-top:1px dashed var(--line)}
+.cs-fig{margin:24px 0 0}
+.cs-fig img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:0 20px 40px -28px var(--shadow-c)}
+.cs-fig figcaption{margin-top:10px;font-size:14px;color:var(--muted)}
+.fig-ph{aspect-ratio:16/9;border-radius:12px;border:1.5px dashed var(--line-strong);background:var(--mint-soft);display:grid;place-items:center;color:var(--muted);font-weight:700;font-size:14px;text-align:center;padding:16px}
+.callout{padding:18px 22px;border-radius:12px;background:var(--mint-soft);border:1px solid var(--line);font-weight:600}
+.flow{list-style:none;counter-reset:flow;margin:24px 0 0;padding:0;display:flex;flex-direction:column;gap:0}
+.flow li{counter-increment:flow;position:relative;padding:0 0 22px 52px;font-size:16px;line-height:1.7}
+.flow li::before{content:counter(flow);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--primary);color:var(--on-primary);font-weight:800;font-size:14px;display:grid;place-items:center}
+.flow li::after{content:"";position:absolute;left:15px;top:36px;bottom:4px;width:2px;background:var(--line)}
+.flow li:last-child::after{display:none}
+.flow li strong{color:var(--text)}
+.stats{list-style:none;margin:24px 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.stats li{padding:18px;border-radius:12px;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;gap:4px}
+.stat-n{font-family:'Hanken Grotesk','Manrope',sans-serif;font-size:40px;line-height:1;letter-spacing:-.04em;color:var(--accent-text)}
+.stat-l{font-size:14px;color:var(--muted)}
+@media (max-width:600px){.stats{grid-template-columns:minmax(0,1fr)}}
+.ds-cover{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;flex:1}
+.ds-cell{border-radius:12px;border:1px solid var(--mock-line);padding:14px;display:flex;flex-direction:column;gap:10px;justify-content:center}
+.ds-pill{display:block;height:26px;border-radius:999px;background:var(--mock-soft)}
+.ds-pill.on{background:var(--mock-strong)}
+.ds-pill.out{background:transparent;border:2px solid var(--mock-strong)}
+.ds-sw{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.ds-sw i{aspect-ratio:1;border-radius:8px}
+@media (max-width:900px){
+.facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+.fact{border-right:0;border-bottom:1px solid var(--line)}
+.cs-sec{grid-template-columns:minmax(0,1fr)}
+.cover{aspect-ratio:4/3}
+.cover-mock{width:86%}
+}
+@media (max-width:600px){
+.wrap,.narrow{width:min(1200px,100% - 32px)}
+.facts{grid-template-columns:minmax(0,1fr)}
+.gal-grid{grid-template-columns:minmax(0,1fr)}
+.ds-cover{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.rr *{transition-duration:.01ms!important}}
+.lang-switch{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--line);border-radius:999px;height:44px;box-sizing:border-box}
+.lang-switch a{display:grid;place-items:center;min-width:36px;height:36px;padding:0 8px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.04em;color:var(--muted);text-decoration:none;transition:background-color .2s,color .2s}
+.lang-switch a:hover{color:var(--text);background:var(--hover-bg)}
+.lang-switch a.is-active{background:var(--mint);color:#0A3F2E}
+.lang-switch a:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+@media (max-width:440px){.hd-actions{gap:4px}.lang-switch{height:40px}.lang-switch a{min-width:30px;height:32px;padding:0 6px;font-size:11px}.hd .icon-btn{width:40px;height:40px}}
+.rr .brand{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:28px;letter-spacing:-.01em}
+.rr .brand em{font-style:italic}
+.rr .hd.is-scrolled .brand{font-size:25px}
+@media (max-width:760px){.rr .brand,.rr .hd.is-scrolled .brand{font-size:24px}}
+/* fundo pontilhado em todo o site */
+.rr{background-color:var(--bg);background-image:radial-gradient(circle,var(--dot) 1.15px,transparent 1.6px);background-size:24px 24px;background-position:-12px -12px;min-height:100vh}
+.rr .section:not(.ct2),.rr .ft,.rr .cs,.rr .gallery,.rr .next-wrap{background-color:transparent!important}
+#sobre::before{display:none}
+/* pontilhado contínuo, sem emendas entre seções */
+.rr .canvas-bg{background:transparent!important}
+.rr .hero,.rr .c-hero{background:transparent!important}
+.rr #sobre{overflow:visible;overflow-x:clip}
+.rr #sobre::after{-webkit-mask-image:radial-gradient(closest-side,#000 55%,transparent);mask-image:radial-gradient(closest-side,#000 55%,transparent)}
+/* footer verde */
+.rr footer.ft{background-color:#0D2E23!important;background-image:radial-gradient(circle,rgba(168,230,207,.14) 1px,transparent 1.6px);background-size:22px 22px;border-top:1px solid rgba(238,248,243,.12);color:rgba(238,248,243,.72)}
+.rr[data-theme="dark"] footer.ft{background-color:#102920!important}
+.rr footer.ft .ft-in{color:rgba(238,248,243,.72)}
+.rr footer.ft a{color:#EEF8F3}
+.rr footer.ft a:hover{color:#A8E6CF}
+/* páginas de projeto: sem pontilhado */
+.rr{background-image:none!important}
+.rr footer.ft{background-image:none}
+/* menu mais transparente */
+.rr{--glass:rgba(247,250,248,.16)!important;--sheen:.22!important}
+.rr[data-theme="dark"]{--glass:rgba(18,36,28,.2)!important;--sheen:.08!important}
+.rr .hd.is-scrolled .hd-bar{-webkit-backdrop-filter:blur(14px) saturate(160%);backdrop-filter:blur(14px) saturate(160%)}
+/* verde mais claro no contato e footer */
+.rr .ct2{--ct-bg:#1B5E48}
+.rr[data-theme="dark"] .ct2{--ct-bg:#164A39}
+.rr footer.ft{background-color:#1B5E48!important}
+.rr[data-theme="dark"] footer.ft{background-color:#164A39!important}
+/* footer volta ao padrão claro */
+.rr footer.ft,.rr[data-theme="dark"] footer.ft{background-color:transparent!important;background-image:none!important;border-top:1px solid var(--line);color:var(--muted)}
+.rr footer.ft .ft-in{color:var(--muted)}
+.rr footer.ft a{color:var(--text)}
+.rr footer.ft a:hover{color:var(--accent-text)}
+
+/* footer mais compacto */
+.rr footer.ft{padding-top:20px!important;padding-bottom:20px!important}
+
+/* infos do projeto: colunas dividem a largura toda */
+@media (min-width:901px){.rr .facts{display:flex}.rr .facts .fact{flex:1 1 auto;min-width:0}.rr .facts .fact dd{text-wrap:pretty}.rr .facts .fact:nth-child(-n+3){flex-shrink:0}}
+@media (min-width:1200px){.rr .facts .fact:has(dd br){flex-shrink:0}}
+
+/* marca-texto dos pontos principais */
+.rr .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(247,213,78,.5) 46%,rgba(247,213,78,.5) 94%,transparent 94%);color:inherit;padding:0 .08em;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.rr[data-theme="dark"] .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(247,213,78,.24) 46%,rgba(247,213,78,.24) 94%,transparent 94%)}
+
+/* temporalidade: mercado, comparativo e impacto */
+.ct-vals{margin:24px 0 0;padding:18px 20px;border-radius:12px;border:1px solid var(--line);background:var(--surface)}
+.ct-vals .bars-t{margin:0 0 14px}
+.ct-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;align-items:baseline;padding:8px 0}
+.ct-row + .ct-row{border-top:1px solid var(--line)}
+.ct-row span{font-size:14px;font-weight:600}
+.ct-row b{font-size:14px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ct-row i{grid-column:1 / -1;height:6px;border-radius:999px;background:var(--mint-soft);overflow:hidden;position:relative}
+.ct-row i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);border-radius:999px;background:var(--primary)}
+.why-cards{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin:20px 0 0}
+.why-card{padding:20px;border-radius:12px;border:1px solid var(--line);background:var(--surface);display:grid;grid-template-columns:36px minmax(0,1fr);gap:6px 16px;align-items:start}
+.why-card .why-ico{grid-row:1 / span 2}
+.why-ico{width:36px;height:36px;border-radius:10px;background:var(--mint-soft);color:var(--accent-text);display:grid;place-items:center;font-weight:800;font-size:16px}
+.why-card h4{margin:0;font-size:16px;font-weight:800}
+.why-card p{margin:0;font-size:14px;line-height:1.6;color:var(--muted)}
+.bench-wrap{margin:20px 0 0;overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.bench{width:100%;min-width:540px;border-collapse:collapse;font-size:13px}
+.bench th{font-size:11px;font-weight:800;letter-spacing:.02em;color:var(--muted);text-align:center;padding:12px 4px;border-bottom:1px solid var(--line);white-space:nowrap}
+.bench th:first-child,.bench td:first-child{text-align:left;padding-left:14px;padding-right:8px}
+.bench th.is-us{color:var(--accent-text)}
+.bench td{text-align:center;padding:9px 4px;border-bottom:1px solid var(--line)}
+.bench tr:last-child td{border-bottom:0}
+.bench td.is-us{background:var(--mint-soft)}
+.bm{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;font-size:12px;font-weight:800}
+.bm.y{background:var(--mint);color:#0A3F2E}
+.bm.n{color:var(--muted);opacity:.7}
+.bench-notes{margin:16px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.bench-notes li::marker{color:var(--accent-text)}
+@media (max-width:900px){.why-cards{grid-template-columns:minmax(0,1fr)}}
+
+/* imagens ampliáveis */
+.zoom-thumb{all:unset;box-sizing:border-box;display:block;width:100%;position:relative;overflow:hidden;border-radius:12px;border:1px solid var(--line);cursor:zoom-in;background:#fff;box-shadow:0 20px 40px -28px var(--shadow-c)}
+.zoom-thumb.is-tall{max-height:440px}
+.zoom-thumb img{display:block;width:100%;height:auto;border:0!important;box-shadow:none!important;border-radius:0!important}
+.zoom-thumb.is-tall::after{content:"";position:absolute;left:0;right:0;bottom:0;height:45%;background:linear-gradient(to bottom,rgba(255,255,255,0),rgba(255,255,255,.96));pointer-events:none}
+.zoom-hint{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);z-index:1;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:var(--primary);color:#fff;font-size:14px;font-weight:700;white-space:nowrap;box-shadow:0 10px 20px -10px rgba(14,124,90,.7);transition:transform .2s,opacity .2s}
+.zoom-thumb:not(.is-tall) .zoom-hint{opacity:0}
+.zoom-thumb:not(.is-tall):hover .zoom-hint,.zoom-thumb:not(.is-tall):focus-visible .zoom-hint{opacity:1}
+@media (hover:none){.zoom-thumb:not(.is-tall) .zoom-hint{opacity:1}}
+.zoom-hint svg{width:16px;height:16px}
+.zoom-thumb:hover .zoom-hint{transform:translateX(-50%) translateY(-2px)}
+.zoom-thumb:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
+.zoom-ov{position:fixed;inset:0;z-index:100;background:rgba(8,20,15,.82);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);display:flex;justify-content:center;cursor:zoom-out}
+.zoom-scroll{width:min(1200px,100%);height:100%;overflow-y:auto;padding:64px 16px 32px;box-sizing:border-box;-webkit-overflow-scrolling:touch;display:flex;flex-direction:column}
+.zoom-scroll img{display:block;width:100%;height:auto;margin:auto 0;border-radius:10px;cursor:default;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.zoom-close{all:unset;position:fixed;top:16px;right:16px;z-index:101;width:44px;height:44px;border-radius:50%;background:#fff;color:#10221B;display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.3)}
+.zoom-close svg{width:18px;height:18px}
+.zoom-close:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
+
+.stats.stats-1{grid-template-columns:minmax(0,1fr)}
+.issues{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.issues li{position:relative;padding:14px 16px 14px 40px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-size:16px;line-height:1.6}
+.issues li::before{content:"";position:absolute;left:16px;top:22px;width:10px;height:10px;border-radius:50%;background:var(--primary)}
+
+/* temporalidade: gravações */
+.cs-vid{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#fff;box-shadow:0 20px 40px -28px var(--shadow-c)}
+</style>
+</head>
+<body>
+<div class="rr" data-tpl-data-theme="{{theme}}" data-ref="setRoot">
+<a class="skip" href="#conteudo">Skip to content</a>
+<header data-tpl-class="hd {{hdClass}}">
+  <div class="hd-bar">
+    <a class="brand" href="../../en/index.html" aria-label="Raquel Rebouças, home page">Raquel <em>Rebouças</em></a>
+    <nav class="hd-nav" aria-label="Main">
+      <a href="../../en/index.html" class="is-active" aria-current="page">Projects</a>
+      <a href="../../en/index.html">About me</a>
+      <a href="../../en/index.html">Writing</a>
+      <a href="../../en/index.html">Contact</a>
+    </nav>
+    <div class="hd-actions">
+      <nav class="lang-switch" aria-label="Language"><a href="../../cases/temporalidade-documental.html" lang="pt-BR" hreflang="pt-BR" title="Português">PT</a><a href="../../en/cases/temporalidade-documental.html" class="is-active" aria-current="page" lang="en" title="English">EN</a></nav>
+      <button class="icon-btn" type="button" data-on-click="toggleTheme" data-tpl-aria-label="{{themeLabel}}" data-tpl-title="{{themeLabel}}">
+        <dc-if data-if="isDark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg></dc-if>
+        <dc-if data-if="isLight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"></path></svg></dc-if>
+      </button>
+      <button class="icon-btn menu-btn" type="button" data-on-click="toggleMenu" data-tpl-aria-expanded="{{menuOpen}}" aria-controls="menu-mobile" data-tpl-aria-label="{{menuLabel}}">
+        <dc-if data-if="menuOpen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></dc-if>
+        <dc-if data-if="menuClosed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></dc-if>
+      </button>
+    </div>
+  </div>
+  <dc-if data-if="menuOpen">
+    <nav id="menu-mobile" class="hd-menu" aria-label="Menu">
+      <a href="../../en/index.html">Projects</a><a href="../../en/index.html">About me</a><a href="../../en/index.html">Writing</a><a href="../../en/index.html">Contact</a>
+    </nav>
+  </dc-if>
+</header>
+
+<main id="conteudo">
+  <section class="c-hero canvas-bg">
+    <div class="narrow">
+      <a class="back" href="../../en/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>Back to projects</a>
+      <div class="reveal">
+        <p class="c-kicker"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 1.5v13M11.5 1.5v13M1.5 4.5h13M1.5 11.5h13"></path></svg>Case 02 · 1Doc</p>
+        <h1 class="display c-title">Document <em>retention</em> schedules</h1>
+        <p class="c-summary">How we brought 1Doc to cover the full lifecycle of public records, from the retention schedule to final disposition, turning complex archival regulations into a clear digital flow for government agencies.</p>
+        <ul class="tags"><li>GovTech</li><li>Records management</li><li>Complex business rules</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="cover reveal">
+      <div class="cover-mock cover-window">
+        <div class="cover-screen">
+          <img src="../../assets/fila-destinacao.jpg" alt="1Doc Records Management screen, Disposition tab: disposition queue with filters for disposition, module and classification, and a list of eligible documents with their due dates.">
+        </div>
+      </div>
+    </div>
+
+    <dl class="facts reveal">
+      <div class="fact"><dt>Company</dt><dd>1Doc · Softplan</dd></div>
+      <div class="fact"><dt>My role</dt><dd>Product Designer</dd></div>
+      <div class="fact"><dt>Timeline</dt><dd>Q2 - 2026</dd></div>
+      <div class="fact"><dt>Team</dt><dd>Raquel Rebouças (Product Designer)<br>Karina Alves (Product Designer)<br>Marcele Litch (Product Designer)<br>Amanda Aragão (Product Manager)&nbsp;</dd></div>
+      
+    </dl>
+  </div>
+
+  <div class="narrow cs">
+    <section class="cs-sec reveal" aria-labelledby="s1"><div><span class="cs-num">01</span><h2 id="s1" class="cs-h">Context</h2></div><div class="cs-body">
+      <p>1Doc already offered part of a records management toolset through its Classification Plan, linked to each subject. However, <mark class="hl">the platform did not yet support the retention and disposition workflow, a functional gap compared with competitors in the market</mark>.</p>
+      <p>This opened an opportunity to evolve the product, extending support for the lifecycle of public records and meeting agencies’ needs around classification, retention periods and final disposition.</p>
+      <div class="cs-step">
+        <h3 class="cs-sub">Tenders outside our scope</h3>
+        <p>The market also showed how big the gap was. We mapped public records management (GED) tenders that 1Doc couldn’t bid on because it didn’t meet the tender requirements.</p>
+        <ul class="stats"><li><span class="stat-n">16</span><span class="stat-l">tenders mapped outside our scope, Jan to Aug 2026</span></li><li><span class="stat-n">11</span><span class="stat-l">digital records tenders, excluding 5 for physical records</span></li><li><span class="stat-n">~0.9</span><span class="stat-l">tender per month, on average</span></li></ul>
+        <div class="ct-vals" role="group" aria-label="Total contract value per client"><p class="bars-t">Total contract value per client</p><div class="ct-row"><span>Bariri City Council (SP)</span><b>R$ 186.000,00</b><i style="--w:21.3%" aria-hidden="true"></i></div><div class="ct-row"><span>Montes Claros City Council (MG)</span><b>R$ 841.853,80</b><i style="--w:96.6%" aria-hidden="true"></i></div><div class="ct-row"><span>Caxias do Sul City Council (RS)</span><b>R$ 871.915,78</b><i style="--w:100.0%" aria-hidden="true"></i></div></div>
+        <p class="callout" style="margin-top:20px">A potential market the product is missing today.</p>
+      </div>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s2"><div><span class="cs-num">02</span><h2 id="s2" class="cs-h">Problem</h2></div><div class="cs-body">
+      <p>Until now, 1Doc kept every single process issued on the platform, <mark class="hl">with no way to handle records disposition, something oversight bodies require</mark>. The Classification Plan existed, but classified documents followed no lifecycle: there were no retention periods, no appraisal and no disposal.</p>
+      <p class="callout">In practice, municipalities couldn’t carry out proper records management, and every document was stored indefinitely.</p>
+      <figure class="cs-fig">
+        <button type="button" class="zoom-thumb" data-on-click="openZoom" data-zoom="../../assets/pcd-legado.jpg" aria-label="Enlarge image"><img src="../../assets/pcd-legado.jpg" alt="1Doc’s legacy Document Classification Plan screen, showing the tree of functions, subfunctions, activities and documents with their codes." loading="lazy"><span class="zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4.2-4.2M11 8.5v5M8.5 11h5"></path></svg>Click to enlarge</span></button>
+        <figcaption>Before: the legacy Classification Plan organized the codes but didn’t define what happened to a document afterward.</figcaption>
+      </figure>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s3"><div><span class="cs-num">03</span><h2 id="s3" class="cs-h">Process and discovery</h2></div><div class="cs-body">
+      <div class="cs-step">
+        <h3 class="cs-sub">CSD matrix</h3>
+        <p>We started with a CSD matrix (Certainties, Suppositions and Doubts) to surface the rules and open questions around records disposition in the public sector: which laws apply, who approves disposal, and what has to happen before a document can be destroyed.</p>
+        <figure class="cs-fig"><button type="button" class="zoom-thumb" data-on-click="openZoom" data-zoom="../../assets/matriz-csd.jpg" aria-label="Enlarge image"><img src="../../assets/matriz-csd.jpg" alt="CSD matrix in three columns: Certainties (green), Suppositions (orange) and Doubts (pink), with sticky notes about retention laws, the CPAD, storage and disposal rules." loading="lazy"><span class="zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4.2-4.2M11 8.5v5M8.5 11h5"></path></svg>Click to enlarge</span></button><figcaption>CSD matrix with the project’s initial certainties, suppositions and doubts.</figcaption></figure>
+      </div>
+      <div class="cs-step">
+        <h3 class="cs-sub">Competitive benchmarking</h3>
+        <p>We mapped competitors’ features to understand how the market handled records retention, which steps made up their workflows and which capabilities could inspire 1Doc’s evolution.</p>
+        <figure class="cs-fig"><button type="button" class="zoom-thumb is-tall" data-on-click="openZoom" data-zoom="../../assets/benchmarking.jpg" aria-label="Enlarge image"><img src="../../assets/benchmarking.jpg" alt="Benchmark of SEI, OM30, Taugor GED and Arquivar: a description of each solution, its weaknesses, and a retention module table marking Yes, Partial or No for each feature." loading="lazy"><span class="zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4.2-4.2M11 8.5v5M8.5 11h5"></path></svg>Click to enlarge</span></button><figcaption>Comparison of the retention modules in SEI, OM30, Taugor GED and Arquivar.</figcaption></figure>
+      </div>
+      <div class="cs-step">
+        <h3 class="cs-sub">Mapping the SEI workflow</h3>
+        <p>We mapped the entire workflow of SEI (the Brazilian federal government’s electronic records system) to <mark class="hl">make sure 1Doc would offer, at a minimum, what this free federal software already gives municipalities</mark>.</p>
+        <figure class="cs-fig"><button type="button" class="zoom-thumb is-tall" data-on-click="openZoom" data-zoom="../../assets/fluxo-sei.jpg" aria-label="Enlarge image"><img src="../../assets/fluxo-sei.jpg" alt="Swimlane flowchart of the SEI Records Management module (System, User/Archivist, CPAD and Official Gazette), covering archiving, retrieval, appraisal and disposition through to disposal." loading="lazy"><span class="zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4.2-4.2M11 8.5v5M8.5 11h5"></path></svg>Click to enlarge</span></button><figcaption>Workflow of the SEI Records Management module, from archiving to disposal, by role.</figcaption></figure>
+      </div>
+      <div class="cs-step">
+        <h3 class="cs-sub">Requirements gathering</h3>
+        <p>We researched and structured the rules the federal government requires for records disposition, understanding each step, condition, dependency and edge case. The goal was to <mark class="hl">turn a complex process governed by archival regulations into clear requirements</mark> for a digital solution tailored to the platform’s module- and issuance-based model.</p>
+      </div>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s4"><div><span class="cs-num">04</span><h2 id="s4" class="cs-h">Solution</h2></div><div class="cs-body">
+      <p>The design built on 1Doc’s legacy interface. That decision was driven by the complexity of the business rules and the urgency of the launch, since the platform redesign is still under way. <mark class="hl">The proposal covers the main stages of the records retention lifecycle, from setting retention periods to final disposition.</mark></p>
+      <ol class="flow">
+        <li><strong>Records retention schedule.</strong> Setting up retention periods for the active and semi-active phases, plus the final disposition of each document class, according to each agency’s rules.</li>
+        <li><strong>Link to the Classification Plan.</strong> The rules connect to the codes and classes of the existing plan. The solution builds on the current structure and extends it, tying classification to how long documents are kept and how they are disposed of.</li>
+        <li><strong>Disposition queue.</strong> Brings together the items eligible for disposal or permanent retention, with a consolidated view of what needs to be appraised.</li>
+        <li><strong>Disposal lists.</strong> Users select eligible documents and processes, organize them into formal lists and review everything before submitting it for approval.</li>
+        <li><strong>CPAD approval.</strong> The workflow automatically generates the records of official acts and routes items to the committee for signature at each step. It also lets agencies publish the notices directly in 1DOM, 1Doc’s Official Gazette, if they have the product.</li>
+        <li><strong>Final disposition.</strong> Once approved, users carry out the disposal of authorized items or transfer documents to permanent retention.</li>
+        <li><strong>History and traceability.</strong> A record of everything that was disposed of or transferred to the archive, including the items and the steps taken, supporting transparency and accountability to oversight bodies.</li>
+      </ol>
+      <figure class="cs-fig">
+        <video class="cs-vid" poster="../../assets/temp-listas-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Recording of the List management tab: disposal lists with the included documents, each document’s class, and the actions to add documents, delete the list, and generate the list and send it for approval." width="1200" height="606"><source src="../../assets/temp-listas.webm" type="video/webm"><source src="../../assets/temp-listas.mp4" type="video/mp4"></video>
+        <figcaption>List management: users review the documents in each list before generating it and sending it for approval.</figcaption>
+      </figure>
+      <figure class="cs-fig">
+        <video class="cs-vid" poster="../../assets/temp-aprovacao-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Recording of the Approval tab: disposal and transfer lists awaiting signature, with each step’s history and the actions to void the list, generate the notice and transfer documents." width="1200" height="629"><source src="../../assets/temp-aprovacao.webm" type="video/webm"><source src="../../assets/temp-aprovacao.mp4" type="video/mp4"></video>
+        <figcaption>Approval: each list shows its signature status and unlocks the next step, such as generating the notice or transferring the documents.</figcaption>
+      </figure>
+      <figure class="cs-fig">
+        <button type="button" class="zoom-thumb is-tall" data-on-click="openZoom" data-zoom="../../assets/fila-destinacao.jpg" aria-label="Enlarge image"><img src="../../assets/fila-destinacao.jpg" alt="Disposition queue in the new Records Management tab, with counters for Disposition queue, List management, Approval, Final disposition and History." loading="lazy"><span class="zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4.2-4.2M11 8.5v5M8.5 11h5"></path></svg>Click to enlarge</span></button>
+        <figcaption>After: Records Management brings together the disposition queue, lists, approval, final disposition and history.</figcaption>
+      </figure>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s5"><div><span class="cs-num">05</span><h2 id="s5" class="cs-h">Validation</h2></div><div class="cs-body">
+      <p>Using a working prototype built with the help of Claude, <mark class="hl">we validated the flow with a 1Doc sales analyst who holds a degree in archival science</mark>, to confirm that every archival rule was met.</p>
+      <p>We also ran 4 interviews with 1Doc customers: admin users who sit on their municipality’s CPAD (Permanent Document Appraisal Committee). <mark class="hl">The flow was validated with strong approval.</mark></p>
+      <ul class="stats">
+        <li><span class="stat-n">4</span><span class="stat-l">interviews with CPAD members</span></li>
+        <li><span class="stat-n">1</span><span class="stat-l">validation with an archivist</span></li>
+        <li><span class="stat-n">7</span><span class="stat-l">lifecycle stages covered</span></li>
+      </ul>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s7"><div><span class="cs-num">06</span><h2 id="s7" class="cs-h">Why this delivery matters</h2></div><div class="cs-body">
+      <p>The delivery brings 1Doc closer to legal requirements and the SIGAD model, and sets it apart from tools that only classify.</p>
+      <div class="why-cards"><article class="why-card"><span class="why-ico" aria-hidden="true">§</span><h4>Legal compliance in tenders</h4><p>Law No. 8,159/1991 and e-ARQ Brasil require public agencies to keep a Classification Plan and a Retention Schedule. 1Doc now meets this within the platform itself.</p></article><article class="why-card"><span class="why-ico" aria-hidden="true">◎</span><h4>Closer to SIGAD</h4><p>The platform used to only classify. Now it calculates due dates, builds the queue of what needs appraisal and organizes the lists, moving closer to archival management guidelines.</p></article><article class="why-card"><span class="why-ico" aria-hidden="true">▲</span><h4>Ahead of competitors</h4><p>Players without a Retention Schedule or automatic search for expired items fall behind. Less manual work, stronger legal compliance and a strong differentiator in the public sector.</p></article></div>
+      <div class="cs-step" style="margin-top:36px">
+        <h3 class="cs-sub">Feature comparison</h3>
+        <div class="bench-wrap"><table class="bench" aria-label="Records management feature comparison between 1Doc, SEI, Aprova, FlowDocs, SOGOV and Cidade360"><thead><tr><th scope="col">Feature</th><th scope="col" class="is-us">1Doc</th><th scope="col">SEI</th><th scope="col">Aprova</th><th scope="col">FlowDocs</th><th scope="col">SOGOV</th><th scope="col">Cidade360</th></tr></thead><tbody><tr><td>Classification Plan</td><td class="is-us"><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td></tr><tr><td>Visual classification management at issuance</td><td class="is-us"><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td></tr><tr><td>Search by classification</td><td class="is-us"><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td></tr><tr><td>Retention management</td><td class="is-us"><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td></tr><tr><td>Lifecycle phases: active to permanent retention</td><td class="is-us"><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td></tr><tr><td>Creates disposal lists</td><td class="is-us"><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td></tr><tr><td>Two-factor approval for disposal</td><td class="is-us"><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td></tr><tr><td>Official gazette integration</td><td class="is-us"><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td></tr><tr><td>Official act generation</td><td class="is-us"><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td></tr><tr><td>Record of disposed documents</td><td class="is-us"><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td></tr><tr><td>List history</td><td class="is-us"><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td></tr><tr><td>User hierarchy</td><td class="is-us"><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm y" aria-label="yes">✓</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td><td><span class="bm n" aria-label="no">✕</span></td></tr></tbody></table></div>
+        <ul class="bench-notes"><li>SEI positions itself as the reference for digital processes.</li><li><mark class="hl">1Doc is the only one that goes all the way to the official act and the Official Gazette (1DOM).</mark></li><li>Aprova looks like 1Doc before this delivery: it classifies, but doesn’t manage retention.</li><li>Cidade360, SOGOV, GDOC and FlowDocs don’t have this feature.</li></ul>
+      </div>
+    </div></section>
+
+    <section class="cs-sec reveal" aria-labelledby="s6"><div><span class="cs-num">07</span><h2 id="s6" class="cs-h">Results</h2></div><div class="cs-body">
+      <p>In the first month with the new feature, 1Doc closed a contract with <mark class="hl">Juazeiro City Hall</mark>.</p>
+      <ul class="stats stats-1"><li><span class="stat-n">R$ 288k</span><span class="stat-l">annual value of the contract with Juazeiro City Hall, closed in the product’s first month</span></li></ul>
+      <ul class="issues"><li><strong>Market leadership on the topic.</strong> 1Doc now offers a more complete retention lifecycle than its competitors, going all the way to the official act and the Official Gazette.</li><li><strong>More competitive in tenders.</strong> With retention management, 1Doc becomes more competitive and can bid on tenders that used to be outside its scope.</li></ul>
+    </div></section>
+  </div>
+
+  <div class="wrap next-wrap">
+    <a class="next reveal" href="../../en/cases/arvore-de-documentos.html">
+      <div><p class="next-k">Next project →</p><p class="next-t">Process Document Tree</p></div>
+      <span class="next-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+    </a>
+  </div>
+</main>
+
+<dc-if data-if="zoomOpen">
+  <div class="zoom-ov" role="dialog" aria-modal="true" aria-label="Enlarged image" data-on-click="closeZoom">
+    <button type="button" class="zoom-close" data-on-click="closeZoom" aria-label="Close image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+    <div class="zoom-scroll"><img data-tpl-src="{{zoomSrc}}" data-tpl-alt="{{zoomAlt}}"></div>
+  </div>
+</dc-if>
+
+
+<footer class="ft">
+  <div class="wrap ft-in">
+    <p style="margin: 0">© 2026 Raquel Rebouças</p>
+    <p style="margin: 0">São Paulo, Brazil</p>
+  </div>
+</footer>
+</div>
+<script src="../../assets/dc-runtime.js"></script>
+<script>
+class Component extends DCLogic {
+  state = { theme: null, stored: null, sys: 'light', scrolled: false, menuOpen: false, zoomOpen: false, zoomSrc: '', zoomAlt: '' };
+  setRoot = (el) => { if (el) this.rootEl = el; };
+  resolveTheme() {
+    const s = this.state || {};
+    if (s.theme) return s.theme;
+    const p = this.props && this.props.themePreview;
+    if (p === 'light' || p === 'dark') return p;
+    return s.stored || s.sys || 'light';
+  }
+  toggleTheme = () => {
+    const next = this.resolveTheme() === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('rr-theme', next); } catch (e) {}
+    this.setState({ theme: next });
+  };
+  toggleMenu = () => { this.setState({ menuOpen: !this.state.menuOpen }); };
+  openZoom = (e) => {
+    const t = e && (e.currentTarget && e.currentTarget.getAttribute ? e.currentTarget : e.target);
+    const btn = t && t.closest ? t.closest('[data-zoom]') : null;
+    if (!btn) return;
+    const im = btn.querySelector('img');
+    this.setState({ zoomOpen: true, zoomSrc: im ? im.getAttribute('src') : btn.getAttribute('data-zoom'), zoomAlt: im ? im.getAttribute('alt') : '' });
+    try { document.documentElement.style.overflow = 'hidden'; } catch (err) {}
+  };
+  closeZoom = (e) => {
+    const t = e && e.target;
+    if (t && t.closest && t.closest('.zoom-scroll img') && !t.closest('.zoom-close')) return;
+    this.setState({ zoomOpen: false }); try { document.documentElement.style.overflow = ''; } catch (err) {}
+  };
+  componentDidMount() {
+    this.cleanups = [];
+    const mm = (q) => (window.matchMedia ? window.matchMedia(q) : { matches: false });
+    const reduce = mm('(prefers-reduced-motion: reduce)').matches;
+    let stored = null;
+    try { stored = localStorage.getItem('rr-theme'); } catch (e) {}
+    if (stored !== 'light' && stored !== 'dark') stored = null;
+    const mq = mm('(prefers-color-scheme: dark)');
+    const onMq = (e) => this.setState({ sys: e.matches ? 'dark' : 'light' });
+    if (mq.addEventListener) { mq.addEventListener('change', onMq); this.cleanups.push(() => mq.removeEventListener('change', onMq)); }
+    this.setState({ stored: stored, sys: mq.matches ? 'dark' : 'light' });
+    const onKey = (e) => { if (e.key === 'Escape' && this.state.zoomOpen) this.closeZoom(); };
+    document.addEventListener('keydown', onKey);
+    this.cleanups.push(() => document.removeEventListener('keydown', onKey));
+    const onScroll = (e) => {
+      let y = window.scrollY || document.documentElement.scrollTop || 0;
+      const t = e && e.target;
+      if (t && t !== document && typeof t.scrollTop === 'number') y = Math.max(y, t.scrollTop);
+      const sc = y > 24;
+      if (sc !== this.state.scrolled) this.setState({ scrolled: sc });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+    this.cleanups.push(() => { window.removeEventListener('scroll', onScroll); document.removeEventListener('scroll', onScroll, true); });
+    onScroll();
+    const root = this.rootEl || document.querySelector('.rr');
+    if (root && !reduce && 'IntersectionObserver' in window && (window.innerHeight || 0) < 1400) {
+      root.classList.add('js-reveal');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+      }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+      root.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+      this.cleanups.push(() => io.disconnect());
+    }
+  }
+  componentWillUnmount() { (this.cleanups || []).forEach((f) => { try { f(); } catch (e) {} }); }
+  renderVals() {
+    const s = this.state || {};
+    const theme = this.resolveTheme();
+    return {
+      setRoot: this.setRoot, theme: theme,
+      isDark: theme === 'dark', isLight: theme !== 'dark',
+      themeLabel: theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme',
+      toggleTheme: this.toggleTheme,
+      hdClass: s.scrolled ? 'is-scrolled' : '',
+      menuOpen: !!s.menuOpen, menuClosed: !s.menuOpen,
+      menuLabel: s.menuOpen ? 'Close menu' : 'Open menu',
+      toggleMenu: this.toggleMenu,
+      zoomOpen: !!s.zoomOpen, zoomSrc: s.zoomSrc || '', zoomAlt: s.zoomAlt || '', openZoom: this.openZoom, closeZoom: this.closeZoom
+    };
+  }
+}
+DC.mount(Component, {"themePreview": "auto"});
+</script>
+</body>
+</html>
