@@ -491,7 +491,7 @@ class Component extends DCLogic {
       root.classList.add('js-reveal');
       const io = new IntersectionObserver((entries) => {
         entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
-      }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+      }, { threshold: 0, rootMargin: '0px 0px -6% 0px' });
       root.querySelectorAll('.reveal').forEach((el) => io.observe(el));
       this.cleanups.push(() => io.disconnect());
     }
