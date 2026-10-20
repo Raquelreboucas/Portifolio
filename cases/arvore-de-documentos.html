@@ -331,9 +331,10 @@ a{color:#0E7C5A}a:hover{color:#0A6447}
 .vt th:first-child,.vt td:first-child{text-align:left;font-weight:700}
 @media (max-width:600px){.stats.stats-4{grid-template-columns:minmax(0,1fr)}.tk-plot{gap:4px;height:180px}.tk-labels{gap:4px}.tk-labels span{font-size:9px}.tk-v{font-size:11px}.tk-avg b{font-size:10px}}
 
+.cs-vid{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#fff;box-shadow:0 20px 40px -28px var(--shadow-c)}
 /* marca-texto dos pontos principais */
-.rr .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(247,213,78,.5) 46%,rgba(247,213,78,.5) 94%,transparent 94%);color:inherit;padding:0 .08em;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.rr[data-theme="dark"] .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(247,213,78,.24) 46%,rgba(247,213,78,.24) 94%,transparent 94%)}
+.rr .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(92,199,158,.34) 46%,rgba(92,199,158,.34) 94%,transparent 94%);color:inherit;font-weight:600;padding:0 .08em;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.rr[data-theme="dark"] .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(52,211,153,.32) 46%,rgba(52,211,153,.32) 94%,transparent 94%);color:#f4fff9}
 </style>
 </head>
 <body>
@@ -398,6 +399,9 @@ a{color:#0E7C5A}a:hover{color:#0A6447}
     <section class="cs-sec reveal" aria-labelledby="s1"><div><span class="cs-num">01</span><h2 id="s1" class="cs-h">Contexto</h2></div><div class="cs-body">
       <p>A Árvore de Documentos converte e concatena um processo nativo da 1Doc, com todos os seus anexos, em um único PDF compilado e paginado.</p>
       <p>Ela foi criada para atender a uma necessidade dos municípios: gerar processos para prestação de contas a entidades, órgãos e ferramentas externas, incluindo os órgãos de controle.</p>
+      <p>Antes deste projeto, a Árvore já existia em duas versões: a legado, do visual antigo da 1Doc, e um redesign feito na migração para o novo visual.</p>
+      <figure class="cs-fig"><img class="cs-vid" src="../assets/arvore-legado.gif" alt="Gravação da versão legado da Árvore do Memorando: o usuário escolhe o tipo de árvore entre versão completa, completa com verificação de autenticidade e personalizada, vê os documentos do processo e solicita a geração, que retorna uma mensagem de processamento." loading="lazy" width="1200" height="515"><figcaption>Versão legado da Árvore do Memorando: escolha do tipo de árvore, documentos do processo e solicitação da geração.</figcaption></figure>
+      <figure class="cs-fig"><img class="cs-vid" src="../assets/arvore-redesign.gif" alt="Gravação do redesign da Árvore no novo visual da 1Doc: o usuário escolhe o tipo de árvore, seleciona os despachos por tipo, gera a árvore e faz o download." loading="lazy" width="1200" height="523"><figcaption>Redesign da Árvore no novo visual, antes deste projeto: tipos de árvore, seleção de documentos por tipo, geração e download.</figcaption></figure>
     </div></section>
 
     <section class="cs-sec reveal" aria-labelledby="s2"><div><span class="cs-num">02</span><h2 id="s2" class="cs-h">Problema</h2></div><div class="cs-body">
@@ -482,7 +486,7 @@ a{color:#0E7C5A}a:hover{color:#0A6447}
         <h3 class="cs-sub">Principais padrões encontrados nos comentários de feedback e sugestões</h3>
         <ol class="patterns">
           <li><span class="p-k">Performance</span><strong>Tempo e limite de geração</strong><p>Demora no processamento e limite de gerações que não atende à demanda diária.</p></li>
-          <li><span class="p-k">Formatos</span><strong>Anexos não-PDF não aparecem</strong><p><mark class="hl">Usuários relatam que imagens, Word e ZIP também deveriam entrar na Árvore</mark>, pois fazem parte dos processos.</p></li>
+          <li><span class="p-k">Formatos</span><strong>Anexos não-PDF não aparecem</strong><p>Usuários relatam que imagens, Word e ZIP também deveriam entrar na Árvore, pois fazem parte dos processos.</p></li>
           <li><span class="p-k">Árvore personalizada</span><strong>Seleção com autenticidade</strong><p>Escolher despachos e anexos mantendo a verificação das assinaturas, hoje as assinaturas só ficam disponível na versão completa</p></li>
           <li><span class="p-k">Campos fixos</span><strong>Campos fixos fora do PDF</strong><p>Bug. Textos e parágrafos preenchidos nos assuntos não aparecem, dificultando entender o processo.</p></li>
           <li><span class="p-k">Privacidade</span><strong>Necessidade de anonimização</strong><p>Mascarar informações pessoais fornecidas no processo de acordo com a LGPD.</p></li>
@@ -510,7 +514,7 @@ a{color:#0E7C5A}a:hover{color:#0A6447}
           <li class="ok"><span aria-hidden="true">✓</span>Atende quando o cliente quer pesquisar no documento.</li><li class="no"><span aria-hidden="true">✕</span>Não atende quem precisa de outras configurações, como escolher os arquivos da Árvore ou incluir a versão de verificação.</li>
           <li class="no"><span aria-hidden="true">✕</span>Não resolve os problemas de geração. Ainda é preciso exportar o processo para os Tribunais,</li>
         </ul>
-        <figure class="cs-fig"><div class="fig-ph" role="img" aria-label="Espaço para a imagem do protótipo da pasta digital">[Imagem: protótipo da pasta digital]</div><figcaption>Protótipo da pasta digital apresentado aos clientes.</figcaption></figure>
+        <figure class="cs-fig"><img src="../assets/pasta-digital.jpg" alt="Protótipo da pasta digital na 1Doc: painel lateral com o memorando e seus despachos em árvore e, ao lado, o visualizador do documento com paginação e controles de zoom." loading="lazy" width="1919" height="831" style="width:100%;height:auto;border-radius:12px;border:1px solid var(--line,rgba(0,0,0,.08));display:block"><figcaption>Protótipo da pasta digital apresentado aos clientes: os documentos do processo ficam organizados em árvore e o visualizador mostra o número de páginas de cada um.</figcaption></figure>
       </div>
     </div></section>
 
@@ -600,10 +604,9 @@ a{color:#0E7C5A}a:hover{color:#0A6447}
         <li><strong>POC de anonimização.</strong> Investigar como mascarar dados pessoais e quais dados entram na regra da LGPD.</li>
         <li><strong>Árvores antigas.</strong> Entender quais árvores geradas há muito tempo ainda são acessadas, para calibrar o tempo de armazenamento.</li>
         <li><strong>Downloads.</strong> Medir quantas vezes cada árvore é baixada e se as pessoas voltam para baixar de novo.</li>
+        <li><strong>Custo de armazenamento.</strong> Estimar a economia no custo de armazenamento das árvores.</li>
       </ul>
     </div></section>
-
-    <section class="cs-sec reveal" aria-labelledby="s6"><div><span class="cs-num">07</span><h2 id="s6" class="cs-h">Aprendizados</h2></div><div class="cs-body"><p class="ph">[O que você levaria para o próximo projeto e o que faria diferente.]</p></div></section>
   </div>
 
   <div class="wrap next-wrap">

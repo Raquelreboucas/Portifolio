@@ -279,8 +279,14 @@ a{color:#0E7C5A}a:hover{color:#0A6447}
 .rr .next-wrap{padding-top:clamp(56px,7vw,96px)}
 
 /* marca-texto dos pontos principais */
-.rr .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(247,213,78,.5) 46%,rgba(247,213,78,.5) 94%,transparent 94%);color:inherit;padding:0 .08em;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.rr[data-theme="dark"] .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(247,213,78,.24) 46%,rgba(247,213,78,.24) 94%,transparent 94%)}
+.rr .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(92,199,158,.34) 46%,rgba(92,199,158,.34) 94%,transparent 94%);color:inherit;font-weight:600;padding:0 .08em;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.rr[data-theme="dark"] .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(52,211,153,.32) 46%,rgba(52,211,153,.32) 94%,transparent 94%);color:#f4fff9}
+
+/* aviso em construção */
+.rr .wip-note{display:flex;align-items:flex-start;gap:10px;max-width:720px;margin:24px 0 0;padding:12px 16px;border-radius:12px;background:#FFF4D6;color:#5C3F00;border:1px solid rgba(122,83,0,.2);font-size:15px;line-height:1.5}
+.rr .wip-note b{font-weight:700;white-space:nowrap}
+.rr .wip-note::before{content:"";width:8px;height:8px;border-radius:50%;background:#E0A100;flex:none;margin-top:8px}
+.rr[data-theme="dark"] .wip-note{background:#2E260C;color:#F5E3A6;border-color:rgba(247,213,78,.28)}
 </style>
 </head>
 <body>
@@ -323,6 +329,7 @@ a{color:#0E7C5A}a:hover{color:#0A6447}
         <h1 class="display c-title"><em>Signature</em> 2.0</h1>
         <p class="c-summary">Designing and evolving 1Doc’s new Electronic Signature journey, including integration with Gov.br digital signatures.</p>
         <ul class="tags"><li>Electronic signature</li><li>Gov.br</li></ul>
+        <p class="wip-note" role="note"><span><b>Work in progress.</b> I’m still organizing and structuring this case, so some sections and images may be missing.</span></p>
       </div>
     </div>
   </section>
@@ -356,7 +363,7 @@ a{color:#0E7C5A}a:hover{color:#0A6447}
     </div></section>
     <section class="cs-sec reveal" aria-labelledby="s2"><div><span class="cs-num">02</span><h2 id="s2" class="cs-h">The previous signature model</h2></div><div class="cs-body">
       <p>Since the platform was first built, signing worked as a single step: when a process was sent for signature, <mark class="hl">every document was merged into one PDF, and every participant signed that same content</mark>.</p>
-        <figure class="cs-fig"><div class="fig-ph" role="img" aria-label="Image: legacy signer">[Image: legacy signer]</div><figcaption>[Caption: the previous signer, with every document merged into a single PDF]</figcaption></figure>
+        <figure class="cs-fig"><img src="../../assets/assinatura-hoje.jpg" alt="Request signatures screen in the previous 1Doc model: internal users and external contacts fields, a sequential order option and the signer list with order, role and participation, not tied to specific documents." loading="lazy" width="888" height="714" style="width:100%;height:auto;border-radius:12px;border:1px solid var(--line);display:block"><figcaption>Requesting signatures in the previous model: signers are set for the process as a whole, with no way to choose which documents each one signs.</figcaption></figure>
       <p>The model simplified some flows, but it didn’t reflect the complexity of real processes, where different people are responsible for different documents.</p>
       <p>This limitation came up often in our relationship with customers. Being able to sign documents individually <mark class="hl">was among the most frequent requests received by the Customer Success team</mark>, and the topic also weighed on the dissatisfaction recorded in CSAT surveys.</p>
       <p>To understand these frustrations in depth, <mark class="hl">we talked to 5 customers</mark>.</p>

@@ -331,9 +331,10 @@ a{color:#0E7C5A}a:hover{color:#0A6447}
 .vt th:first-child,.vt td:first-child{text-align:left;font-weight:700}
 @media (max-width:600px){.stats.stats-4{grid-template-columns:minmax(0,1fr)}.tk-plot{gap:4px;height:180px}.tk-labels{gap:4px}.tk-labels span{font-size:9px}.tk-v{font-size:11px}.tk-avg b{font-size:10px}}
 
+.cs-vid{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#fff;box-shadow:0 20px 40px -28px var(--shadow-c)}
 /* marca-texto dos pontos principais */
-.rr .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(247,213,78,.5) 46%,rgba(247,213,78,.5) 94%,transparent 94%);color:inherit;padding:0 .08em;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.rr[data-theme="dark"] .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(247,213,78,.24) 46%,rgba(247,213,78,.24) 94%,transparent 94%)}
+.rr .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(92,199,158,.34) 46%,rgba(92,199,158,.34) 94%,transparent 94%);color:inherit;font-weight:600;padding:0 .08em;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.rr[data-theme="dark"] .cs mark.hl{background:linear-gradient(to bottom,transparent 46%,rgba(52,211,153,.32) 46%,rgba(52,211,153,.32) 94%,transparent 94%);color:#f4fff9}
 </style>
 </head>
 <body>
@@ -398,6 +399,9 @@ a{color:#0E7C5A}a:hover{color:#0A6447}
     <section class="cs-sec reveal" aria-labelledby="s1"><div><span class="cs-num">01</span><h2 id="s1" class="cs-h">Context</h2></div><div class="cs-body">
       <p>The Document Tree converts and merges a native 1Doc process, along with all of its attachments, into a single compiled, paginated PDF.</p>
       <p>It was built to meet a core municipal need: producing processes for accountability submissions to external entities, agencies, and systems, including oversight and audit bodies.</p>
+      <p>Before this project, the Document Tree already existed in two versions: the legacy one, from 1Doc's old interface, and a redesign made during the migration to the new interface.</p>
+      <figure class="cs-fig"><img class="cs-vid" src="../../assets/arvore-legado.gif" alt="Recording of the legacy Memo Tree: the user picks the tree type among full version, full with authenticity check and custom, sees the process documents and requests generation, which returns a processing message." loading="lazy" width="1200" height="515"><figcaption>Legacy version of the Memo Tree: choosing the tree type, the process documents and requesting generation.</figcaption></figure>
+      <figure class="cs-fig"><img class="cs-vid" src="../../assets/arvore-redesign.gif" alt="Recording of the Tree redesign in the new 1Doc interface: the user picks the tree type, selects dispatches by type, generates the tree and downloads it." loading="lazy" width="1200" height="523"><figcaption>Redesign of the Tree in the new interface, before this project: tree types, selecting documents by type, generation and download.</figcaption></figure>
     </div></section>
 
     <section class="cs-sec reveal" aria-labelledby="s2"><div><span class="cs-num">02</span><h2 id="s2" class="cs-h">Problem</h2></div><div class="cs-body">
@@ -482,7 +486,7 @@ a{color:#0E7C5A}a:hover{color:#0A6447}
         <h3 class="cs-sub">Key patterns in feedback and suggestion comments</h3>
         <ol class="patterns">
           <li><span class="p-k">Performance</span><strong>Generation time and limits</strong><p>Slow processing and a generation cap that doesn’t meet daily demand.</p></li>
-          <li><span class="p-k">Formats</span><strong>Non-PDF attachments are left out</strong><p><mark class="hl">Users say images, Word files, and ZIPs should also be included in the Document Tree</mark>, since they are part of the processes.</p></li>
+          <li><span class="p-k">Formats</span><strong>Non-PDF attachments are left out</strong><p>Users say images, Word files, and ZIPs should also be included in the Document Tree, since they are part of the processes.</p></li>
           <li><span class="p-k">Custom tree</span><strong>Selection with authenticity</strong><p>Choosing specific dispatches and attachments while keeping signature verification; today, signatures are only available in the full version.</p></li>
           <li><span class="p-k">Fixed fields</span><strong>Fixed fields missing from the PDF</strong><p>Bug. Text and paragraphs filled in under subjects don’t appear, making the process hard to follow.</p></li>
           <li><span class="p-k">Privacy</span><strong>Need for anonymization</strong><p>Masking personal information provided in the process, in line with the LGPD.</p></li>
@@ -510,7 +514,7 @@ a{color:#0E7C5A}a:hover{color:#0A6447}
           <li class="ok"><span aria-hidden="true">✓</span>Works when the client wants to search within the document.</li><li class="no"><span aria-hidden="true">✕</span>Doesn’t work for those who need other settings, such as choosing which files go into the Document Tree or including the verification version.</li>
           <li class="no"><span aria-hidden="true">✕</span>Doesn’t solve the generation problems. The process still has to be exported for the audit courts.</li>
         </ul>
-        <figure class="cs-fig"><div class="fig-ph" role="img" aria-label="Placeholder for the digital folder prototype image">[Image: digital folder prototype]</div><figcaption>Digital folder prototype shown to clients.</figcaption></figure>
+        <figure class="cs-fig"><img src="../../assets/pasta-digital.jpg" alt="Digital folder prototype in 1Doc: side panel with the memo and its dispatches as a tree, next to the document viewer with pagination and zoom controls." loading="lazy" width="1919" height="831" style="width:100%;height:auto;border-radius:12px;border:1px solid var(--line,rgba(0,0,0,.08));display:block"><figcaption>Digital folder prototype shown to clients: the process documents are organized as a tree, and the viewer shows the page count for each one.</figcaption></figure>
       </div>
     </div></section>
 
@@ -600,10 +604,9 @@ a{color:#0E7C5A}a:hover{color:#0A6447}
         <li><strong>Anonymization POC.</strong> Investigate how to mask personal data and which data falls under LGPD rules.</li>
         <li><strong>Older trees.</strong> Understand which trees generated long ago are still accessed, to calibrate the storage period.</li>
         <li><strong>Downloads.</strong> Measure how many times each tree is downloaded and whether people come back to download it again.</li>
+        <li><strong>Storage cost.</strong> Estimate the savings in tree storage costs.</li>
       </ul>
     </div></section>
-
-    <section class="cs-sec reveal" aria-labelledby="s6"><div><span class="cs-num">07</span><h2 id="s6" class="cs-h">Learnings</h2></div><div class="cs-body"><p class="ph">[What you would take to the next project and what you would do differently.]</p></div></section>
   </div>
 
   <div class="wrap next-wrap">

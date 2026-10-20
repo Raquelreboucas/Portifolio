@@ -699,6 +699,11 @@ html{scroll-behavior:auto}
 
 /* trajetória: título em 1 linha no celular */
 @media (max-width:600px){.rr #trajetoria-title .br-d{display:none}.rr #trajetoria-title{white-space:nowrap;font-size:clamp(28px,9.4vw,44px)}}
+
+/* tag em construção */
+.rr .case-card .case-tags li.wip{background:#FFF4D6;color:#7A5300;border-color:rgba(122,83,0,.2);display:inline-flex;align-items:center;gap:6px}
+.rr .case-tags li.wip::before{content:"";width:7px;height:7px;border-radius:50%;background:#E0A100;flex:none}
+.rr[data-theme="dark"] .case-card .case-tags li.wip{background:#3A2F0B;color:#F7D54E;border-color:rgba(247,213,78,.3)}
 </style>
 </head>
 <body>
@@ -821,7 +826,7 @@ html{scroll-behavior:auto}
     </div>
     <div class="cases reveal">
       <a class="case-card c1" href="../en/cases/1ds.html">
-        <ul class="tags case-tags"><li>Design System</li><li>Components</li><li>Documentation</li></ul>
+        <ul class="tags case-tags"><li class="wip">Work in progress</li><li>Design System</li><li>Components</li><li>Documentation</li></ul>
         <div class="case-thumb"><div class="case-img" aria-hidden="true">
           <div class="mock">
             <div class="mock-bar"><i></i><i></i><i></i><b></b></div>
@@ -869,7 +874,7 @@ html{scroll-behavior:auto}
       </a>
 
       <a class="case-card c4" href="../en/cases/assinatura.html">
-        <ul class="tags case-tags"><li>Product Discovery</li><li>UX/UI</li></ul>
+        <ul class="tags case-tags"><li class="wip">Work in progress</li><li>Product Discovery</li><li>UX/UI</li></ul>
         <div class="case-thumb"><div class="case-img" aria-hidden="true">
           <div class="mock">
             <div class="mock-bar"><i></i><i></i><i></i><b></b></div>
